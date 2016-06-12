@@ -32,19 +32,26 @@ for(var i = 0; i < records.length; i++) {
         }
     }
     
-    for(key in records[i].value['Values']){
-      value = records[i].value['Values'][key];
-      // value is GDP per capita
-      // key is year
-      newRecord = records[i];
-      newRecord.value = { 
-        ${CC} : records[i].value['${CC}'], 
-        ${CI} : records[i].value['${CI}'],
-        ${YR} : key,
-        ${VL} : value,
+    // Save the map of values that was originally saved in the Record 
+    // Under the 'Values' field
+    var Values = records[i].value['Values'];
+    
+    for(key in Values){
+      var value = Values[key];
+      // value : GDP per capita
+      // key   : year
+      record = records[i] //Make new variable just called for easier reading
+      // Note: this is a pass by reference so a new record is not created
+      record.value = { 
+        '${CC}' : records[i].value['${CC}'],
+        '${CI}' : records[i].value['${CI}'],
+        '${YR}' : key,
+        '${VL}' : value,
       };
-      output.write(newRecord);
+      output.write(record);
+      // what is written as it is written to
     }
+    
     
     // Change record root field value to a MAP value and create an entry
     //records[i].value = { V : 'Hello' };
@@ -65,7 +72,7 @@ for(var i = 0; i < records.length; i++) {
     //records[i].value.A[0] = 100;
 
     // Write record to procesor output
-    //output.write(records[i]);
+    // output.write(records[i]);
   } catch (e) {
     // Send record to error
     error.write(records[i], e);
