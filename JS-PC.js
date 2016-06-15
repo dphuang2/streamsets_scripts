@@ -5,10 +5,11 @@ function writeRecord(Values, year, country, cc){
       	// key   : indicator
       	record = records[i] //Make new variable just called for easier reading
       	// Note: this is a pass by reference so a new record is not created
-     	 record.value = { 
-        	'${CC}' : cc,
-        	'${CI}' : country+' ('+key+')',
-        	'${YR}' : year,
+        
+     	record.value = { 
+        	'${ID}' : key,
+        	'${CT}' : cc,
+        	'${DT}' : year,
         	'${VL}' : value,
       	};
       	output.write(record);
