@@ -2,7 +2,7 @@
   "pipelineConfig" : {
     "schemaVersion" : 1,
     "version" : 5,
-    "uuid" : "76e2377f-84f9-46e7-aea0-3a2533a40536",
+    "uuid" : "b555528b-9c92-424f-be68-21cda393eb00",
     "description" : "",
     "configuration" : [ {
       "name" : "executionMode",
@@ -122,7 +122,7 @@
         "value" : "WITH_HEADER"
       }, {
         "name" : "conf.dataFormatConfig.csvMaxObjectLen",
-        "value" : 1024
+        "value" : 33554432
       }, {
         "name" : "conf.dataFormatConfig.csvCustomDelimiter",
         "value" : "|"
@@ -212,7 +212,7 @@
         "value" : 128
       }, {
         "name" : "conf.batchSize",
-        "value" : 1000
+        "value" : 99999
       }, {
         "name" : "conf.poolingTimeoutSecs",
         "value" : 10
@@ -266,6 +266,9 @@
       "configuration" : [ {
         "name" : "lanePredicates",
         "value" : [ {
+          "outputLane" : "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1466285783789",
+          "predicate" : "${record:attribute('filename') == 'Individuals_Internet_2000-2014.csv'}"
+        }, {
           "outputLane" : "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1465848506949",
           "predicate" : "${record:attribute('filename') == 'oni_country_data_2013-09-20.csv'}"
         }, {
@@ -289,11 +292,11 @@
         "description" : "",
         "label" : "Stream Selector 1",
         "xPos" : 280,
-        "yPos" : 140,
+        "yPos" : 170,
         "stageType" : "PROCESSOR"
       },
       "inputLanes" : [ "com_streamsets_pipeline_stage_origin_spooldir_SpoolDirDSource_01OutputLane14656964692430" ],
-      "outputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1465848506949", "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1465707849620", "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1465707792658" ]
+      "outputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1466285783789", "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1465848506949", "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1465707849620", "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1465707792658" ]
     }, {
       "instanceName" : "com_streamsets_pipeline_stage_processor_javascript_JavaScriptDProcessor_01",
       "library" : "streamsets-datacollector-basic-lib",
@@ -319,7 +322,7 @@
         "description" : "API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2.csv",
         "label" : "GDP per capita",
         "xPos" : 500,
-        "yPos" : 170,
+        "yPos" : 300,
         "stageType" : "PROCESSOR"
       },
       "inputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1465707849620" ],
@@ -334,7 +337,7 @@
         "description" : "",
         "label" : "Trash 1",
         "xPos" : 500,
-        "yPos" : 300,
+        "yPos" : 430,
         "stageType" : "TARGET"
       },
       "inputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1465707792658" ],
@@ -364,11 +367,41 @@
         "description" : "oni_country_data_2013-09-20.csv",
         "label" : "Political Censorship",
         "xPos" : 500,
-        "yPos" : 40,
+        "yPos" : 170,
         "stageType" : "PROCESSOR"
       },
       "inputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1465848506949" ],
       "outputLanes" : [ "com_streamsets_pipeline_stage_processor_javascript_JavaScriptDProcessor_02OutputLane14658488172670" ]
+    }, {
+      "instanceName" : "com_streamsets_pipeline_stage_processor_javascript_JavaScriptDProcessor_03",
+      "library" : "streamsets-datacollector-basic-lib",
+      "stageName" : "com_streamsets_pipeline_stage_processor_javascript_JavaScriptDProcessor",
+      "stageVersion" : "2",
+      "configuration" : [ {
+        "name" : "processingMode",
+        "value" : "RECORD"
+      }, {
+        "name" : "script",
+        "value" : "function writeRecord(Values){\n      for(key in Values){\n      \tvar value = Values[key];\n      \t// value : GDP per capita\n      \t// key   : year\n      \trecord = records[i] //Make new variable just called for easier reading\n      \t// Note: this is a pass by reference so a new record is not created\n     \t record.value = { \n        \t'${ID}' : 'ipr',\n        \t'${CT}' : records[i].value['${CT}'],\n        \t'${DT}' : key,\n        \t'${VL}' : value,\n      \t};\n      \toutput.write(record);\n      \t// what is written to the record is what it outputs\n    }\n}\n\nfor(var i = 0; i < records.length; i++) {\n  try {\n    // Change record root field value to a STRING value\n    //records[i].value = 'Hello ' + i;\n\t\n    records[i].value.Values = {};\n    records[i].value['${CT}'] = records[i].value['country']; // 1. Alter this line to the column that identifys the Country\n    for(key in records[i].value){\n      \tvar value = records[i].value[key];\n    \tif(value != \"\" && key > 1950){\n          \trecords[i].value['Values'][key] = value;\n        }\n    }\n    //output.write(records[i]);\n    \n    // Save the map of values that was originally saved in the Record \n    // Under the 'Values' field\n    var Values = records[i].value['Values'];\n\twriteRecord(Values);\n    \n  } catch (e) {\n    // Send record to error\n    error.write(records[i], e);\n  }\n}"
+      }, {
+        "name" : "stageOnRecordError",
+        "value" : "TO_ERROR"
+      }, {
+        "name" : "stageRequiredFields",
+        "value" : [ ]
+      }, {
+        "name" : "stageRecordPreconditions",
+        "value" : [ ]
+      } ],
+      "uiInfo" : {
+        "description" : "Individuals_Internet_2000-2014.csv",
+        "label" : "Individuals Internet",
+        "xPos" : 500,
+        "yPos" : 40,
+        "stageType" : "PROCESSOR"
+      },
+      "inputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1466285783789" ],
+      "outputLanes" : [ "com_streamsets_pipeline_stage_processor_javascript_JavaScriptDProcessor_03OutputLane14662858143690" ]
     }, {
       "instanceName" : "com_streamsets_pipeline_stage_processor_expression_ExpressionDProcessor_01",
       "library" : "streamsets-datacollector-basic-lib",
@@ -397,10 +430,10 @@
         "description" : "",
         "label" : "Map to List-Map",
         "xPos" : 720,
-        "yPos" : 170,
+        "yPos" : 300,
         "stageType" : "PROCESSOR"
       },
-      "inputLanes" : [ "com_streamsets_pipeline_stage_processor_javascript_JavaScriptDProcessor_01OutputLane14656965639590", "com_streamsets_pipeline_stage_processor_javascript_JavaScriptDProcessor_02OutputLane14658488172670" ],
+      "inputLanes" : [ "com_streamsets_pipeline_stage_processor_javascript_JavaScriptDProcessor_01OutputLane14656965639590", "com_streamsets_pipeline_stage_processor_javascript_JavaScriptDProcessor_02OutputLane14658488172670", "com_streamsets_pipeline_stage_processor_javascript_JavaScriptDProcessor_03OutputLane14662858143690" ],
       "outputLanes" : [ "com_streamsets_pipeline_stage_processor_expression_ExpressionDProcessor_01OutputLane14657099461960" ]
     }, {
       "instanceName" : "com_streamsets_pipeline_stage_destination_localfilesystem_LocalFileSystemDTarget_02",
@@ -522,8 +555,8 @@
       "uiInfo" : {
         "description" : "",
         "label" : "Local FS 2",
-        "xPos" : 915.9675903320312,
-        "yPos" : 166.2053985595703,
+        "xPos" : 940,
+        "yPos" : 300,
         "stageType" : "TARGET"
       },
       "inputLanes" : [ "com_streamsets_pipeline_stage_processor_expression_ExpressionDProcessor_01OutputLane14657099461960" ],
@@ -561,11 +594,11 @@
       "name" : "IM testing",
       "description" : "",
       "created" : 1465696449825,
-      "lastModified" : 1465982093334,
+      "lastModified" : 1466287832097,
       "creator" : "admin",
       "lastModifier" : "admin",
       "lastRev" : "0",
-      "uuid" : "76e2377f-84f9-46e7-aea0-3a2533a40536",
+      "uuid" : "b555528b-9c92-424f-be68-21cda393eb00",
       "valid" : true,
       "metadata" : {
         "labels" : [ ]
