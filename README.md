@@ -9,6 +9,7 @@
 The only difference between Mac OS and Windows is that you would not have to use Vagrant (Linux box)
 <ol>
     <li> Install Vagrant, Ruby, and Git </li>
+    Have to manually install VirtualBox on Mac
     <li> vagrant box add ubuntu/trusty64 </li>
     Important Note: MUST USE Ubuntu 14.04 or above to follow StreamSets requirements <br>
     if there are problems adding the box, install C++ 2010 SP1 Reidistributable Package (x86): https://github.com/mitchellh/vagrant/issues/6852 
