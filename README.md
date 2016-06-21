@@ -6,7 +6,7 @@
 </ol>
 
 <h3>Streamsets setup for Windows 10 64 bit </h3>
-The only difference between Mac OS and Windows is that you would not have to use Vagrant (Linux box)
+Mac should use Vagrant for persistent development environment (makes it easy)
 <ol>
     <li> Install Vagrant, Ruby, and Git </li>
     Have to manually install VirtualBox on Mac

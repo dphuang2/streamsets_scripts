@@ -1,15 +1,14 @@
-function writeRecord(Values, year, country, cc){
+function writeRecord(Values){
       for(key in Values){
       	var value = Values[key];
-      	// value : Political Score
-      	// key   : indicator
+      	// value : GDP per capita
+      	// key   : year
       	record = records[i] //Make new variable just called for easier reading
       	// Note: this is a pass by reference so a new record is not created
-        
-     	record.value = { 
-        	'${ID}' : key,
-        	'${CT}' : cc,
-        	'${DT}' : year,
+     	 record.value = { 
+        	'${ID}' : 'gdpcapus',
+        	'${CT}' : records[i].value['${CT}'],
+        	'${DT}' : key,
         	'${VL}' : value,
       	};
       	output.write(record);
@@ -21,23 +20,21 @@ for(var i = 0; i < records.length; i++) {
   try {
     // Change record root field value to a STRING value
     //records[i].value = 'Hello ' + i;
-    var cc = records[i].value['country_code'];
-    var country = records[i].value['country'];
-	var year = records[i].value['testing_date'];
-    var Values = {};
+	
+    records[i].value.Values = {};
+    records[i].value['${CT}'] = records[i].value['Country Code'];
     for(key in records[i].value){
       	var value = records[i].value[key];
-    	if(key != 'country' && key != 'country_code' && key != 'testing_date' && key != 'url'){
-          	//records[i].value['Values'][key] = value;
-          Values[key] = value;
+    	if(value != "" && key > 1950){
+          	records[i].value['Values'][key] = value;
         }
-        
     }
-    // output.write(records[i]);
+    //output.write(records[i]);
     
     // Save the map of values that was originally saved in the Record 
     // Under the 'Values' field
-	writeRecord(Values, year, country, cc);
+    var Values = records[i].value['Values'];
+	writeRecord(Values);
     
   } catch (e) {
     // Send record to error
