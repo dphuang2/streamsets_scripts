@@ -22,7 +22,6 @@ for(var i = 0; i < records.length; i++) {
         var CC = "country_code"; // 1. Replace with Country Code Header
         var CT = "country"; // 2. Replace with Country Name Header
         var YR = "testing_date"; // 3. Replace with Year Header (If needed)
-        var AvoidArray = [CC, CT, YR];
 
         // Save Country Data
         var cc = records[i].value['CC'];
