@@ -2,7 +2,7 @@
   "pipelineConfig" : {
     "schemaVersion" : 1,
     "version" : 5,
-    "uuid" : "a9354413-8411-41ae-a843-d8546842ce9c",
+    "uuid" : "4e5d5ded-a250-4388-aa9d-2d40df9119ed",
     "description" : "",
     "configuration" : [ {
       "name" : "executionMode",
@@ -266,6 +266,9 @@
       "configuration" : [ {
         "name" : "lanePredicates",
         "value" : [ {
+          "outputLane" : "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1466483478889",
+          "predicate" : "${record:attribute('filename') == 'WEF_NRI_2012-2015_Historical_Dataset.csv'}"
+        }, {
           "outputLane" : "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1466285783789",
           "predicate" : "${record:attribute('filename') == 'Individuals_Internet_2000-2014.csv'}"
         }, {
@@ -292,11 +295,11 @@
         "description" : "",
         "label" : "Stream Selector 1",
         "xPos" : 280,
-        "yPos" : 170,
+        "yPos" : 200,
         "stageType" : "PROCESSOR"
       },
       "inputLanes" : [ "com_streamsets_pipeline_stage_origin_spooldir_SpoolDirDSource_01OutputLane14656964692430" ],
-      "outputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1466285783789", "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1465848506949", "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1465707849620", "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1465707792658" ]
+      "outputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1466483478889", "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1466285783789", "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1465848506949", "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1465707849620", "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1465707792658" ]
     }, {
       "instanceName" : "com_streamsets_pipeline_stage_processor_javascript_JavaScriptDProcessor_01",
       "library" : "streamsets-datacollector-basic-lib",
@@ -321,8 +324,8 @@
       "uiInfo" : {
         "description" : "API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2.csv",
         "label" : "GDP per capita",
-        "xPos" : 497.5,
-        "yPos" : 298.75,
+        "xPos" : 500,
+        "yPos" : 430,
         "stageType" : "PROCESSOR"
       },
       "inputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1465707849620" ],
@@ -337,7 +340,7 @@
         "description" : "",
         "label" : "Trash 1",
         "xPos" : 500,
-        "yPos" : 430,
+        "yPos" : 560,
         "stageType" : "TARGET"
       },
       "inputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1465707792658" ],
@@ -352,7 +355,7 @@
         "value" : "RECORD"
       }, {
         "name" : "script",
-        "value" : "function writeRecord(Values){\n    for(key in Values){\n        var value = Values[key];\n        // value : GDP per capita\n        // key   : year\n        record = records[i] //Make new variable just called for easier reading\n            // Note: this is a pass by reference so a new record is not created\n            record.value = { \n                '${ID}' : 'gdpcapus',\n                '${CT}' : records[i].value['${CT}'],\n                '${DT}' : key,\n                '${VL}' : value,\n            };\n        output.write(record);\n        // what is written to the record is what it outputs\n    }\n}\n\nfor(var i = 0; i < records.length; i++) {\n    try {\n        records[i].value.Values = {};\n        records[i].value['${CT}'] = records[i].value['Country Code'];\n        for(key in records[i].value){\n            var value = records[i].value[key];\n            if(value != \"\" && key > 1950){\n                records[i].value['Values'][key] = value;\n            }\n        }\n        //output.write(records[i]);\n\n        // Save the map of values that was originally saved in the Record \n        // Under the 'Values' field\n        var Values = records[i].value['Values'];\n        writeRecord(Values);\n\n    } catch (e) {\n        // Send record to error\n        error.write(records[i], e);\n    }\n}"
+        "value" : "function writeRecord(Values, year, country, cc){\n      for(key in Values){\n      \tvar value = Values[key];\n      \t// value : Political Score\n      \t// key   : indicator\n      \trecord = records[i] //Make new variable just called for easier reading\n      \t// Note: this is a pass by reference so a new record is not created\n        \n     \trecord.value = { \n        \t'${ID}' : key,\n        \t'${CT}' : cc,\n        \t'${DT}' : year,\n        \t'${VL}' : value,\n      \t};\n      \toutput.write(record);\n      \t// what is written to the record is what it outputs\n    }\n}\n\nfor(var i = 0; i < records.length; i++) {\n  try {\n    var cc = records[i].value['country_code'];\n    var country = records[i].value['country'];\n\tvar year = records[i].value['testing_date'];\n    var Values = {};\n    for(key in records[i].value){\n      \tvar value = records[i].value[key];\n    \tif(key != 'country' && key != 'country_code' && key != 'testing_date' && key != 'url'){\n          \t//records[i].value['Values'][key] = value;\n          Values[key] = value;\n        }\n        \n    }\n    // output.write(records[i]);\n    \n    // Save the map of values that was originally saved in the Record \n    // Under the 'Values' field\n\twriteRecord(Values, year, country, cc);\n    \n  } catch (e) {\n    // Send record to error\n    error.write(records[i], e);\n  }\n}"
       }, {
         "name" : "stageOnRecordError",
         "value" : "TO_ERROR"
@@ -367,7 +370,7 @@
         "description" : "oni_country_data_2013-09-20.csv",
         "label" : "Political Censorship",
         "xPos" : 500,
-        "yPos" : 168.75,
+        "yPos" : 300,
         "stageType" : "PROCESSOR"
       },
       "inputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1465848506949" ],
@@ -397,11 +400,41 @@
         "description" : "Individuals_Internet_2000-2014.csv",
         "label" : "Individuals Internet",
         "xPos" : 500,
-        "yPos" : 40,
+        "yPos" : 170,
         "stageType" : "PROCESSOR"
       },
       "inputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1466285783789" ],
       "outputLanes" : [ "com_streamsets_pipeline_stage_processor_javascript_JavaScriptDProcessor_03OutputLane14662858143690" ]
+    }, {
+      "instanceName" : "com_streamsets_pipeline_stage_processor_javascript_JavaScriptDProcessor_04",
+      "library" : "streamsets-datacollector-basic-lib",
+      "stageName" : "com_streamsets_pipeline_stage_processor_javascript_JavaScriptDProcessor",
+      "stageVersion" : "2",
+      "configuration" : [ {
+        "name" : "processingMode",
+        "value" : "RECORD"
+      }, {
+        "name" : "script",
+        "value" : "function writeRecord(Values, year, indicator){\n    for(key in Values){\n        var value = Values[key];\n        // value : GDP per capita\n        // key   : year\n        record = records[i] //Make new variable just called for easier reading\n            // Note: this is a pass by reference so a new record is not created\n            record.value = { \n                '${ID}' : 'nri'+indicator,\n                '${CT}' : key,\n                '${DT}' : year,\n                '${VL}' : value,\n            };\n        output.write(record);\n        // what is written to the record is what it outputs\n    }\n}\n\nfor(var i = 0; i < records.length; i++) {\n    try {\n        if(records[i].value['Attribute'] == 'Value'){\n\n            var YR = \"Edition\"; \n            var indicator = \"Placement\";\n\n            // Save Country Data\n            var indicator = records[i].value[indicator];\n            var year = records[i].value[YR];\n\n            records[i].value.Values = {};\n            for(key in records[i].value){\n                var value = records[i].value[key];\n                if(key.length == 3 && value != \"\"){\n                    records[i].value['Values'][key] = value;\n                }\n            }\n            //output.write(records[i]);\n\n            // Save the map of values that was originally saved in the Record \n            // Under the 'Values' field\n            var Values = records[i].value['Values'];\n            writeRecord(Values, year, indicator);\n\n        }\n    } catch (e) {\n        // Send record to error\n        error.write(records[i], e);\n    }\n}"
+      }, {
+        "name" : "stageOnRecordError",
+        "value" : "TO_ERROR"
+      }, {
+        "name" : "stageRequiredFields",
+        "value" : [ ]
+      }, {
+        "name" : "stageRecordPreconditions",
+        "value" : [ ]
+      } ],
+      "uiInfo" : {
+        "description" : "WEF_NRI_2012-2015_Historical_Dataset.csv",
+        "label" : "Network Readiness Index",
+        "xPos" : 500,
+        "yPos" : 40,
+        "stageType" : "PROCESSOR"
+      },
+      "inputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_01OutputLane1466483478889" ],
+      "outputLanes" : [ "com_streamsets_pipeline_stage_processor_javascript_JavaScriptDProcessor_04OutputLane14664837627080" ]
     }, {
       "instanceName" : "com_streamsets_pipeline_stage_processor_expression_ExpressionDProcessor_01",
       "library" : "streamsets-datacollector-basic-lib",
@@ -430,10 +463,10 @@
         "description" : "",
         "label" : "Map to List-Map",
         "xPos" : 720,
-        "yPos" : 300,
+        "yPos" : 430,
         "stageType" : "PROCESSOR"
       },
-      "inputLanes" : [ "com_streamsets_pipeline_stage_processor_javascript_JavaScriptDProcessor_01OutputLane14656965639590", "com_streamsets_pipeline_stage_processor_javascript_JavaScriptDProcessor_02OutputLane14658488172670", "com_streamsets_pipeline_stage_processor_javascript_JavaScriptDProcessor_03OutputLane14662858143690" ],
+      "inputLanes" : [ "com_streamsets_pipeline_stage_processor_javascript_JavaScriptDProcessor_01OutputLane14656965639590", "com_streamsets_pipeline_stage_processor_javascript_JavaScriptDProcessor_02OutputLane14658488172670", "com_streamsets_pipeline_stage_processor_javascript_JavaScriptDProcessor_03OutputLane14662858143690", "com_streamsets_pipeline_stage_processor_javascript_JavaScriptDProcessor_04OutputLane14664837627080" ],
       "outputLanes" : [ "com_streamsets_pipeline_stage_processor_expression_ExpressionDProcessor_01OutputLane14657099461960" ]
     }, {
       "instanceName" : "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02",
@@ -443,16 +476,19 @@
       "configuration" : [ {
         "name" : "lanePredicates",
         "value" : [ {
-          "outputLane" : "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664600502060",
+          "outputLane" : "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664837882120",
+          "predicate" : "${record:attribute('filename') == 'WEF_NRI_2012-2015_Historical_Dataset.csv'}"
+        }, {
+          "outputLane" : "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664837882121",
           "predicate" : "${record:attribute('filename') == 'Individuals_Internet_2000-2014.csv'}"
         }, {
-          "outputLane" : "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664600502061",
+          "outputLane" : "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664837882122",
           "predicate" : "${record:attribute('filename') == 'oni_country_data_2013-09-20.csv'}"
         }, {
-          "outputLane" : "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664600502062",
+          "outputLane" : "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664837882123",
           "predicate" : "${record:attribute('filename') == 'API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2.csv'}"
         }, {
-          "outputLane" : "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664600502063",
+          "outputLane" : "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664837882124",
           "predicate" : "default"
         } ]
       }, {
@@ -469,34 +505,19 @@
         "description" : "",
         "label" : "Stream Selector 2",
         "xPos" : 940,
-        "yPos" : 300,
+        "yPos" : 430,
         "stageType" : "PROCESSOR"
       },
       "inputLanes" : [ "com_streamsets_pipeline_stage_processor_expression_ExpressionDProcessor_01OutputLane14657099461960" ],
-      "outputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664600502060", "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664600502061", "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664600502062", "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664600502063" ]
+      "outputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664837882120", "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664837882121", "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664837882122", "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664837882123", "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664837882124" ]
     }, {
-      "instanceName" : "com_streamsets_pipeline_stage_destination_devnull_NullDTarget_02",
-      "library" : "streamsets-datacollector-basic-lib",
-      "stageName" : "com_streamsets_pipeline_stage_destination_devnull_NullDTarget",
-      "stageVersion" : "1",
-      "configuration" : [ ],
-      "uiInfo" : {
-        "description" : "",
-        "label" : "Trash 2",
-        "xPos" : 1160,
-        "yPos" : 680,
-        "stageType" : "TARGET"
-      },
-      "inputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664600502063" ],
-      "outputLanes" : [ ]
-    }, {
-      "instanceName" : "com_streamsets_pipeline_stage_destination_localfilesystem_LocalFileSystemDTarget_02",
+      "instanceName" : "com_streamsets_pipeline_stage_destination_localfilesystem_LocalFileSystemDTarget_04",
       "library" : "streamsets-datacollector-basic-lib",
       "stageName" : "com_streamsets_pipeline_stage_destination_localfilesystem_LocalFileSystemDTarget",
       "stageVersion" : "2",
       "configuration" : [ {
         "name" : "configs.uniquePrefix",
-        "value" : "gdppcap_"
+        "value" : "ipu_"
       }, {
         "name" : "configs.dirPathTemplateInHeader",
         "value" : false
@@ -608,12 +629,12 @@
       } ],
       "uiInfo" : {
         "description" : "",
-        "label" : "GDP per capita",
+        "label" : "Individual Internet",
         "xPos" : 1160,
         "yPos" : 550,
         "stageType" : "TARGET"
       },
-      "inputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664600502062" ],
+      "inputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664837882121" ],
       "outputLanes" : [ ]
     }, {
       "instanceName" : "com_streamsets_pipeline_stage_destination_localfilesystem_LocalFileSystemDTarget_03",
@@ -736,19 +757,19 @@
         "description" : "",
         "label" : "Political Censorship",
         "xPos" : 1160,
-        "yPos" : 420,
+        "yPos" : 680,
         "stageType" : "TARGET"
       },
-      "inputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664600502061" ],
+      "inputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664837882122" ],
       "outputLanes" : [ ]
     }, {
-      "instanceName" : "com_streamsets_pipeline_stage_destination_localfilesystem_LocalFileSystemDTarget_04",
+      "instanceName" : "com_streamsets_pipeline_stage_destination_localfilesystem_LocalFileSystemDTarget_02",
       "library" : "streamsets-datacollector-basic-lib",
       "stageName" : "com_streamsets_pipeline_stage_destination_localfilesystem_LocalFileSystemDTarget",
       "stageVersion" : "2",
       "configuration" : [ {
         "name" : "configs.uniquePrefix",
-        "value" : "ipu_"
+        "value" : "gdppcap_"
       }, {
         "name" : "configs.dirPathTemplateInHeader",
         "value" : false
@@ -860,12 +881,153 @@
       } ],
       "uiInfo" : {
         "description" : "",
-        "label" : "Individual Internet",
+        "label" : "GDP per capita",
         "xPos" : 1160,
-        "yPos" : 290,
+        "yPos" : 810,
         "stageType" : "TARGET"
       },
-      "inputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664600502060" ],
+      "inputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664837882123" ],
+      "outputLanes" : [ ]
+    }, {
+      "instanceName" : "com_streamsets_pipeline_stage_destination_devnull_NullDTarget_02",
+      "library" : "streamsets-datacollector-basic-lib",
+      "stageName" : "com_streamsets_pipeline_stage_destination_devnull_NullDTarget",
+      "stageVersion" : "1",
+      "configuration" : [ ],
+      "uiInfo" : {
+        "description" : "",
+        "label" : "Trash 2",
+        "xPos" : 1160,
+        "yPos" : 940,
+        "stageType" : "TARGET"
+      },
+      "inputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664837882124" ],
+      "outputLanes" : [ ]
+    }, {
+      "instanceName" : "com_streamsets_pipeline_stage_destination_localfilesystem_LocalFileSystemDTarget_05",
+      "library" : "streamsets-datacollector-basic-lib",
+      "stageName" : "com_streamsets_pipeline_stage_destination_localfilesystem_LocalFileSystemDTarget",
+      "stageVersion" : "2",
+      "configuration" : [ {
+        "name" : "configs.uniquePrefix",
+        "value" : "nri_"
+      }, {
+        "name" : "configs.dirPathTemplateInHeader",
+        "value" : false
+      }, {
+        "name" : "configs.dirPathTemplate",
+        "value" : "${destination}"
+      }, {
+        "name" : "configs.timeZoneID",
+        "value" : "UTC"
+      }, {
+        "name" : "configs.timeDriver",
+        "value" : "${time:now()}"
+      }, {
+        "name" : "configs.maxRecordsPerFile",
+        "value" : 0
+      }, {
+        "name" : "configs.maxFileSize",
+        "value" : 0
+      }, {
+        "name" : "configs.idleTimeout",
+        "value" : "${1 * HOURS}"
+      }, {
+        "name" : "configs.compression",
+        "value" : "NONE"
+      }, {
+        "name" : "configs.otherCompression",
+        "value" : null
+      }, {
+        "name" : "configs.keyEl",
+        "value" : "${uuid()}"
+      }, {
+        "name" : "configs.lateRecordsLimit",
+        "value" : "${1 * HOURS}"
+      }, {
+        "name" : "configs.rollIfHeader",
+        "value" : false
+      }, {
+        "name" : "configs.rollHeaderName",
+        "value" : "roll"
+      }, {
+        "name" : "configs.lateRecordsAction",
+        "value" : "SEND_TO_ERROR"
+      }, {
+        "name" : "configs.lateRecordsDirPathTemplate",
+        "value" : "/tmp/late/${YYYY()}-${MM()}-${DD()}"
+      }, {
+        "name" : "configs.dataFormat",
+        "value" : "DELIMITED"
+      }, {
+        "name" : "configs.dataGeneratorFormatConfig.charset",
+        "value" : "UTF-8"
+      }, {
+        "name" : "configs.dataGeneratorFormatConfig.csvFileFormat",
+        "value" : "CSV"
+      }, {
+        "name" : "configs.dataGeneratorFormatConfig.csvHeader",
+        "value" : "WITH_HEADER"
+      }, {
+        "name" : "configs.dataGeneratorFormatConfig.csvReplaceNewLines",
+        "value" : true
+      }, {
+        "name" : "configs.dataGeneratorFormatConfig.csvReplaceNewLinesString",
+        "value" : ""
+      }, {
+        "name" : "configs.dataGeneratorFormatConfig.csvCustomDelimiter",
+        "value" : "|"
+      }, {
+        "name" : "configs.dataGeneratorFormatConfig.csvCustomEscape",
+        "value" : "\\"
+      }, {
+        "name" : "configs.dataGeneratorFormatConfig.csvCustomQuote",
+        "value" : "\""
+      }, {
+        "name" : "configs.dataGeneratorFormatConfig.jsonMode",
+        "value" : "MULTIPLE_OBJECTS"
+      }, {
+        "name" : "configs.dataGeneratorFormatConfig.textFieldPath",
+        "value" : "/"
+      }, {
+        "name" : "configs.dataGeneratorFormatConfig.textEmptyLineIfNull",
+        "value" : false
+      }, {
+        "name" : "configs.dataGeneratorFormatConfig.avroSchemaInHeader",
+        "value" : true
+      }, {
+        "name" : "configs.dataGeneratorFormatConfig.avroSchema",
+        "value" : null
+      }, {
+        "name" : "configs.dataGeneratorFormatConfig.avroCompression",
+        "value" : "NULL"
+      }, {
+        "name" : "configs.dataGeneratorFormatConfig.binaryFieldPath",
+        "value" : "/"
+      }, {
+        "name" : "configs.dataGeneratorFormatConfig.protoDescriptorFile",
+        "value" : null
+      }, {
+        "name" : "configs.dataGeneratorFormatConfig.messageType",
+        "value" : null
+      }, {
+        "name" : "stageOnRecordError",
+        "value" : "TO_ERROR"
+      }, {
+        "name" : "stageRequiredFields",
+        "value" : [ ]
+      }, {
+        "name" : "stageRecordPreconditions",
+        "value" : [ ]
+      } ],
+      "uiInfo" : {
+        "description" : "",
+        "label" : "Network Readiness Index",
+        "xPos" : 1156.185302734375,
+        "yPos" : 420,
+        "stageType" : "TARGET"
+      },
+      "inputLanes" : [ "com_streamsets_pipeline_stage_processor_selector_SelectorDProcessor_02OutputLane14664837882120" ],
       "outputLanes" : [ ]
     } ],
     "errorStage" : {
@@ -900,11 +1062,11 @@
       "name" : "IM testing",
       "description" : "",
       "created" : 1466418346379,
-      "lastModified" : 1466471498924,
+      "lastModified" : 1466489056213,
       "creator" : "admin",
       "lastModifier" : "admin",
       "lastRev" : "0",
-      "uuid" : "a9354413-8411-41ae-a843-d8546842ce9c",
+      "uuid" : "4e5d5ded-a250-4388-aa9d-2d40df9119ed",
       "valid" : true,
       "metadata" : {
         "labels" : [ ]
@@ -932,9 +1094,9 @@
     "previewable" : true,
     "valid" : true,
     "issues" : {
-      "issueCount" : 0,
       "stageIssues" : { },
-      "pipelineIssues" : [ ]
+      "pipelineIssues" : [ ],
+      "issueCount" : 0
     }
   },
   "pipelineRules" : {
@@ -1003,8 +1165,8 @@
   "libraryDefinitions" : {
     "pipeline" : [ {
       "configDefinitions" : [ {
-        "max" : 9223372036854775807,
         "fieldName" : "executionMode",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "",
@@ -1025,14 +1187,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 10,
+        "dependsOnMap" : null,
         "name" : "executionMode",
         "type" : "MODEL",
         "defaultValue" : "STANDALONE"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "deliveryGuarantee",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "",
@@ -1053,14 +1215,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 20,
+        "dependsOnMap" : null,
         "name" : "deliveryGuarantee",
         "type" : "MODEL",
         "defaultValue" : "AT_LEAST_ONCE"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "shouldRetry",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "",
@@ -1075,14 +1237,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 30,
+        "dependsOnMap" : null,
         "name" : "shouldRetry",
         "type" : "BOOLEAN",
         "defaultValue" : true
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "retryAttempts",
+        "max" : 9223372036854775807,
         "dependsOn" : "shouldRetry",
         "triggeredByValues" : [ true ],
         "description" : "Max no of retries. To retry indefinitely, use -1. The wait time between retries starts at 15 seconds and doubles until reaching 5 minutes.",
@@ -1097,16 +1259,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 30,
         "dependsOnMap" : {
           "shouldRetry" : [ true ]
         },
-        "displayPosition" : 30,
         "name" : "retryAttempts",
         "type" : "NUMBER",
         "defaultValue" : -1
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "memoryLimit",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Maximum amount of memory the pipeline can use. Configure in relationship to the SDC Java heap size. The default is 650 and a value of 0 or less disables the limit.",
@@ -1121,14 +1283,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 60,
+        "dependsOnMap" : null,
         "name" : "memoryLimit",
         "type" : "NUMBER",
         "defaultValue" : "${jvm:maxMemoryMB() * 0.65}"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "memoryLimitExceeded",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Behavior when the pipeline exceeds the memory limit. Tip: Configure an alert to indicate when the memory use approaches the limit.",
@@ -1149,14 +1311,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 70,
+        "dependsOnMap" : null,
         "name" : "memoryLimitExceeded",
         "type" : "MODEL",
         "defaultValue" : "STOP_PIPELINE"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "notifyOnStates",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Notifies via email when pipeline gets to the specified states",
@@ -1177,14 +1339,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 75,
+        "dependsOnMap" : null,
         "name" : "notifyOnStates",
         "type" : "MODEL",
         "defaultValue" : [ "RUN_ERROR", "STOPPED", "FINISHED" ]
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "emailIDs",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Email Addresses",
@@ -1199,14 +1361,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 76,
+        "dependsOnMap" : null,
         "name" : "emailIDs",
         "type" : "LIST",
         "defaultValue" : [ ]
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "constants",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "",
@@ -1221,14 +1383,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 80,
+        "dependsOnMap" : null,
         "name" : "constants",
         "type" : "MAP",
         "defaultValue" : [ ]
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "badRecordsHandling",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "",
@@ -1249,14 +1411,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 90,
+        "dependsOnMap" : null,
         "name" : "badRecordsHandling",
         "type" : "MODEL",
         "defaultValue" : null
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "statsAggregatorStage",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "",
@@ -1277,14 +1439,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 95,
+        "dependsOnMap" : null,
         "name" : "statsAggregatorStage",
         "type" : "MODEL",
         "defaultValue" : "streamsets-datacollector-basic-lib::com_streamsets_pipeline_stage_destination_devnull_StatsNullDTarget::1"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "clusterSlaveMemory",
+        "max" : 9223372036854775807,
         "dependsOn" : "executionMode",
         "triggeredByValues" : [ "CLUSTER_BATCH", "CLUSTER_YARN_STREAMING" ],
         "description" : "",
@@ -1299,16 +1461,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 100,
         "dependsOnMap" : {
           "executionMode" : [ "CLUSTER_BATCH", "CLUSTER_YARN_STREAMING" ]
         },
-        "displayPosition" : 100,
         "name" : "clusterSlaveMemory",
         "type" : "NUMBER",
         "defaultValue" : 1024
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "clusterSlaveJavaOpts",
+        "max" : 9223372036854775807,
         "dependsOn" : "executionMode",
         "triggeredByValues" : [ "CLUSTER_BATCH", "CLUSTER_YARN_STREAMING" ],
         "description" : "Add properties as needed. Changes to default settings are not recommended.",
@@ -1323,16 +1485,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 110,
         "dependsOnMap" : {
           "executionMode" : [ "CLUSTER_BATCH", "CLUSTER_YARN_STREAMING" ]
         },
-        "displayPosition" : 110,
         "name" : "clusterSlaveJavaOpts",
         "type" : "STRING",
         "defaultValue" : "-XX:PermSize=128M -XX:MaxPermSize=256M -Dlog4j.debug"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "clusterLauncherEnv",
+        "max" : 9223372036854775807,
         "dependsOn" : "executionMode",
         "triggeredByValues" : [ "CLUSTER_BATCH", "CLUSTER_YARN_STREAMING" ],
         "description" : "Sets additional environment variables for the cluster launcher",
@@ -1347,16 +1509,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 120,
         "dependsOnMap" : {
           "executionMode" : [ "CLUSTER_BATCH", "CLUSTER_YARN_STREAMING" ]
         },
-        "displayPosition" : 120,
         "name" : "clusterLauncherEnv",
         "type" : "MAP",
         "defaultValue" : [ ]
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "mesosDispatcherURL",
+        "max" : 9223372036854775807,
         "dependsOn" : "executionMode",
         "triggeredByValues" : [ "CLUSTER_MESOS_STREAMING" ],
         "description" : "URL for service which launches Mesos framework",
@@ -1371,16 +1533,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 130,
         "dependsOnMap" : {
           "executionMode" : [ "CLUSTER_MESOS_STREAMING" ]
         },
-        "displayPosition" : 130,
         "name" : "mesosDispatcherURL",
         "type" : "STRING",
         "defaultValue" : null
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "hdfsS3ConfDir",
+        "max" : 9223372036854775807,
         "dependsOn" : "executionMode",
         "triggeredByValues" : [ "CLUSTER_MESOS_STREAMING" ],
         "description" : "An SDC resource directory or symbolic link with HDFS/S3 configuration files core-site.xml and hdfs-site.xml",
@@ -1395,16 +1557,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 150,
         "dependsOnMap" : {
           "executionMode" : [ "CLUSTER_MESOS_STREAMING" ]
         },
-        "displayPosition" : 150,
         "name" : "hdfsS3ConfDir",
         "type" : "STRING",
         "defaultValue" : null
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "rateLimit",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Maximum number of events per second that should be accepted into the pipeline. Rate is not limited if this is not set, or is set to 0",
@@ -1419,8 +1581,8 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 180,
+        "dependsOnMap" : null,
         "name" : "rateLimit",
         "type" : "NUMBER",
         "defaultValue" : 0
@@ -1445,16 +1607,16 @@
       }
     } ],
     "stages" : [ {
-      "icon" : "directory.png",
       "version" : "7",
       "privateClassLoader" : false,
       "library" : "streamsets-datacollector-basic-lib",
       "description" : "Reads files from a directory",
       "label" : "Directory",
+      "icon" : "directory.png",
       "libraryLabel" : "Basic",
       "configDefinitions" : [ {
-        "max" : 9223372036854775807,
         "fieldName" : "charset",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormat",
         "triggeredByValues" : [ "TEXT", "JSON", "DELIMITED", "XML", "LOG" ],
         "description" : "",
@@ -1475,16 +1637,16 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 300,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "TEXT", "JSON", "DELIMITED", "XML", "LOG" ]
         },
-        "displayPosition" : 300,
         "name" : "conf.dataFormatConfig.charset",
         "type" : "MODEL",
         "defaultValue" : "UTF-8"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "removeCtrlChars",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Use only if required as it impacts reading performance",
@@ -1499,14 +1661,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 310,
+        "dependsOnMap" : null,
         "name" : "conf.dataFormatConfig.removeCtrlChars",
         "type" : "BOOLEAN",
         "defaultValue" : false
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "compression",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Compression formats gzip, bzip2, xz, lzma, Pack200, DEFLATE and Z are supported. Archive formats 7z, ar, arj, cpio, dump, tar and zip are supported.",
@@ -1527,14 +1689,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 320,
+        "dependsOnMap" : null,
         "name" : "conf.dataFormatConfig.compression",
         "type" : "MODEL",
         "defaultValue" : "NONE"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "filePatternInArchive",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormatConfig.compression",
         "triggeredByValues" : [ "ARCHIVE", "COMPRESSED_ARCHIVE" ],
         "description" : "A glob or regular expression that defines the pattern of the file names within the compressed directory.",
@@ -1549,16 +1711,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 330,
         "dependsOnMap" : {
           "conf.dataFormatConfig.compression" : [ "ARCHIVE", "COMPRESSED_ARCHIVE" ]
         },
-        "displayPosition" : 330,
         "name" : "conf.dataFormatConfig.filePatternInArchive",
         "type" : "STRING",
         "defaultValue" : "*"
       }, {
-        "max" : 2147483647,
         "fieldName" : "textMaxLineLen",
+        "max" : 2147483647,
         "dependsOn" : "conf.dataFormat",
         "triggeredByValues" : [ "TEXT" ],
         "description" : "Longer lines are truncated",
@@ -1573,16 +1735,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 340,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "TEXT" ]
         },
-        "displayPosition" : 340,
         "name" : "conf.dataFormatConfig.textMaxLineLen",
         "type" : "NUMBER",
         "defaultValue" : 1024
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "jsonContent",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormat",
         "triggeredByValues" : [ "JSON" ],
         "description" : "",
@@ -1603,16 +1765,16 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 350,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "JSON" ]
         },
-        "displayPosition" : 350,
         "name" : "conf.dataFormatConfig.jsonContent",
         "type" : "MODEL",
         "defaultValue" : "MULTIPLE_OBJECTS"
       }, {
-        "max" : 2147483647,
         "fieldName" : "jsonMaxObjectLen",
+        "max" : 2147483647,
         "dependsOn" : "conf.dataFormat",
         "triggeredByValues" : [ "JSON" ],
         "description" : "Larger objects are not processed",
@@ -1627,16 +1789,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 360,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "JSON" ]
         },
-        "displayPosition" : 360,
         "name" : "conf.dataFormatConfig.jsonMaxObjectLen",
         "type" : "NUMBER",
         "defaultValue" : 4096
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "csvFileFormat",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormat",
         "triggeredByValues" : [ "DELIMITED" ],
         "description" : "",
@@ -1657,16 +1819,16 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 370,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "DELIMITED" ]
         },
-        "displayPosition" : 370,
         "name" : "conf.dataFormatConfig.csvFileFormat",
         "type" : "MODEL",
         "defaultValue" : "CSV"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "csvHeader",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormat",
         "triggeredByValues" : [ "DELIMITED" ],
         "description" : "",
@@ -1687,16 +1849,16 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 380,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "DELIMITED" ]
         },
-        "displayPosition" : 380,
         "name" : "conf.dataFormatConfig.csvHeader",
         "type" : "MODEL",
         "defaultValue" : "NO_HEADER"
       }, {
-        "max" : 2147483647,
         "fieldName" : "csvMaxObjectLen",
+        "max" : 2147483647,
         "dependsOn" : "conf.dataFormat",
         "triggeredByValues" : [ "DELIMITED" ],
         "description" : "Larger objects are not processed",
@@ -1711,16 +1873,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 390,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "DELIMITED" ]
         },
-        "displayPosition" : 390,
         "name" : "conf.dataFormatConfig.csvMaxObjectLen",
         "type" : "NUMBER",
         "defaultValue" : 1024
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "csvCustomDelimiter",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormatConfig.csvFileFormat",
         "triggeredByValues" : [ "CUSTOM" ],
         "description" : "",
@@ -1735,17 +1897,17 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 400,
         "dependsOnMap" : {
           "conf.dataFormatConfig.csvFileFormat" : [ "CUSTOM" ],
           "conf.dataFormat" : [ "DELIMITED" ]
         },
-        "displayPosition" : 400,
         "name" : "conf.dataFormatConfig.csvCustomDelimiter",
         "type" : "CHARACTER",
         "defaultValue" : "|"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "csvCustomEscape",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormatConfig.csvFileFormat",
         "triggeredByValues" : [ "CUSTOM" ],
         "description" : "",
@@ -1760,17 +1922,17 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 410,
         "dependsOnMap" : {
           "conf.dataFormatConfig.csvFileFormat" : [ "CUSTOM" ],
           "conf.dataFormat" : [ "DELIMITED" ]
         },
-        "displayPosition" : 410,
         "name" : "conf.dataFormatConfig.csvCustomEscape",
         "type" : "CHARACTER",
         "defaultValue" : "\\"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "csvCustomQuote",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormatConfig.csvFileFormat",
         "triggeredByValues" : [ "CUSTOM" ],
         "description" : "",
@@ -1785,17 +1947,17 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 420,
         "dependsOnMap" : {
           "conf.dataFormatConfig.csvFileFormat" : [ "CUSTOM" ],
           "conf.dataFormat" : [ "DELIMITED" ]
         },
-        "displayPosition" : 420,
         "name" : "conf.dataFormatConfig.csvCustomQuote",
         "type" : "CHARACTER",
         "defaultValue" : "\""
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "csvRecordType",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormat",
         "triggeredByValues" : [ "DELIMITED" ],
         "description" : "",
@@ -1816,16 +1978,16 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 430,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "DELIMITED" ]
         },
-        "displayPosition" : 430,
         "name" : "conf.dataFormatConfig.csvRecordType",
         "type" : "MODEL",
         "defaultValue" : "LIST_MAP"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "csvSkipStartLines",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormat",
         "triggeredByValues" : [ "DELIMITED" ],
         "description" : "Number of lines to skip before reading",
@@ -1840,16 +2002,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 435,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "DELIMITED" ]
         },
-        "displayPosition" : 435,
         "name" : "conf.dataFormatConfig.csvSkipStartLines",
         "type" : "NUMBER",
         "defaultValue" : 0
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "xmlRecordElement",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormat",
         "triggeredByValues" : [ "XML" ],
         "description" : "XML element that acts as a record delimiter. No delimiter will treat the whole XML document as one record.",
@@ -1864,16 +2026,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 440,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "XML" ]
         },
-        "displayPosition" : 440,
         "name" : "conf.dataFormatConfig.xmlRecordElement",
         "type" : "STRING",
         "defaultValue" : null
       }, {
-        "max" : 2147483647,
         "fieldName" : "xmlMaxObjectLen",
+        "max" : 2147483647,
         "dependsOn" : "conf.dataFormat",
         "triggeredByValues" : [ "XML" ],
         "description" : "Larger records are not processed",
@@ -1888,16 +2050,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 450,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "XML" ]
         },
-        "displayPosition" : 450,
         "name" : "conf.dataFormatConfig.xmlMaxObjectLen",
         "type" : "NUMBER",
         "defaultValue" : 4096
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "logMode",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormat",
         "triggeredByValues" : [ "LOG" ],
         "description" : "",
@@ -1918,16 +2080,16 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 460,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "LOG" ]
         },
-        "displayPosition" : 460,
         "name" : "conf.dataFormatConfig.logMode",
         "type" : "MODEL",
         "defaultValue" : "COMMON_LOG_FORMAT"
       }, {
-        "max" : 2147483647,
         "fieldName" : "logMaxObjectLen",
+        "max" : 2147483647,
         "dependsOn" : "conf.dataFormat",
         "triggeredByValues" : [ "LOG" ],
         "description" : "Longer lines are truncated",
@@ -1942,16 +2104,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 470,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "LOG" ]
         },
-        "displayPosition" : 470,
         "name" : "conf.dataFormatConfig.logMaxObjectLen",
         "type" : "NUMBER",
         "defaultValue" : 1024
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "retainOriginalLine",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormat",
         "triggeredByValues" : [ "LOG" ],
         "description" : "Indicates if the original line of log should be retained in the record",
@@ -1966,16 +2128,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 480,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "LOG" ]
         },
-        "displayPosition" : 480,
         "name" : "conf.dataFormatConfig.retainOriginalLine",
         "type" : "BOOLEAN",
         "defaultValue" : false
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "customLogFormat",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormatConfig.logMode",
         "triggeredByValues" : [ "APACHE_CUSTOM_LOG_FORMAT" ],
         "description" : "",
@@ -1990,17 +2152,17 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 490,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "LOG" ],
           "conf.dataFormatConfig.logMode" : [ "APACHE_CUSTOM_LOG_FORMAT" ]
         },
-        "displayPosition" : 490,
         "name" : "conf.dataFormatConfig.customLogFormat",
         "type" : "STRING",
         "defaultValue" : "%h %l %u %t \"%r\" %>s %b"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "regex",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormatConfig.logMode",
         "triggeredByValues" : [ "REGEX" ],
         "description" : "The regular expression which is used to parse the log line.",
@@ -2015,17 +2177,17 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 500,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "LOG" ],
           "conf.dataFormatConfig.logMode" : [ "REGEX" ]
         },
-        "displayPosition" : 500,
         "name" : "conf.dataFormatConfig.regex",
         "type" : "STRING",
         "defaultValue" : "^(\\S+) (\\S+) (\\S+) \\[([\\w:/]+\\s[+\\-]\\d{4})\\] \"(\\S+) (\\S+) (\\S+)\" (\\d{3}) (\\d+)"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "fieldPathsToGroupName",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormatConfig.logMode",
         "triggeredByValues" : [ "REGEX" ],
         "description" : "Map groups in the regular expression to field paths",
@@ -2040,8 +2202,8 @@
         "model" : {
           "values" : null,
           "configDefinitions" : [ {
-            "max" : 9223372036854775807,
             "fieldName" : "fieldPath",
+            "max" : 9223372036854775807,
             "dependsOn" : "",
             "triggeredByValues" : null,
             "description" : "",
@@ -2056,14 +2218,14 @@
             "model" : null,
             "mode" : "text/plain",
             "lines" : 0,
-            "dependsOnMap" : null,
             "displayPosition" : 10,
+            "dependsOnMap" : null,
             "name" : "fieldPath",
             "type" : "STRING",
             "defaultValue" : "/"
           }, {
-            "max" : 9223372036854775807,
             "fieldName" : "group",
+            "max" : 9223372036854775807,
             "dependsOn" : "",
             "triggeredByValues" : null,
             "description" : "",
@@ -2078,8 +2240,8 @@
             "model" : null,
             "mode" : "text/plain",
             "lines" : 0,
-            "dependsOnMap" : null,
             "displayPosition" : 20,
+            "dependsOnMap" : null,
             "name" : "group",
             "type" : "NUMBER",
             "defaultValue" : 1
@@ -2090,17 +2252,17 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 510,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "LOG" ],
           "conf.dataFormatConfig.logMode" : [ "REGEX" ]
         },
-        "displayPosition" : 510,
         "name" : "conf.dataFormatConfig.fieldPathsToGroupName",
         "type" : "MODEL",
         "defaultValue" : [ ]
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "grokPatternDefinition",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormatConfig.logMode",
         "triggeredByValues" : [ "GROK" ],
         "description" : "Define your own grok patterns which will be used to parse the logs",
@@ -2115,17 +2277,17 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 520,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "LOG" ],
           "conf.dataFormatConfig.logMode" : [ "GROK" ]
         },
-        "displayPosition" : 520,
         "name" : "conf.dataFormatConfig.grokPatternDefinition",
         "type" : "TEXT",
         "defaultValue" : null
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "grokPattern",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormatConfig.logMode",
         "triggeredByValues" : [ "GROK" ],
         "description" : "The grok pattern which is used to parse the log line",
@@ -2140,17 +2302,17 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 530,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "LOG" ],
           "conf.dataFormatConfig.logMode" : [ "GROK" ]
         },
-        "displayPosition" : 530,
         "name" : "conf.dataFormatConfig.grokPattern",
         "type" : "STRING",
         "defaultValue" : "%{COMMONAPACHELOG}"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "onParseError",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormatConfig.logMode",
         "triggeredByValues" : [ "LOG4J" ],
         "description" : "",
@@ -2171,17 +2333,17 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 540,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "LOG" ],
           "conf.dataFormatConfig.logMode" : [ "LOG4J" ]
         },
-        "displayPosition" : 540,
         "name" : "conf.dataFormatConfig.onParseError",
         "type" : "MODEL",
         "defaultValue" : "ERROR"
       }, {
-        "max" : 2147483647,
         "fieldName" : "maxStackTraceLines",
+        "max" : 2147483647,
         "dependsOn" : "conf.dataFormatConfig.onParseError",
         "triggeredByValues" : [ "INCLUDE_AS_STACK_TRACE" ],
         "description" : "Any line that does not match the expected pattern will be treated as a Stack trace as long as it is part of the same message. The stack trace will be trimmed to the specified number of lines.",
@@ -2196,18 +2358,18 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 550,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "LOG" ],
           "conf.dataFormatConfig.logMode" : [ "LOG4J" ],
           "conf.dataFormatConfig.onParseError" : [ "INCLUDE_AS_STACK_TRACE" ]
         },
-        "displayPosition" : 550,
         "name" : "conf.dataFormatConfig.maxStackTraceLines",
         "type" : "NUMBER",
         "defaultValue" : 50
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "enableLog4jCustomLogFormat",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormatConfig.logMode",
         "triggeredByValues" : [ "LOG4J" ],
         "description" : "",
@@ -2222,17 +2384,17 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 560,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "LOG" ],
           "conf.dataFormatConfig.logMode" : [ "LOG4J" ]
         },
-        "displayPosition" : 560,
         "name" : "conf.dataFormatConfig.enableLog4jCustomLogFormat",
         "type" : "BOOLEAN",
         "defaultValue" : false
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "log4jCustomLogFormat",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormatConfig.enableLog4jCustomLogFormat",
         "triggeredByValues" : [ true ],
         "description" : "Specify your own custom log4j format.",
@@ -2247,18 +2409,18 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 570,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "LOG" ],
           "conf.dataFormatConfig.enableLog4jCustomLogFormat" : [ true ],
           "conf.dataFormatConfig.logMode" : [ "LOG4J" ]
         },
-        "displayPosition" : 570,
         "name" : "conf.dataFormatConfig.log4jCustomLogFormat",
         "type" : "STRING",
         "defaultValue" : "%r [%t] %-5p %c %x - %m%n"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "avroSchema",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormat",
         "triggeredByValues" : [ "AVRO" ],
         "description" : "Overrides the schema associated with the message. Optionally use the runtime:loadResource function to use a schema stored in a file",
@@ -2273,16 +2435,16 @@
         "model" : null,
         "mode" : "application/json",
         "lines" : 0,
+        "displayPosition" : 590,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "AVRO" ]
         },
-        "displayPosition" : 590,
         "name" : "conf.dataFormatConfig.avroSchema",
         "type" : "TEXT",
         "defaultValue" : null
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "protoDescriptorFile",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormat",
         "triggeredByValues" : [ "PROTOBUF" ],
         "description" : "Protobuf Descriptor File (.desc) path relative to SDC resources directory",
@@ -2297,16 +2459,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 600,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "PROTOBUF" ]
         },
-        "displayPosition" : 600,
         "name" : "conf.dataFormatConfig.protoDescriptorFile",
         "type" : "STRING",
         "defaultValue" : null
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "messageType",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormat",
         "triggeredByValues" : [ "PROTOBUF" ],
         "description" : "Fully Qualified Message Type name. Use format <packageName>.<messageTypeName>",
@@ -2321,16 +2483,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 610,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "PROTOBUF" ]
         },
-        "displayPosition" : 610,
         "name" : "conf.dataFormatConfig.messageType",
         "type" : "STRING",
         "defaultValue" : null
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "isDelimited",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormat",
         "triggeredByValues" : [ "PROTOBUF" ],
         "description" : "Should be checked when the input data is prepended with the message size. When unchecked only a single message can be present in the source file/Kafka message, etc.",
@@ -2345,16 +2507,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 620,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "PROTOBUF" ]
         },
-        "displayPosition" : 620,
         "name" : "conf.dataFormatConfig.isDelimited",
         "type" : "BOOLEAN",
         "defaultValue" : true
       }, {
-        "max" : 2147483647,
         "fieldName" : "binaryMaxObjectLen",
+        "max" : 2147483647,
         "dependsOn" : "conf.dataFormat",
         "triggeredByValues" : [ "BINARY" ],
         "description" : "Larger objects are not processed",
@@ -2369,16 +2531,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 700,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "BINARY" ]
         },
-        "displayPosition" : 700,
         "name" : "conf.dataFormatConfig.binaryMaxObjectLen",
         "type" : "NUMBER",
         "defaultValue" : 1024
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "dataFormat",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Format of data in the files",
@@ -2399,14 +2561,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 0,
+        "dependsOnMap" : null,
         "name" : "conf.dataFormat",
         "type" : "MODEL",
         "defaultValue" : null
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "spoolDir",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Use a local directory",
@@ -2421,14 +2583,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 10,
+        "dependsOnMap" : null,
         "name" : "conf.spoolDir",
         "type" : "STRING",
         "defaultValue" : null
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "allowLateDirectory",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Enables reading from a late-arriving directory. When enabled, the origin does not validate the configured path.",
@@ -2443,14 +2605,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 12,
+        "dependsOnMap" : null,
         "name" : "conf.allowLateDirectory",
         "type" : "BOOLEAN",
         "defaultValue" : false
       }, {
-        "max" : 2147483647,
         "fieldName" : "overrunLimit",
+        "max" : 2147483647,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Low level reader buffer limit to avoid out of Memory errors",
@@ -2465,14 +2627,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 15,
+        "dependsOnMap" : null,
         "name" : "conf.overrunLimit",
         "type" : "NUMBER",
         "defaultValue" : 128
       }, {
-        "max" : 2147483647,
         "fieldName" : "batchSize",
+        "max" : 2147483647,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Max number of records per batch",
@@ -2487,14 +2649,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 20,
+        "dependsOnMap" : null,
         "name" : "conf.batchSize",
         "type" : "NUMBER",
         "defaultValue" : 1000
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "poolingTimeoutSecs",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Max time to wait for new files before sending an empty batch",
@@ -2509,14 +2671,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 30,
+        "dependsOnMap" : null,
         "name" : "conf.poolingTimeoutSecs",
         "type" : "NUMBER",
         "defaultValue" : 600
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "useLastModified",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Read files based on the last-modified timestamp or lexicographically ascending file names. When timestamp ordering is used, files with the same timestamp are ordered based on file names.",
@@ -2537,14 +2699,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 35,
+        "dependsOnMap" : null,
         "name" : "conf.useLastModified",
         "type" : "MODEL",
         "defaultValue" : "LEXICOGRAPHICAL"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "filePattern",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "A glob or regular expression that defines the pattern of the file names in the directory. Files are processed in lexicographically increasing order.",
@@ -2559,14 +2721,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 40,
+        "dependsOnMap" : null,
         "name" : "conf.filePattern",
         "type" : "STRING",
         "defaultValue" : null
       }, {
-        "max" : 2147483647,
         "fieldName" : "maxSpoolFiles",
+        "max" : 2147483647,
         "dependsOn" : "conf.dataFormat",
         "triggeredByValues" : [ "TEXT", "JSON", "XML", "DELIMITED", "LOG" ],
         "description" : "Max number of files in the directory waiting to be processed. Additional files cause the pipeline to fail.",
@@ -2581,16 +2743,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 60,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "TEXT", "JSON", "XML", "DELIMITED", "LOG" ]
         },
-        "displayPosition" : 60,
         "name" : "conf.maxSpoolFiles",
         "type" : "NUMBER",
         "defaultValue" : 1000
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "initialFileToProcess",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.dataFormat",
         "triggeredByValues" : [ "TEXT", "JSON", "XML", "DELIMITED", "LOG" ],
         "description" : "When configured, the Data Collector does not process earlier (naturally ascending order) file names",
@@ -2605,16 +2767,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 50,
         "dependsOnMap" : {
           "conf.dataFormat" : [ "TEXT", "JSON", "XML", "DELIMITED", "LOG" ]
         },
-        "displayPosition" : 50,
         "name" : "conf.initialFileToProcess",
         "type" : "STRING",
         "defaultValue" : null
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "errorArchiveDir",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Directory for files that could not be fully processed",
@@ -2629,14 +2791,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 100,
+        "dependsOnMap" : null,
         "name" : "conf.errorArchiveDir",
         "type" : "STRING",
         "defaultValue" : null
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "postProcessing",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Action to take after processing a file",
@@ -2657,14 +2819,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 110,
+        "dependsOnMap" : null,
         "name" : "conf.postProcessing",
         "type" : "MODEL",
         "defaultValue" : "NONE"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "archiveDir",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.postProcessing",
         "triggeredByValues" : [ "ARCHIVE" ],
         "description" : "Directory to archive files after they have been processed",
@@ -2679,16 +2841,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 200,
         "dependsOnMap" : {
           "conf.postProcessing" : [ "ARCHIVE" ]
         },
-        "displayPosition" : 200,
         "name" : "conf.archiveDir",
         "type" : "STRING",
         "defaultValue" : null
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "retentionTimeMins",
+        "max" : 9223372036854775807,
         "dependsOn" : "conf.postProcessing",
         "triggeredByValues" : [ "ARCHIVE" ],
         "description" : "How long archived files should be kept before deleting, a value of zero means forever",
@@ -2703,16 +2865,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 210,
         "dependsOnMap" : {
           "conf.postProcessing" : [ "ARCHIVE" ]
         },
-        "displayPosition" : 210,
         "name" : "conf.retentionTimeMins",
         "type" : "NUMBER",
         "defaultValue" : 0
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "stageOnRecordError",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Action to take with records sent to error",
@@ -2733,8 +2895,8 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 30,
+        "dependsOnMap" : null,
         "name" : "stageOnRecordError",
         "type" : "MODEL",
         "defaultValue" : "TO_ERROR"
@@ -2778,8 +2940,8 @@
       },
       "rawSourceDefinition" : {
         "configDefinitions" : [ {
-          "max" : 9223372036854775807,
           "fieldName" : "fileName",
+          "max" : 9223372036854775807,
           "dependsOn" : "",
           "triggeredByValues" : null,
           "description" : "The full path of the file",
@@ -2794,8 +2956,8 @@
           "model" : null,
           "mode" : "text/plain",
           "lines" : 0,
-          "dependsOnMap" : null,
           "displayPosition" : 0,
+          "dependsOnMap" : null,
           "name" : "fileName",
           "type" : "STRING",
           "defaultValue" : null
@@ -2818,16 +2980,16 @@
       "preconditions" : false,
       "onRecordError" : true
     }, {
-      "icon" : "laneSelector.png",
       "version" : "1",
       "privateClassLoader" : false,
       "library" : "streamsets-datacollector-basic-lib",
       "description" : "Passes records to streams based on conditions",
       "label" : "Stream Selector",
+      "icon" : "laneSelector.png",
       "libraryLabel" : "Basic",
       "configDefinitions" : [ {
-        "max" : 9223372036854775807,
         "fieldName" : "lanePredicates",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Records that match the condition pass to the stream",
@@ -2848,14 +3010,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 10,
+        "dependsOnMap" : null,
         "name" : "lanePredicates",
         "type" : "MODEL",
         "defaultValue" : { }
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "stageOnRecordError",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Action to take with records sent to error",
@@ -2876,14 +3038,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 30,
+        "dependsOnMap" : null,
         "name" : "stageOnRecordError",
         "type" : "MODEL",
         "defaultValue" : "TO_ERROR"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "stageRequiredFields",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Records without any of these fields are sent to error",
@@ -2904,14 +3066,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 10,
+        "dependsOnMap" : null,
         "name" : "stageRequiredFields",
         "type" : "MODEL",
         "defaultValue" : [ ]
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "stageRecordPreconditions",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Records that don't satisfy all the preconditions are sent to error",
@@ -2926,8 +3088,8 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 20,
+        "dependsOnMap" : null,
         "name" : "stageRecordPreconditions",
         "type" : "LIST",
         "defaultValue" : null
@@ -2958,16 +3120,16 @@
       "preconditions" : true,
       "onRecordError" : true
     }, {
-      "icon" : "javascript.png",
       "version" : "2",
       "privateClassLoader" : false,
       "library" : "streamsets-datacollector-basic-lib",
       "description" : "Processes records using JavaScript",
       "label" : "JavaScript Evaluator",
+      "icon" : "javascript.png",
       "libraryLabel" : "Basic",
       "configDefinitions" : [ {
-        "max" : 9223372036854775807,
         "fieldName" : "processingMode",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "If 'Record by Record' the processor takes care of record error handling, if 'Batch by Batch' the JavaScript must take care of record error handling",
@@ -2988,14 +3150,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 10,
+        "dependsOnMap" : null,
         "name" : "processingMode",
         "type" : "MODEL",
         "defaultValue" : "BATCH"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "script",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "",
@@ -3010,14 +3172,14 @@
         "model" : null,
         "mode" : "text/javascript",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 20,
+        "dependsOnMap" : null,
         "name" : "script",
         "type" : "TEXT",
         "defaultValue" : "/**\n * Sample JavaScript code\n *\n * Available Objects:\n * \n *  records: an array of records to process, depending on the JavaScript processor\n *           processing mode it may have 1 record or all the records in the batch.\n *\n *  state: a dict that is preserved between invocations of this script. \n *        Useful for caching bits of data e.g. counters.\n *\n *  log.<loglevel>(msg, obj...): use instead of print to send log messages to the log4j log instead of stdout.\n *                               loglevel is any log4j level: e.g. info, error, warn, trace.\n *\n *  output.write(record): writes a record to processor output\n *\n *  error.write(record, message): sends a record to error\n *\n */\n\nfor(var i = 0; i < records.length; i++) {\n  try {\n    // Change record root field value to a STRING value\n    //records[i].value = 'Hello ' + i;\n\n\n    // Change record root field value to a MAP value and create an entry\n    //records[i].value = { V : 'Hello' };\n\n    // Access a MAP entry\n    //records[i].value.X = records[i].value['V'] + ' World';\n\n    // Modify a MAP entry\n    //records[i].value.V = 5;\n\n    // Create an ARRAY entry\n    //records[i].value.A = ['Element 1', 'Element 2'];\n\n    // Access a Array entry\n    //records[i].value.B = records[i].value['A'][0];\n\n    // Modify an existing ARRAY entry\n    //records[i].value.A[0] = 100;\n\n    // Write record to procesor output\n    output.write(records[i]);\n  } catch (e) {\n    // Send record to error\n    error.write(records[i], e);\n  }\n}\n"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "stageOnRecordError",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Action to take with records sent to error",
@@ -3038,14 +3200,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 30,
+        "dependsOnMap" : null,
         "name" : "stageOnRecordError",
         "type" : "MODEL",
         "defaultValue" : "TO_ERROR"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "stageRequiredFields",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Records without any of these fields are sent to error",
@@ -3066,14 +3228,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 10,
+        "dependsOnMap" : null,
         "name" : "stageRequiredFields",
         "type" : "MODEL",
         "defaultValue" : [ ]
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "stageRecordPreconditions",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Records that don't satisfy all the preconditions are sent to error",
@@ -3088,8 +3250,8 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 20,
+        "dependsOnMap" : null,
         "name" : "stageRecordPreconditions",
         "type" : "LIST",
         "defaultValue" : null
@@ -3120,12 +3282,12 @@
       "preconditions" : true,
       "onRecordError" : true
     }, {
-      "icon" : "trash.png",
       "version" : "1",
       "privateClassLoader" : false,
       "library" : "streamsets-datacollector-basic-lib",
       "description" : "Discards records",
       "label" : "Trash",
+      "icon" : "trash.png",
       "libraryLabel" : "Basic",
       "configDefinitions" : [ ],
       "errorStage" : false,
@@ -3149,16 +3311,16 @@
       "preconditions" : false,
       "onRecordError" : false
     }, {
-      "icon" : "expression.png",
       "version" : "2",
       "privateClassLoader" : false,
       "library" : "streamsets-datacollector-basic-lib",
       "description" : "Performs calculations on a field-by-field basis",
       "label" : "Expression Evaluator",
+      "icon" : "expression.png",
       "libraryLabel" : "Basic",
       "configDefinitions" : [ {
-        "max" : 9223372036854775807,
         "fieldName" : "expressionProcessorConfigs",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "",
@@ -3173,8 +3335,8 @@
         "model" : {
           "values" : null,
           "configDefinitions" : [ {
-            "max" : 9223372036854775807,
             "fieldName" : "fieldToSet",
+            "max" : 9223372036854775807,
             "dependsOn" : "",
             "triggeredByValues" : null,
             "description" : "Use an existing field or enter a new field. Using an existing field overwrites the original value.",
@@ -3195,14 +3357,14 @@
             },
             "mode" : "text/plain",
             "lines" : 0,
-            "dependsOnMap" : null,
             "displayPosition" : 10,
+            "dependsOnMap" : null,
             "name" : "fieldToSet",
             "type" : "MODEL",
             "defaultValue" : "/"
           }, {
-            "max" : 9223372036854775807,
             "fieldName" : "expression",
+            "max" : 9223372036854775807,
             "dependsOn" : "",
             "triggeredByValues" : null,
             "description" : "Use the expression language to modify values in a field.",
@@ -3217,8 +3379,8 @@
             "model" : null,
             "mode" : "text/plain",
             "lines" : 0,
-            "dependsOnMap" : null,
             "displayPosition" : 20,
+            "dependsOnMap" : null,
             "name" : "expression",
             "type" : "STRING",
             "defaultValue" : "${record:value('/')}"
@@ -3229,14 +3391,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 10,
+        "dependsOnMap" : null,
         "name" : "expressionProcessorConfigs",
         "type" : "MODEL",
         "defaultValue" : [ ]
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "headerAttributeConfigs",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "",
@@ -3251,8 +3413,8 @@
         "model" : {
           "values" : null,
           "configDefinitions" : [ {
-            "max" : 9223372036854775807,
             "fieldName" : "attributeToSet",
+            "max" : 9223372036854775807,
             "dependsOn" : "",
             "triggeredByValues" : null,
             "description" : "Use an existing header attribute or enter a new attribute. Using an existing attribute overwrites the original value.",
@@ -3267,14 +3429,14 @@
             "model" : null,
             "mode" : "text/plain",
             "lines" : 0,
-            "dependsOnMap" : null,
             "displayPosition" : 30,
+            "dependsOnMap" : null,
             "name" : "attributeToSet",
             "type" : "STRING",
             "defaultValue" : "/"
           }, {
-            "max" : 9223372036854775807,
             "fieldName" : "headerAttributeExpression",
+            "max" : 9223372036854775807,
             "dependsOn" : "",
             "triggeredByValues" : null,
             "description" : "Use the expression language to modify or set new attributes in the header.",
@@ -3289,8 +3451,8 @@
             "model" : null,
             "mode" : "text/plain",
             "lines" : 0,
-            "dependsOnMap" : null,
             "displayPosition" : 40,
+            "dependsOnMap" : null,
             "name" : "headerAttributeExpression",
             "type" : "STRING",
             "defaultValue" : "${record:value('/')}"
@@ -3301,14 +3463,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 10,
+        "dependsOnMap" : null,
         "name" : "headerAttributeConfigs",
         "type" : "MODEL",
         "defaultValue" : [ ]
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "stageOnRecordError",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Action to take with records sent to error",
@@ -3329,14 +3491,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 30,
+        "dependsOnMap" : null,
         "name" : "stageOnRecordError",
         "type" : "MODEL",
         "defaultValue" : "TO_ERROR"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "stageRequiredFields",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Records without any of these fields are sent to error",
@@ -3357,14 +3519,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 10,
+        "dependsOnMap" : null,
         "name" : "stageRequiredFields",
         "type" : "MODEL",
         "defaultValue" : [ ]
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "stageRecordPreconditions",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Records that don't satisfy all the preconditions are sent to error",
@@ -3379,8 +3541,8 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 20,
+        "dependsOnMap" : null,
         "name" : "stageRecordPreconditions",
         "type" : "LIST",
         "defaultValue" : null
@@ -3411,16 +3573,16 @@
       "preconditions" : true,
       "onRecordError" : true
     }, {
-      "icon" : "localfilesystem.png",
       "version" : "2",
       "privateClassLoader" : false,
       "library" : "streamsets-datacollector-basic-lib",
       "description" : "Writes to the local file system",
       "label" : "Local FS",
+      "icon" : "localfilesystem.png",
       "libraryLabel" : "Basic",
       "configDefinitions" : [ {
-        "max" : 9223372036854775807,
         "fieldName" : "uniquePrefix",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "File name prefix",
@@ -3435,14 +3597,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 105,
+        "dependsOnMap" : null,
         "name" : "configs.uniquePrefix",
         "type" : "STRING",
         "defaultValue" : "sdc-${sdc:id()}"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "dirPathTemplateInHeader",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "The directory is defined by the 'targetDirectory' record header attribute instead of the Directory Template configuration property.",
@@ -3457,14 +3619,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 105,
+        "dependsOnMap" : null,
         "name" : "configs.dirPathTemplateInHeader",
         "type" : "BOOLEAN",
         "defaultValue" : false
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "dirPathTemplate",
+        "max" : 9223372036854775807,
         "dependsOn" : "configs.dirPathTemplateInHeader",
         "triggeredByValues" : [ false ],
         "description" : "Template for the creation of output directories. Valid variables are ${YYYY()}, ${MM()}, ${DD()}, ${hh()}, ${mm()}, ${ss()} and {record:value(“/field”)} for values in a field. Directories are created based on the smallest time unit variable used.",
@@ -3479,16 +3641,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 110,
         "dependsOnMap" : {
           "configs.dirPathTemplateInHeader" : [ false ]
         },
-        "displayPosition" : 110,
         "name" : "configs.dirPathTemplate",
         "type" : "STRING",
         "defaultValue" : "/tmp/out/${YYYY()}-${MM()}-${DD()}-${hh()}"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "timeZoneID",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Time zone to use to resolve directory paths",
@@ -3509,14 +3671,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 120,
+        "dependsOnMap" : null,
         "name" : "configs.timeZoneID",
         "type" : "MODEL",
         "defaultValue" : "UTC"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "timeDriver",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Time basis to use for a record. Enter an expression that evaluates to a datetime. To use the processing time, enter ${time:now()}. To use field values, use '${record:value(\"<filepath>\")}'.",
@@ -3531,14 +3693,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 130,
+        "dependsOnMap" : null,
         "name" : "configs.timeDriver",
         "type" : "STRING",
         "defaultValue" : "${time:now()}"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "maxRecordsPerFile",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Number of records that triggers the creation of a new file. Use 0 to opt out.",
@@ -3553,14 +3715,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 140,
+        "dependsOnMap" : null,
         "name" : "configs.maxRecordsPerFile",
         "type" : "NUMBER",
         "defaultValue" : 0
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "maxFileSize",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Exceeding this size triggers the creation of a new file. Use 0 to opt out.",
@@ -3575,14 +3737,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 150,
+        "dependsOnMap" : null,
         "name" : "configs.maxFileSize",
         "type" : "NUMBER",
         "defaultValue" : 0
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "idleTimeout",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Maximum time for a file to remain idle. After no records are written to a file for the specified time, the destination closes the file. Enter a number to specify a value in seconds. You can also use the MINUTES or HOURS constants in an expression. Use -1 to opt out of a timeout.",
@@ -3597,14 +3759,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 155,
+        "dependsOnMap" : null,
         "name" : "configs.idleTimeout",
         "type" : "STRING",
         "defaultValue" : "${1 * HOURS}"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "compression",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "",
@@ -3625,14 +3787,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 160,
+        "dependsOnMap" : null,
         "name" : "configs.compression",
         "type" : "MODEL",
         "defaultValue" : "NONE"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "otherCompression",
+        "max" : 9223372036854775807,
         "dependsOn" : "configs.compression",
         "triggeredByValues" : [ "OTHER" ],
         "description" : "Use the full class name",
@@ -3647,16 +3809,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 170,
         "dependsOnMap" : {
           "configs.compression" : [ "OTHER" ]
         },
-        "displayPosition" : 170,
         "name" : "configs.otherCompression",
         "type" : "STRING",
         "defaultValue" : null
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "keyEl",
+        "max" : 9223372036854775807,
         "dependsOn" : "configs.fileType",
         "triggeredByValues" : [ "SEQUENCE_FILE" ],
         "description" : "Record key for creating Hadoop sequence files. Valid options are '${record:value(\"<field-path>\")}' or '${uuid()}'",
@@ -3671,16 +3833,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 180,
         "dependsOnMap" : {
           "configs.fileType" : [ "SEQUENCE_FILE" ]
         },
-        "displayPosition" : 180,
         "name" : "configs.keyEl",
         "type" : "STRING",
         "defaultValue" : "${uuid()}"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "lateRecordsLimit",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Time limit (in seconds) for a record to be written to the corresponding HDFS directory, if the limit is exceeded the record will be written to the current late records file. 0 means no limit. If a number is used it is considered seconds, it can be multiplied by 'MINUTES' or 'HOURS', ie: '${30 * MINUTES}'",
@@ -3695,14 +3857,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 200,
+        "dependsOnMap" : null,
         "name" : "configs.lateRecordsLimit",
         "type" : "STRING",
         "defaultValue" : "${1 * HOURS}"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "rollIfHeader",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Closes the current file and creates a new file when processing a record with the specified roll attribute",
@@ -3717,14 +3879,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 204,
+        "dependsOnMap" : null,
         "name" : "configs.rollIfHeader",
         "type" : "BOOLEAN",
         "defaultValue" : false
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "rollHeaderName",
+        "max" : 9223372036854775807,
         "dependsOn" : "configs.rollIfHeader",
         "triggeredByValues" : [ true ],
         "description" : "Name of the roll attribute",
@@ -3739,16 +3901,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 205,
         "dependsOnMap" : {
           "configs.rollIfHeader" : [ true ]
         },
-        "displayPosition" : 205,
         "name" : "configs.rollHeaderName",
         "type" : "STRING",
         "defaultValue" : "roll"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "lateRecordsAction",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Action for records considered late.",
@@ -3769,14 +3931,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 210,
+        "dependsOnMap" : null,
         "name" : "configs.lateRecordsAction",
         "type" : "MODEL",
         "defaultValue" : "SEND_TO_ERROR"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "lateRecordsDirPathTemplate",
+        "max" : 9223372036854775807,
         "dependsOn" : "configs.lateRecordsAction",
         "triggeredByValues" : [ "SEND_TO_LATE_RECORDS_FILE" ],
         "description" : "Template for the creation of late record directories. Valid variables are ${YYYY()}, ${MM()}, ${DD()}, ${hh()}, ${mm()}, ${ss()}.",
@@ -3791,16 +3953,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 220,
         "dependsOnMap" : {
           "configs.lateRecordsAction" : [ "SEND_TO_LATE_RECORDS_FILE" ]
         },
-        "displayPosition" : 220,
         "name" : "configs.lateRecordsDirPathTemplate",
         "type" : "STRING",
         "defaultValue" : "/tmp/late/${YYYY()}-${MM()}-${DD()}"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "dataFormat",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Data Format",
@@ -3821,14 +3983,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 100,
+        "dependsOnMap" : null,
         "name" : "configs.dataFormat",
         "type" : "MODEL",
         "defaultValue" : "TEXT"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "charset",
+        "max" : 9223372036854775807,
         "dependsOn" : "configs.dataFormat",
         "triggeredByValues" : [ "TEXT", "JSON", "DELIMITED" ],
         "description" : "",
@@ -3849,16 +4011,16 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 300,
         "dependsOnMap" : {
           "configs.dataFormat" : [ "TEXT", "JSON", "DELIMITED" ]
         },
-        "displayPosition" : 300,
         "name" : "configs.dataGeneratorFormatConfig.charset",
         "type" : "MODEL",
         "defaultValue" : "UTF-8"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "csvFileFormat",
+        "max" : 9223372036854775807,
         "dependsOn" : "configs.dataFormat",
         "triggeredByValues" : [ "DELIMITED" ],
         "description" : "",
@@ -3879,16 +4041,16 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 310,
         "dependsOnMap" : {
           "configs.dataFormat" : [ "DELIMITED" ]
         },
-        "displayPosition" : 310,
         "name" : "configs.dataGeneratorFormatConfig.csvFileFormat",
         "type" : "MODEL",
         "defaultValue" : "CSV"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "csvHeader",
+        "max" : 9223372036854775807,
         "dependsOn" : "configs.dataFormat",
         "triggeredByValues" : [ "DELIMITED" ],
         "description" : "",
@@ -3909,16 +4071,16 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 320,
         "dependsOnMap" : {
           "configs.dataFormat" : [ "DELIMITED" ]
         },
-        "displayPosition" : 320,
         "name" : "configs.dataGeneratorFormatConfig.csvHeader",
         "type" : "MODEL",
         "defaultValue" : "NO_HEADER"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "csvReplaceNewLines",
+        "max" : 9223372036854775807,
         "dependsOn" : "configs.dataFormat",
         "triggeredByValues" : [ "DELIMITED" ],
         "description" : "Replaces new lines characters with configured string constant",
@@ -3933,16 +4095,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 330,
         "dependsOnMap" : {
           "configs.dataFormat" : [ "DELIMITED" ]
         },
-        "displayPosition" : 330,
         "name" : "configs.dataGeneratorFormatConfig.csvReplaceNewLines",
         "type" : "BOOLEAN",
         "defaultValue" : true
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "csvReplaceNewLinesString",
+        "max" : 9223372036854775807,
         "dependsOn" : "configs.dataGeneratorFormatConfig.csvReplaceNewLines",
         "triggeredByValues" : [ true ],
         "description" : "String that will be used to substitute new line characters. Using empty string will remove the new line characters.",
@@ -3957,17 +4119,17 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 335,
         "dependsOnMap" : {
           "configs.dataFormat" : [ "DELIMITED" ],
           "configs.dataGeneratorFormatConfig.csvReplaceNewLines" : [ true ]
         },
-        "displayPosition" : 335,
         "name" : "configs.dataGeneratorFormatConfig.csvReplaceNewLinesString",
         "type" : "STRING",
         "defaultValue" : " "
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "csvCustomDelimiter",
+        "max" : 9223372036854775807,
         "dependsOn" : "configs.dataGeneratorFormatConfig.csvFileFormat",
         "triggeredByValues" : [ "CUSTOM" ],
         "description" : "",
@@ -3982,17 +4144,17 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 340,
         "dependsOnMap" : {
           "configs.dataFormat" : [ "DELIMITED" ],
           "configs.dataGeneratorFormatConfig.csvFileFormat" : [ "CUSTOM" ]
         },
-        "displayPosition" : 340,
         "name" : "configs.dataGeneratorFormatConfig.csvCustomDelimiter",
         "type" : "CHARACTER",
         "defaultValue" : "|"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "csvCustomEscape",
+        "max" : 9223372036854775807,
         "dependsOn" : "configs.dataGeneratorFormatConfig.csvFileFormat",
         "triggeredByValues" : [ "CUSTOM" ],
         "description" : "",
@@ -4007,17 +4169,17 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 350,
         "dependsOnMap" : {
           "configs.dataFormat" : [ "DELIMITED" ],
           "configs.dataGeneratorFormatConfig.csvFileFormat" : [ "CUSTOM" ]
         },
-        "displayPosition" : 350,
         "name" : "configs.dataGeneratorFormatConfig.csvCustomEscape",
         "type" : "CHARACTER",
         "defaultValue" : "\\"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "csvCustomQuote",
+        "max" : 9223372036854775807,
         "dependsOn" : "configs.dataGeneratorFormatConfig.csvFileFormat",
         "triggeredByValues" : [ "CUSTOM" ],
         "description" : "",
@@ -4032,17 +4194,17 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 360,
         "dependsOnMap" : {
           "configs.dataFormat" : [ "DELIMITED" ],
           "configs.dataGeneratorFormatConfig.csvFileFormat" : [ "CUSTOM" ]
         },
-        "displayPosition" : 360,
         "name" : "configs.dataGeneratorFormatConfig.csvCustomQuote",
         "type" : "CHARACTER",
         "defaultValue" : "\""
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "jsonMode",
+        "max" : 9223372036854775807,
         "dependsOn" : "configs.dataFormat",
         "triggeredByValues" : [ "JSON" ],
         "description" : "",
@@ -4063,16 +4225,16 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 370,
         "dependsOnMap" : {
           "configs.dataFormat" : [ "JSON" ]
         },
-        "displayPosition" : 370,
         "name" : "configs.dataGeneratorFormatConfig.jsonMode",
         "type" : "MODEL",
         "defaultValue" : "MULTIPLE_OBJECTS"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "textFieldPath",
+        "max" : 9223372036854775807,
         "dependsOn" : "configs.dataFormat",
         "triggeredByValues" : [ "TEXT" ],
         "description" : "String field that will be written to the destination",
@@ -4093,16 +4255,16 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 380,
         "dependsOnMap" : {
           "configs.dataFormat" : [ "TEXT" ]
         },
-        "displayPosition" : 380,
         "name" : "configs.dataGeneratorFormatConfig.textFieldPath",
         "type" : "MODEL",
         "defaultValue" : "/"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "textEmptyLineIfNull",
+        "max" : 9223372036854775807,
         "dependsOn" : "configs.dataFormat",
         "triggeredByValues" : [ "TEXT" ],
         "description" : "",
@@ -4117,16 +4279,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 390,
         "dependsOnMap" : {
           "configs.dataFormat" : [ "TEXT" ]
         },
-        "displayPosition" : 390,
         "name" : "configs.dataGeneratorFormatConfig.textEmptyLineIfNull",
         "type" : "BOOLEAN",
         "defaultValue" : false
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "avroSchemaInHeader",
+        "max" : 9223372036854775807,
         "dependsOn" : "configs.dataFormat",
         "triggeredByValues" : [ "AVRO" ],
         "description" : "Uses the Avro schema embedded in the avroSchema record header attribute.",
@@ -4141,16 +4303,16 @@
         "model" : null,
         "mode" : "application/json",
         "lines" : 0,
+        "displayPosition" : 400,
         "dependsOnMap" : {
           "configs.dataFormat" : [ "AVRO" ]
         },
-        "displayPosition" : 400,
         "name" : "configs.dataGeneratorFormatConfig.avroSchemaInHeader",
         "type" : "BOOLEAN",
         "defaultValue" : true
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "avroSchema",
+        "max" : 9223372036854775807,
         "dependsOn" : "configs.dataGeneratorFormatConfig.avroSchemaInHeader",
         "triggeredByValues" : [ false ],
         "description" : "Optionally use the runtime:loadResource function to use a schema stored in a file",
@@ -4165,17 +4327,17 @@
         "model" : null,
         "mode" : "application/json",
         "lines" : 0,
+        "displayPosition" : 400,
         "dependsOnMap" : {
           "configs.dataFormat" : [ "AVRO" ],
           "configs.dataGeneratorFormatConfig.avroSchemaInHeader" : [ false ]
         },
-        "displayPosition" : 400,
         "name" : "configs.dataGeneratorFormatConfig.avroSchema",
         "type" : "TEXT",
         "defaultValue" : null
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "avroCompression",
+        "max" : 9223372036854775807,
         "dependsOn" : "configs.dataFormat",
         "triggeredByValues" : [ "AVRO" ],
         "description" : "",
@@ -4196,16 +4358,16 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 415,
         "dependsOnMap" : {
           "configs.dataFormat" : [ "AVRO" ]
         },
-        "displayPosition" : 415,
         "name" : "configs.dataGeneratorFormatConfig.avroCompression",
         "type" : "MODEL",
         "defaultValue" : "NULL"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "binaryFieldPath",
+        "max" : 9223372036854775807,
         "dependsOn" : "configs.dataFormat",
         "triggeredByValues" : [ "BINARY" ],
         "description" : "Field to write data to Kafka",
@@ -4226,16 +4388,16 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 420,
         "dependsOnMap" : {
           "configs.dataFormat" : [ "BINARY" ]
         },
-        "displayPosition" : 420,
         "name" : "configs.dataGeneratorFormatConfig.binaryFieldPath",
         "type" : "MODEL",
         "defaultValue" : "/"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "protoDescriptorFile",
+        "max" : 9223372036854775807,
         "dependsOn" : "configs.dataFormat",
         "triggeredByValues" : [ "PROTOBUF" ],
         "description" : "Protobuf Descriptor File (.desc) path relative to SDC resources directory",
@@ -4250,16 +4412,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 430,
         "dependsOnMap" : {
           "configs.dataFormat" : [ "PROTOBUF" ]
         },
-        "displayPosition" : 430,
         "name" : "configs.dataGeneratorFormatConfig.protoDescriptorFile",
         "type" : "STRING",
         "defaultValue" : null
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "messageType",
+        "max" : 9223372036854775807,
         "dependsOn" : "configs.dataFormat",
         "triggeredByValues" : [ "PROTOBUF" ],
         "description" : "Fully Qualified Message Type name. Use format <packageName>.<messageTypeName>",
@@ -4274,16 +4436,16 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
+        "displayPosition" : 440,
         "dependsOnMap" : {
           "configs.dataFormat" : [ "PROTOBUF" ]
         },
-        "displayPosition" : 440,
         "name" : "configs.dataGeneratorFormatConfig.messageType",
         "type" : "STRING",
         "defaultValue" : null
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "stageOnRecordError",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Action to take with records sent to error",
@@ -4304,14 +4466,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 30,
+        "dependsOnMap" : null,
         "name" : "stageOnRecordError",
         "type" : "MODEL",
         "defaultValue" : "TO_ERROR"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "stageRequiredFields",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Records without any of these fields are sent to error",
@@ -4332,14 +4494,14 @@
         },
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 10,
+        "dependsOnMap" : null,
         "name" : "stageRequiredFields",
         "type" : "MODEL",
         "defaultValue" : [ ]
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "stageRecordPreconditions",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Records that don't satisfy all the preconditions are sent to error",
@@ -4354,8 +4516,8 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 20,
+        "dependsOnMap" : null,
         "name" : "stageRecordPreconditions",
         "type" : "LIST",
         "defaultValue" : null
@@ -4407,16 +4569,16 @@
       "preconditions" : true,
       "onRecordError" : true
     }, {
-      "icon" : "",
       "version" : "1",
       "privateClassLoader" : false,
       "library" : "streamsets-datacollector-basic-lib",
       "description" : "Writes records to a local File System as SDC records",
       "label" : "Write to File",
+      "icon" : "",
       "libraryLabel" : "Basic",
       "configDefinitions" : [ {
-        "max" : 9223372036854775807,
         "fieldName" : "directory",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Directory to write records",
@@ -4431,14 +4593,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 10,
+        "dependsOnMap" : null,
         "name" : "directory",
         "type" : "STRING",
         "defaultValue" : null
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "uniquePrefix",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "File name prefix",
@@ -4453,14 +4615,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 20,
+        "dependsOnMap" : null,
         "name" : "uniquePrefix",
         "type" : "STRING",
         "defaultValue" : "sdc-${sdc:id()}"
       }, {
-        "max" : 9223372036854775807,
         "fieldName" : "rotationIntervalSecs",
+        "max" : 9223372036854775807,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Max time to wait for error records before creating a new error file. \nEnter the time in seconds or use the default expression to enter the time limit in minutes. You can also use HOURS in the expression to enter the limit in hours.",
@@ -4475,14 +4637,14 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 30,
+        "dependsOnMap" : null,
         "name" : "rotationIntervalSecs",
         "type" : "STRING",
         "defaultValue" : "${1 * HOURS}"
       }, {
-        "max" : 2147483647,
         "fieldName" : "maxFileSizeMbs",
+        "max" : 2147483647,
         "dependsOn" : "",
         "triggeredByValues" : null,
         "description" : "Max file size to trigger the creation of a new file. Use 0 to opt out.",
@@ -4497,8 +4659,8 @@
         "model" : null,
         "mode" : "text/plain",
         "lines" : 0,
-        "dependsOnMap" : null,
         "displayPosition" : 40,
+        "dependsOnMap" : null,
         "name" : "maxFileSizeMbs",
         "type" : "NUMBER",
         "defaultValue" : 512
@@ -4529,12 +4691,12 @@
       "preconditions" : false,
       "onRecordError" : false
     }, {
-      "icon" : "",
       "version" : "1",
       "privateClassLoader" : false,
       "library" : "streamsets-datacollector-basic-lib",
       "description" : "Discards Pipeline Statistic Records",
       "label" : "Discard",
+      "icon" : "",
       "libraryLabel" : "Basic",
       "configDefinitions" : [ ],
       "errorStage" : false,
