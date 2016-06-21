@@ -1,0 +1,741 @@
+indicator,country,date,value
+political_score,AE,2009,3
+political_description,AE,2009,substantial
+social_score,AE,2009,4
+social_description,AE,2009,pervasive
+tools_score,AE,2009,4
+tools_description,AE,2009,pervasive
+conflict/security_score,AE,2009,2
+conflict_security_description,AE,2009,selective
+transparency,AE,2009,Medium
+consistency,AE,2009,High
+political_score,AF,2007,0
+political_description,AF,2007,no evidence
+social_score,AF,2007,0
+social_description,AF,2007,no evidence
+tools_score,AF,2007,0
+tools_description,AF,2007,no evidence
+conflict/security_score,AF,2007,0
+conflict_security_description,AF,2007,no evidence
+transparency,AF,2007,n/a
+consistency,AF,2007,n/a
+political_score,AM,2008,3
+political_description,AM,2008,substantial
+social_score,AM,2008,2
+social_description,AM,2008,selective
+tools_score,AM,2008,2
+tools_description,AM,2008,selective
+conflict/security_score,AM,2008,2
+conflict_security_description,AM,2008,selective
+transparency,AM,2008,Low
+consistency,AM,2008,Medium
+political_score,AU,2009,0
+political_description,AU,2009,no evidence
+social_score,AU,2009,0
+social_description,AU,2009,no evidence
+tools_score,AU,2009,0
+tools_description,AU,2009,no evidence
+conflict/security_score,AU,2009,0
+conflict_security_description,AU,2009,no evidence
+transparency,AU,2009,n/a
+consistency,AU,2009,n/a
+political_score,AZ,2008,2
+political_description,AZ,2008,selective
+social_score,AZ,2008,2
+social_description,AZ,2008,selective
+tools_score,AZ,2008,0
+tools_description,AZ,2008,no evidence
+conflict/security_score,AZ,2008,0
+conflict_security_description,AZ,2008,no evidence
+transparency,AZ,2008,Low
+consistency,AZ,2008,Low
+political_score,BD,2011,0
+political_description,BD,2011,no evidence
+social_score,BD,2011,0
+social_description,BD,2011,no evidence
+tools_score,BD,2011,0
+tools_description,BD,2011,no evidence
+conflict/security_score,BD,2011,0
+conflict_security_description,BD,2011,no evidence
+transparency,BD,2011,n/a
+consistency,BD,2011,n/a
+political_score,BH,2009,4
+political_description,BH,2009,pervasive
+social_score,BH,2009,4
+social_description,BH,2009,pervasive
+tools_score,BH,2009,3
+tools_description,BH,2009,substantial
+conflict/security_score,BH,2009,2
+conflict_security_description,BH,2009,selective
+transparency,BH,2009,Medium
+consistency,BH,2009,High
+political_score,BY,2008,2
+political_description,BY,2008,selective
+social_score,BY,2008,2
+social_description,BY,2008,selective
+tools_score,BY,2008,2
+tools_description,BY,2008,selective
+conflict/security_score,BY,2008,2
+conflict_security_description,BY,2008,selective
+transparency,BY,2008,Low
+consistency,BY,2008,Low
+political_score,CA,2009,0
+political_description,CA,2009,no evidence
+social_score,CA,2009,0
+social_description,CA,2009,no evidence
+tools_score,CA,2009,0
+tools_description,CA,2009,no evidence
+conflict/security_score,CA,2009,0
+conflict_security_description,CA,2009,no evidence
+transparency,CA,2009,n/a
+consistency,CA,2009,n/a
+political_score,CN,2011,4
+political_description,CN,2011,pervasive
+social_score,CN,2011,3
+social_description,CN,2011,substantial
+tools_score,CN,2011,3
+tools_description,CN,2011,substantial
+conflict/security_score,CN,2011,4
+conflict_security_description,CN,2011,pervasive
+transparency,CN,2011,Low
+consistency,CN,2011,High
+political_score,CO,2011,0
+political_description,CO,2011,no evidence
+social_score,CO,2011,2
+social_description,CO,2011,selective
+tools_score,CO,2011,0
+tools_description,CO,2011,no evidence
+conflict/security_score,CO,2011,0
+conflict_security_description,CO,2011,no evidence
+transparency,CO,2011,Low
+consistency,CO,2011,Low
+political_score,DE,2008,0
+political_description,DE,2008,no evidence
+social_score,DE,2008,0
+social_description,DE,2008,no evidence
+tools_score,DE,2008,0
+tools_description,DE,2008,no evidence
+conflict/security_score,DE,2008,0
+conflict_security_description,DE,2008,no evidence
+transparency,DE,2008,n/a
+consistency,DE,2008,n/a
+political_score,DK,2009,0
+political_description,DK,2009,no evidence
+social_score,DK,2009,0
+social_description,DK,2009,no evidence
+tools_score,DK,2009,0
+tools_description,DK,2009,no evidence
+conflict/security_score,DK,2009,0
+conflict_security_description,DK,2009,no evidence
+transparency,DK,2009,n/a
+consistency,DK,2009,n/a
+political_score,DZ,2009,0
+political_description,DZ,2009,no evidence
+social_score,DZ,2009,0
+social_description,DZ,2009,no evidence
+tools_score,DZ,2009,0
+tools_description,DZ,2009,no evidence
+conflict/security_score,DZ,2009,0
+conflict_security_description,DZ,2009,no evidence
+transparency,DZ,2009,n/a
+consistency,DZ,2009,n/a
+political_score,EG,2012,0
+political_description,EG,2012,no evidence
+social_score,EG,2012,0
+social_description,EG,2012,no evidence
+tools_score,EG,2012,0
+tools_description,EG,2012,no evidence
+conflict/security_score,EG,2012,0
+conflict_security_description,EG,2012,no evidence
+transparency,EG,2012,n/a
+consistency,EG,2012,n/a
+political_score,ET,2012,4
+political_description,ET,2012,pervasive
+social_score,ET,2012,0
+social_description,ET,2012,no evidence
+tools_score,ET,2012,2
+tools_description,ET,2012,selective
+conflict/security_score,ET,2012,2
+conflict_security_description,ET,2012,selective
+transparency,ET,2012,Low
+consistency,ET,2012,Low
+political_score,FI,2009,0
+political_description,FI,2009,no evidence
+social_score,FI,2009,0
+social_description,FI,2009,no evidence
+tools_score,FI,2009,0
+tools_description,FI,2009,no evidence
+conflict/security_score,FI,2009,0
+conflict_security_description,FI,2009,no evidence
+transparency,FI,2009,n/a
+consistency,FI,2009,n/a
+political_score,FR,2009,0
+political_description,FR,2009,no evidence
+social_score,FR,2009,0
+social_description,FR,2009,no evidence
+tools_score,FR,2009,0
+tools_description,FR,2009,no evidence
+conflict/security_score,FR,2009,0
+conflict_security_description,FR,2009,no evidence
+transparency,FR,2009,n/a
+consistency,FR,2009,n/a
+political_score,GB,2010,0
+political_description,GB,2010,no evidence
+social_score,GB,2010,0
+social_description,GB,2010,no evidence
+tools_score,GB,2010,0
+tools_description,GB,2010,no evidence
+conflict/security_score,GB,2010,0
+conflict_security_description,GB,2010,no evidence
+transparency,GB,2010,n/a
+consistency,GB,2010,n/a
+political_score,GE,2008,2
+political_description,GE,2008,selective
+social_score,GE,2008,0
+social_description,GE,2008,no evidence
+tools_score,GE,2008,0
+tools_description,GE,2008,no evidence
+conflict/security_score,GE,2008,2
+conflict_security_description,GE,2008,selective
+transparency,GE,2008,Low
+consistency,GE,2008,Low
+political_score,GT,2011,0
+political_description,GT,2011,no evidence
+social_score,GT,2011,0
+social_description,GT,2011,no evidence
+tools_score,GT,2011,0
+tools_description,GT,2011,no evidence
+conflict/security_score,GT,2011,0
+conflict_security_description,GT,2011,no evidence
+transparency,GT,2011,n/a
+consistency,GT,2011,n/a
+political_score,HR,2009,0
+political_description,HR,2009,no evidence
+social_score,HR,2009,0
+social_description,HR,2009,no evidence
+tools_score,HR,2009,0
+tools_description,HR,2009,no evidence
+conflict/security_score,HR,2009,0
+conflict_security_description,HR,2009,no evidence
+transparency,HR,2009,n/a
+consistency,HR,2009,n/a
+political_score,HU,2009,0
+political_description,HU,2009,no evidence
+social_score,HU,2009,0
+social_description,HU,2009,no evidence
+tools_score,HU,2009,0
+tools_description,HU,2009,no evidence
+conflict/security_score,HU,2009,0
+conflict_security_description,HU,2009,no evidence
+transparency,HU,2009,n/a
+consistency,HU,2009,n/a
+political_score,ID,2011,2
+political_description,ID,2011,selective
+social_score,ID,2011,3
+social_description,ID,2011,substantial
+tools_score,ID,2011,2
+tools_description,ID,2011,selective
+conflict/security_score,ID,2011,0
+conflict_security_description,ID,2011,no evidence
+transparency,ID,2011,"High "
+consistency,ID,2011,Low
+political_score,IL,2009,0
+political_description,IL,2009,no evidence
+social_score,IL,2009,0
+social_description,IL,2009,no evidence
+tools_score,IL,2009,0
+tools_description,IL,2009,no evidence
+conflict/security_score,IL,2009,0
+conflict_security_description,IL,2009,no evidence
+transparency,IL,2009,n/a
+consistency,IL,2009,n/a
+political_score,IN,2011,2
+political_description,IN,2011,selective
+social_score,IN,2011,2
+social_description,IN,2011,selective
+tools_score,IN,2011,2
+tools_description,IN,2011,selective
+conflict/security_score,IN,2011,2
+conflict_security_description,IN,2011,selective
+transparency,IN,2011,Medium
+consistency,IN,2011,High
+political_score,IQ,2009,0
+political_description,IQ,2009,no evidence
+social_score,IQ,2009,0
+social_description,IQ,2009,no evidence
+tools_score,IQ,2009,0
+tools_description,IQ,2009,no evidence
+conflict/security_score,IQ,2009,0
+conflict_security_description,IQ,2009,no evidence
+transparency,IQ,2009,n/a
+consistency,IQ,2009,n/a
+political_score,IR,2011,4
+political_description,IR,2011,pervasive
+social_score,IR,2011,4
+social_description,IR,2011,pervasive
+tools_score,IR,2011,4
+tools_description,IR,2011,pervasive
+conflict/security_score,IR,2011,3
+conflict_security_description,IR,2011,substantial
+transparency,IR,2011,Medium
+consistency,IR,2011,High
+political_score,IT,2009,0
+political_description,IT,2009,no evidence
+social_score,IT,2009,2
+social_description,IT,2009,selective
+tools_score,IT,2009,0
+tools_description,IT,2009,no evidence
+conflict/security_score,IT,2009,0
+conflict_security_description,IT,2009,no evidence
+transparency,IT,2009,High
+consistency,IT,2009,Low
+political_score,JO,2009,2
+political_description,JO,2009,selective
+social_score,JO,2009,0
+social_description,JO,2009,no evidence
+tools_score,JO,2009,0
+tools_description,JO,2009,no evidence
+conflict/security_score,JO,2009,0
+conflict_security_description,JO,2009,no evidence
+transparency,JO,2009,Medium
+consistency,JO,2009,Low
+political_score,KG,2009,2
+political_description,KG,2009,selective
+social_score,KG,2009,2
+social_description,KG,2009,selective
+tools_score,KG,2009,0
+tools_description,KG,2009,no evidence
+conflict/security_score,KG,2009,0
+conflict_security_description,KG,2009,no evidence
+transparency,KG,2009,Low
+consistency,KG,2009,Low
+political_score,KR,2011,0
+political_description,KR,2011,no evidence
+social_score,KR,2011,2
+social_description,KR,2011,selective
+tools_score,KR,2011,0
+tools_description,KR,2011,no evidence
+conflict/security_score,KR,2011,4
+conflict_security_description,KR,2011,pervasive
+transparency,KR,2011,High
+consistency,KR,2011,High
+political_score,KW,2009,2
+political_description,KW,2009,selective
+social_score,KW,2009,4
+social_description,KW,2009,pervasive
+tools_score,KW,2009,4
+tools_description,KW,2009,pervasive
+conflict/security_score,KW,2009,2
+conflict_security_description,KW,2009,selective
+transparency,KW,2009,Medium
+consistency,KW,2009,Medium
+political_score,KZ,2009,2
+political_description,KZ,2009,selective
+social_score,KZ,2009,2
+social_description,KZ,2009,selective
+tools_score,KZ,2009,0
+tools_description,KZ,2009,no evidence
+conflict/security_score,KZ,2009,0
+conflict_security_description,KZ,2009,no evidence
+transparency,KZ,2009,Low
+consistency,KZ,2009,Low
+political_score,LA,2011,0
+political_description,LA,2011,no evidence
+social_score,LA,2011,0
+social_description,LA,2011,no evidence
+tools_score,LA,2011,0
+tools_description,LA,2011,no evidence
+conflict/security_score,LA,2011,0
+conflict_security_description,LA,2011,no evidence
+transparency,LA,2011,n/a
+consistency,LA,2011,n/a
+political_score,LB,2009,0
+political_description,LB,2009,no evidence
+social_score,LB,2009,0
+social_description,LB,2009,no evidence
+tools_score,LB,2009,0
+tools_description,LB,2009,no evidence
+conflict/security_score,LB,2009,0
+conflict_security_description,LB,2009,no evidence
+transparency,LB,2009,n/a
+consistency,LB,2009,n/a
+political_score,LK,2009,0
+political_description,LK,2009,no evidence
+social_score,LK,2009,0
+social_description,LK,2009,no evidence
+tools_score,LK,2009,0
+tools_description,LK,2009,no evidence
+conflict/security_score,LK,2009,0
+conflict_security_description,LK,2009,no evidence
+transparency,LK,2009,n/a
+consistency,LK,2009,n/a
+political_score,LV,2009,0
+political_description,LV,2009,no evidence
+social_score,LV,2009,0
+social_description,LV,2009,no evidence
+tools_score,LV,2009,0
+tools_description,LV,2009,no evidence
+conflict/security_score,LV,2009,0
+conflict_security_description,LV,2009,no evidence
+transparency,LV,2009,n/a
+consistency,LV,2009,n/a
+political_score,LY,2009,2
+political_description,LY,2009,selective
+social_score,LY,2009,0
+social_description,LY,2009,no evidence
+tools_score,LY,2009,0
+tools_description,LY,2009,no evidence
+conflict/security_score,LY,2009,0
+conflict_security_description,LY,2009,no evidence
+transparency,LY,2009,n/a
+consistency,LY,2009,n/a
+political_score,MA,2009,0
+political_description,MA,2009,no evidence
+social_score,MA,2009,2
+social_description,MA,2009,selective
+tools_score,MA,2009,2
+tools_description,MA,2009,selective
+conflict/security_score,MA,2009,2
+conflict_security_description,MA,2009,selective
+transparency,MA,2009,Low
+consistency,MA,2009,Medium
+political_score,MD,2009,2
+political_description,MD,2009,selective
+social_score,MD,2009,0
+social_description,MD,2009,no evidence
+tools_score,MD,2009,0
+tools_description,MD,2009,no evidence
+conflict/security_score,MD,2009,0
+conflict_security_description,MD,2009,no evidence
+transparency,MD,2009,Low
+consistency,MD,2009,Low
+political_score,MM,2012,2
+political_description,MM,2012,selective
+social_score,MM,2012,3
+social_description,MM,2012,substantial
+tools_score,MM,2012,2
+tools_description,MM,2012,selective
+conflict/security_score,MM,2012,0
+conflict_security_description,MM,2012,no evidence
+transparency,MM,2012,Medium
+consistency,MM,2012,Medium
+political_score,MR,2009,2
+political_description,MR,2009,selective
+social_score,MR,2009,0
+social_description,MR,2009,no evidence
+tools_score,MR,2009,0
+tools_description,MR,2009,no evidence
+conflict/security_score,MR,2009,0
+conflict_security_description,MR,2009,no evidence
+transparency,MR,2009,n/a
+consistency,MR,2009,n/a
+political_score,MX,2011,0
+political_description,MX,2011,no evidence
+social_score,MX,2011,0
+social_description,MX,2011,no evidence
+tools_score,MX,2011,0
+tools_description,MX,2011,no evidence
+conflict/security_score,MX,2011,0
+conflict_security_description,MX,2011,no evidence
+transparency,MX,2011,n/a
+consistency,MX,2011,n/a
+political_score,MY,2011,0
+political_description,MY,2011,no evidence
+social_score,MY,2011,0
+social_description,MY,2011,no evidence
+tools_score,MY,2011,0
+tools_description,MY,2011,no evidence
+conflict/security_score,MY,2011,0
+conflict_security_description,MY,2011,no evidence
+transparency,MY,2011,n/a
+consistency,MY,2011,n/a
+political_score,NG,2009,0
+political_description,NG,2009,no evidence
+social_score,NG,2009,0
+social_description,NG,2009,no evidence
+tools_score,NG,2009,0
+tools_description,NG,2009,no evidence
+conflict/security_score,NG,2009,0
+conflict_security_description,NG,2009,no evidence
+transparency,NG,2009,n/a
+consistency,NG,2009,n/a
+political_score,NO,2009,0
+political_description,NO,2009,no evidence
+social_score,NO,2009,0
+social_description,NO,2009,no evidence
+tools_score,NO,2009,0
+tools_description,NO,2009,no evidence
+conflict/security_score,NO,2009,0
+conflict_security_description,NO,2009,no evidence
+transparency,NO,2009,n/a
+consistency,NO,2009,n/a
+political_score,NP,2007,0
+political_description,NP,2007,no evidence
+social_score,NP,2007,0
+social_description,NP,2007,no evidence
+tools_score,NP,2007,0
+tools_description,NP,2007,no evidence
+conflict/security_score,NP,2007,0
+conflict_security_description,NP,2007,no evidence
+transparency,NP,2007,n/a
+consistency,NP,2007,n/a
+political_score,OM,2009,2
+political_description,OM,2009,selective
+social_score,OM,2009,4
+social_description,OM,2009,pervasive
+tools_score,OM,2009,3
+tools_description,OM,2009,substantial
+conflict/security_score,OM,2009,0
+conflict_security_description,OM,2009,no evidence
+transparency,OM,2009,Medium
+consistency,OM,2009,High
+political_score,PE,2011,0
+political_description,PE,2011,no evidence
+social_score,PE,2011,0
+social_description,PE,2011,no evidence
+tools_score,PE,2011,0
+tools_description,PE,2011,no evidence
+conflict/security_score,PE,2011,0
+conflict_security_description,PE,2011,no evidence
+transparency,PE,2011,n/a
+consistency,PE,2011,n/a
+political_score,PH,2009,0
+political_description,PH,2009,no evidence
+social_score,PH,2009,0
+social_description,PH,2009,no evidence
+tools_score,PH,2009,0
+tools_description,PH,2009,no evidence
+conflict/security_score,PH,2009,0
+conflict_security_description,PH,2009,no evidence
+transparency,PH,2009,n/a
+consistency,PH,2009,n/a
+political_score,PK,2011,2
+political_description,PK,2011,selective
+social_score,PK,2011,2
+social_description,PK,2011,selective
+tools_score,PK,2011,2
+tools_description,PK,2011,selective
+conflict/security_score,PK,2011,3
+conflict_security_description,PK,2011,substantial
+transparency,PK,2011,Medium
+consistency,PK,2011,Low
+political_score,PS,2009,0
+political_description,PS,2009,no evidence
+social_score,PS,2009,3
+social_description,PS,2009,substantial
+tools_score,PS,2009,0
+tools_description,PS,2009,no evidence
+conflict/security_score,PS,2009,0
+conflict_security_description,PS,2009,no evidence
+transparency,PS,2009,Low
+consistency,PS,2009,Medium
+political_score,QA,2009,2
+political_description,QA,2009,selective
+social_score,QA,2009,4
+social_description,QA,2009,pervasive
+tools_score,QA,2009,4
+tools_description,QA,2009,pervasive
+conflict/security_score,QA,2009,2
+conflict_security_description,QA,2009,selective
+transparency,QA,2009,Medium
+consistency,QA,2009,Medium
+political_score,RO,2009,0
+political_description,RO,2009,no evidence
+social_score,RO,2009,0
+social_description,RO,2009,no evidence
+tools_score,RO,2009,0
+tools_description,RO,2009,no evidence
+conflict/security_score,RO,2009,0
+conflict_security_description,RO,2009,no evidence
+transparency,RO,2009,n/a
+consistency,RO,2009,n/a
+political_score,RU,2010,2
+political_description,RU,2010,selective
+social_score,RU,2010,2
+social_description,RU,2010,selective
+tools_score,RU,2010,0
+tools_description,RU,2010,no evidence
+conflict/security_score,RU,2010,0
+conflict_security_description,RU,2010,no evidence
+transparency,RU,2010,Low
+consistency,RU,2010,Low
+political_score,SA,2009,3
+political_description,SA,2009,substantial
+social_score,SA,2009,4
+social_description,SA,2009,pervasive
+tools_score,SA,2009,4
+tools_description,SA,2009,pervasive
+conflict/security_score,SA,2009,2
+conflict_security_description,SA,2009,selective
+transparency,SA,2009,High
+consistency,SA,2009,High
+political_score,SD,2009,2
+political_description,SD,2009,selective
+social_score,SD,2009,3
+social_description,SD,2009,substantial
+tools_score,SD,2009,3
+tools_description,SD,2009,substantial
+conflict/security_score,SD,2009,0
+conflict_security_description,SD,2009,no evidence
+transparency,SD,2009,High
+consistency,SD,2009,Medium
+political_score,SE,2009,0
+political_description,SE,2009,no evidence
+social_score,SE,2009,0
+social_description,SE,2009,no evidence
+tools_score,SE,2009,0
+tools_description,SE,2009,no evidence
+conflict/security_score,SE,2009,0
+conflict_security_description,SE,2009,no evidence
+transparency,SE,2009,n/a
+consistency,SE,2009,n/a
+political_score,SG,2007,0
+political_description,SG,2007,no evidence
+social_score,SG,2007,2
+social_description,SG,2007,selective
+tools_score,SG,2007,0
+tools_description,SG,2007,no evidence
+conflict/security_score,SG,2007,0
+conflict_security_description,SG,2007,no evidence
+transparency,SG,2007,High
+consistency,SG,2007,High
+political_score,SY,2009,4
+political_description,SY,2009,pervasive
+social_score,SY,2009,2
+social_description,SY,2009,selective
+tools_score,SY,2009,4
+tools_description,SY,2009,pervasive
+conflict/security_score,SY,2009,2
+conflict_security_description,SY,2009,selective
+transparency,SY,2009,Low
+consistency,SY,2009,High
+political_score,TH,2011,2
+political_description,TH,2011,selective
+social_score,TH,2011,2
+social_description,TH,2011,selective
+tools_score,TH,2011,2
+tools_description,TH,2011,selective
+conflict/security_score,TH,2011,0
+conflict_security_description,TH,2011,no evidence
+transparency,TH,2011,Medium
+consistency,TH,2011,Medium
+political_score,TJ,2008,2
+political_description,TJ,2008,selective
+social_score,TJ,2008,0
+social_description,TJ,2008,no evidence
+tools_score,TJ,2008,0
+tools_description,TJ,2008,no evidence
+conflict/security_score,TJ,2008,0
+conflict_security_description,TJ,2008,no evidence
+transparency,TJ,2008,Low
+consistency,TJ,2008,Low
+political_score,TM,2008,4
+political_description,TM,2008,pervasive
+social_score,TM,2008,2
+social_description,TM,2008,selective
+tools_score,TM,2008,2
+tools_description,TM,2008,selective
+conflict/security_score,TM,2008,2
+conflict_security_description,TM,2008,selective
+transparency,TM,2008,Low
+consistency,TM,2008,High
+political_score,TN,2012,0
+political_description,TN,2012,no evidence
+social_score,TN,2012,0
+social_description,TN,2012,no evidence
+tools_score,TN,2012,0
+tools_description,TN,2012,no evidence
+conflict/security_score,TN,2012,0
+conflict_security_description,TN,2012,no evidence
+transparency,TN,2012,n/a
+consistency,TN,2012,n/a
+political_score,TR,2010,2
+political_description,TR,2010,selective
+social_score,TR,2010,2
+social_description,TR,2010,selective
+tools_score,TR,2010,2
+tools_description,TR,2010,selective
+conflict/security_score,TR,2010,0
+conflict_security_description,TR,2010,no evidence
+transparency,TR,2010,Medium
+consistency,TR,2010,Low
+political_score,UA,2008,0
+political_description,UA,2008,no evidence
+social_score,UA,2008,0
+social_description,UA,2008,no evidence
+tools_score,UA,2008,0
+tools_description,UA,2008,no evidence
+conflict/security_score,UA,2008,0
+conflict_security_description,UA,2008,no evidence
+transparency,UA,2008,n/a
+consistency,UA,2008,n/a
+political_score,UG,2009,0
+political_description,UG,2009,no evidence
+social_score,UG,2009,0
+social_description,UG,2009,no evidence
+tools_score,UG,2009,0
+tools_description,UG,2009,no evidence
+conflict/security_score,UG,2009,0
+conflict_security_description,UG,2009,no evidence
+transparency,UG,2009,n/a
+consistency,UG,2009,n/a
+political_score,US,2009,0
+political_description,US,2009,no evidence
+social_score,US,2009,0
+social_description,US,2009,no evidence
+tools_score,US,2009,0
+tools_description,US,2009,no evidence
+conflict/security_score,US,2009,0
+conflict_security_description,US,2009,no evidence
+transparency,US,2009,n/a
+consistency,US,2009,n/a
+political_score,UZ,2008,4
+political_description,UZ,2008,pervasive
+social_score,UZ,2008,2
+social_description,UZ,2008,selective
+tools_score,UZ,2008,2
+tools_description,UZ,2008,selective
+conflict/security_score,UZ,2008,2
+conflict_security_description,UZ,2008,selective
+transparency,UZ,2008,Low
+consistency,UZ,2008,High
+political_score,VE,2011,0
+political_description,VE,2011,no evidence
+social_score,VE,2011,0
+social_description,VE,2011,no evidence
+tools_score,VE,2011,0
+tools_description,VE,2011,no evidence
+conflict/security_score,VE,2011,0
+conflict_security_description,VE,2011,no evidence
+transparency,VE,2011,n/a
+consistency,VE,2011,n/a
+political_score,VN,2012,4
+political_description,VN,2012,pervasive
+social_score,VN,2012,2
+social_description,VN,2012,selective
+tools_score,VN,2012,3
+tools_description,VN,2012,substantial
+conflict/security_score,VN,2012,2
+conflict_security_description,VN,2012,selective
+transparency,VN,2012,Low
+consistency,VN,2012,Medium
+political_score,YE,2012,3
+political_description,YE,2012,substantial
+social_score,YE,2012,4
+social_description,YE,2012,pervasive
+tools_score,YE,2012,3
+tools_description,YE,2012,substantial
+conflict/security_score,YE,2012,2
+conflict_security_description,YE,2012,selective
+transparency,YE,2012,Medium
+consistency,YE,2012,High
+political_score,ZW,2008,0
+political_description,ZW,2008,no evidence
+social_score,ZW,2008,0
+social_description,ZW,2008,no evidence
+tools_score,ZW,2008,0
+tools_description,ZW,2008,no evidence
+conflict/security_score,ZW,2008,0
+conflict_security_description,ZW,2008,no evidence
+transparency,ZW,2008,n/a
+consistency,ZW,2008,n/a
