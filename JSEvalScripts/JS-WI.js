@@ -34,7 +34,7 @@ function findIndicator(i){
                 break;
             case "tertiary enrolment rates (gross) female/male": // WB C.csv
                 records[i].value["${CT}"] = records[i].value["tertiary enrolment rates (gross) female/male"];
-                indicator = " wbtertiaryenrollfm";
+                indicator = "wbtertiaryenrollfm";
                 break;
             case "Secure Internet Servers per million population": // WB A.csv
                 records[i].value["${CT}"] = records[i].value["Secure Internet Servers per million population"];
