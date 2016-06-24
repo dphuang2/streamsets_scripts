@@ -70,7 +70,7 @@ function findIndicator(i){
                 break;
             case "Freedom House - Political Rights": // FH A.csv
                 records[i].value["${CT}"] = records[i].value["Freedom House - Political Rights"];
-                indicator = "fhcivil";
+                indicator = "fhpolitical";
                 break;
         }
         return indicator;
@@ -94,7 +94,6 @@ for(var i = 0; i < records.length; i++) {
         var Values = records[i].value['Values'];
         writeRecord(Values);
 
-        output.write(records[i]);
     } catch (e) {
         // Send record to error
         error.write(records[i], e);

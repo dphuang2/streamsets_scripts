@@ -1,12 +1,12 @@
 function writeRecord(Values){
     for(key in Values){
         var value = Values[key];
-        // value : GDP per capita
+        // value : gdpcapppp
         // key   : year
         record = records[i] //Make new variable just called for easier reading
             // Note: this is a pass by reference so a new record is not created
             record.value = { 
-                '${ID}' : 'gdpcapus',
+                '${ID}' : 'gdpcapppp',
                 '${CT}' : records[i].value['${CT}'],
                 '${DT}' : key,
                 '${VL}' : value,
