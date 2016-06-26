@@ -18,7 +18,7 @@ function writeRecord(Values){
 
 function findIndicator(i){
     var indicator = "";
-    for(key in records[i].value){
+    for(key in records[i].value){ // Uses for loop because records are treated as maps (not arrays or lists)
         switch(key){
             case "WB H school life expectancy female/male": // WB H.csv
                 records[i].value["${CT}"] = records[i].value["WB H school life expectancy female/male"];
@@ -92,7 +92,7 @@ for(var i = 0; i < records.length; i++) {
         }
         
         var Values = records[i].value['Values'];
-        writeRecord(Values);
+        writeRecord(Values); // will write errors when there are no values in the Values map (ie. '..' and '')
 
     } catch (e) {
         // Send record to error
