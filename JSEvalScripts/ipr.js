@@ -18,8 +18,6 @@ function writeRecord(Values){
 
 for(var i = 0; i < records.length; i++) {
   try {
-    // Change record root field value to a STRING value
-    //records[i].value = 'Hello ' + i;
 	
     records[i].value.Values = {};
     records[i].value['${CT}'] = records[i].value['country']; // 1. Alter this line to the column that identifys the Country

@@ -41,3 +41,8 @@ Mac should use Vagrant for persistent development environment (makes it easy)
     <del> <li> edit Vagrantfile by uncommenting private-network line and changing ip to "55.55.55.5" </li> </del>
     <del> <li> add JAVA_HOME="/usr/lib/jvm/java-8-oracle" to your "/etc/environment" file </li> </del>
 </ul>
+
+<h3> Steps for adding a data source </h3>
+Add new condition to Stream Selector 1
+Add new JS Evaluator Processor
+Add new condition to Stream Selector 2
