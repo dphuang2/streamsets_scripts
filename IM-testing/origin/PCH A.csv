@@ -1,0 +1,93 @@
+IXPs (if have IXPs=1; if not=0),2007,2008,2009,2010,2011,2012,2013
+Argentina,1,1,1,1,1,1,1
+Australia,1,1,1,1,1,1,1
+Austria,1,1,1,1,1,1,1
+Bahrain,1,1,1,1,1,1,1
+Bangladesh,1,1,1,1,1,1,1
+Belgium,1,1,1,1,1,1,1
+Benin,0,0,0,0,0,0,1
+Botswana,1,1,1,1,1,1,1
+Brazil,1,1,1,1,1,1,1
+Burkina Faso,0,0,0,0,0,0,0
+Cameroon,0,0,0,0,0,0,0
+Canada,1,1,1,1,1,1,1
+Chile,1,1,1,1,1,1,1
+China,1,1,1,1,1,1,1
+Colombia,1,1,1,1,1,1,1
+Costa Rica,0,0,0,0,0,0,1
+Czech Republic,1,1,1,1,1,1,1
+Denmark,1,1,1,1,1,1,1
+Ecuador,1,1,1,1,1,1,1
+Egypt,1,1,1,1,1,1,1
+Estonia,1,1,1,1,1,1,1
+Ethiopia,0,0,0,0,0,0,0
+Finland,1,1,1,1,1,1,1
+France,1,1,1,1,1,1,1
+Germany,1,1,1,1,1,1,1
+Ghana,1,1,1,1,1,1,1
+Greece,1,1,1,1,1,1,1
+Haiti,1,1,1,1,1,1,1
+Hungary,1,1,1,1,1,1,1
+Iceland,1,1,1,1,1,1,1
+India,1,1,1,1,1,1,1
+Indonesia,1,1,1,1,1,1,1
+Ireland,1,1,1,1,1,1,1
+Israel,1,1,1,1,1,1,1
+Italy,1,1,1,1,1,1,1
+Jamaica,0,0,0,0,0,0,0
+Japan,1,1,1,1,1,1,1
+Jordan,0,0,0,0,0,0,0
+Kazakhstan,0,0,0,0,0,0,0
+Kenya,1,1,1,1,1,1,1
+Malawi,1,1,1,1,1,1,1
+Malaysia,1,1,1,1,1,1,1
+Mali,0,0,0,0,0,0,0
+Mauritius,1,1,1,1,1,1,1
+Mexico,0,0,0,0,0,0,0
+Morocco,0,0,0,0,0,0,0
+Mozambique,1,1,1,1,1,1,1
+Myanmar,0,0,0,0,0,0,0
+Namibia,0,0,0,0,0,0,1
+Nepal,1,1,1,1,1,1,1
+Netherlands,1,1,1,1,1,1,1
+New Zealand,1,1,1,1,1,1,1
+Nigeria,1,1,1,1,1,1,1
+Norway,1,1,1,1,1,1,1
+Pakistan,1,1,1,1,1,1,1
+Peru,1,1,1,1,1,1,1
+Philippines,1,1,1,1,1,1,1
+Poland,1,1,1,1,1,1,1
+Portugal,1,1,1,1,1,1,1
+Qatar,0,0,0,0,0,0,0
+Republic Of Korea,1,1,1,1,1,1,1
+Russian Federation,1,1,1,1,1,1,1
+Rwanda,1,1,1,1,1,1,1
+Saudi Arabia,1,1,1,1,1,1,1
+Senegal,0,0,0,0,0,0,0
+Sierra Leone,0,0,0,0,0,0,0
+Singapore,1,1,1,1,1,1,1
+South Africa,1,1,1,1,1,1,1
+Spain,1,1,1,1,1,1,1
+Sweden,1,1,1,1,1,1,1
+Switzerland,1,1,1,1,1,1,1
+Thailand,1,1,1,1,1,1,1
+Tunisia,1,1,1,1,1,1,1
+Turkey,1,1,1,1,1,1,1
+Uganda,1,1,1,1,1,1,1
+Ukraine,1,1,1,1,1,1,1
+United Arab Emirates,1,1,1,1,1,1,1
+United Kingdom of Great Britain and Northern Ireland,1,1,1,1,1,1,1
+United Republic of Tanzania,1,1,1,1,1,1,1
+United States of America,1,1,1,1,1,1,1
+Uruguay,0,0,0,0,0,0,0
+Venezuela (Bolivarian Republic Of),0,0,0,0,0,0,0
+Viet Nam,1,1,1,1,1,1,1
+Yemen,0,0,0,0,0,0,0
+Zambia,1,1,1,1,1,1,1
+Zimbabwe,1,1,1,1,1,1,1
+,,,,,,,
+MEAN,0.779069767,0.779069767,0.779069767,0.779069767,0.779069767,0.779069767,0.813953488
+,,,,,,,
+SD,0.41730685,0.41730685,0.41730685,0.41730685,0.41730685,0.41730685,0.391426589
+,,,,,,,
+OBSERVATIONS,86,86,86,86,86,86,86

@@ -1,0 +1,2581 @@
+indicator,country,date,value
+wis1,Argentina,2014.0,4.0
+wis2,Argentina,2014.0,4.0
+wis3,Argentina,2014.0,5.0
+wis4,Argentina,2014.0,7.0
+wis5,Argentina,2014.0,6.0
+wis6,Argentina,2014.0,6.0
+wis7,Argentina,2014.0,7.0
+wis8,Argentina,2014.0,7.0
+wis9,Argentina,2014.0,6.0
+wis10,Argentina,2014.0,7.0
+wis11,Argentina,2014.0,8.0
+wis12,Argentina,2014.0,4.0
+wis13,Argentina,2014.0,4.0
+wip2,Argentina,2014.0,6.0
+wip3,Argentina,2014.0,5.0
+wip4,Argentina,2014.0,8.0
+wip5,Argentina,2014.0,8.0
+wip6,Argentina,2014.0,3.0
+wip7,Argentina,2014.0,2.0
+wip8,Argentina,2014.0,3.0
+wip9,Argentina,2014.0,6.0
+wip10,Argentina,2014.0,7.0
+odbc1,Argentina,2013.0,5.0
+odbi1,Argentina,2013.0,0.0
+odbi2,Argentina,2013.0,3.0
+odbi3,Argentina,2013.0,2.0
+odbi4,Argentina,2013.0,0.0
+odbi5,Argentina,2013.0,1.0
+odbi6,Argentina,2013.0,2.0
+aia13,Argentina,2014.0,5.0
+wis1,Australia,2014.0,6.0
+wis2,Australia,2014.0,8.0
+wis3,Australia,2014.0,8.0
+wis4,Australia,2014.0,8.0
+wis5,Australia,2014.0,7.0
+wis6,Australia,2014.0,10.0
+wis7,Australia,2014.0,7.0
+wis8,Australia,2014.0,7.0
+wis9,Australia,2014.0,6.0
+wis10,Australia,2014.0,8.0
+wis11,Australia,2014.0,8.0
+wis12,Australia,2014.0,8.0
+wis13,Australia,2014.0,8.0
+wip2,Australia,2014.0,7.0
+wip3,Australia,2014.0,8.0
+wip4,Australia,2014.0,7.0
+wip5,Australia,2014.0,7.0
+wip6,Australia,2014.0,7.0
+wip7,Australia,2014.0,5.0
+wip8,Australia,2014.0,8.0
+wip9,Australia,2014.0,0.0
+wip10,Australia,2014.0,8.0
+odbc1,Australia,2013.0,8.0
+odbi1,Australia,2013.0,1.0
+odbi2,Australia,2013.0,2.0
+odbi3,Australia,2013.0,2.0
+odbi4,Australia,2013.0,2.0
+odbi5,Australia,2013.0,3.0
+odbi6,Australia,2013.0,3.0
+aia13,Australia,2014.0,8.0
+wis1,Austria,2014.0,5.0
+wis2,Austria,2014.0,4.0
+wis3,Austria,2014.0,6.0
+wis4,Austria,2014.0,7.0
+wis5,Austria,2014.0,8.0
+wis6,Austria,2014.0,10.0
+wis7,Austria,2014.0,8.0
+wis8,Austria,2014.0,8.0
+wis9,Austria,2014.0,8.0
+wis10,Austria,2014.0,9.0
+wis11,Austria,2014.0,9.0
+wis12,Austria,2014.0,5.0
+wis13,Austria,2014.0,8.0
+wip2,Austria,2014.0,8.0
+wip3,Austria,2014.0,7.0
+wip4,Austria,2014.0,9.0
+wip5,Austria,2014.0,8.0
+wip6,Austria,2014.0,5.0
+wip7,Austria,2014.0,5.0
+wip8,Austria,2014.0,5.0
+wip9,Austria,2014.0,9.0
+wip10,Austria,2014.0,8.0
+odbc1,Austria,2013.0,6.0
+odbi1,Austria,2013.0,3.0
+odbi2,Austria,2013.0,4.0
+odbi3,Austria,2013.0,5.0
+odbi4,Austria,2013.0,4.0
+odbi5,Austria,2013.0,3.0
+odbi6,Austria,2013.0,6.0
+aia13,Austria,2014.0,6.0
+wis1,Bahrain,2014.0,5.0
+wis2,Bahrain,2014.0,0.0
+wis3,Bahrain,2014.0,5.0
+wis4,Bahrain,2014.0,1.0
+wis5,Bahrain,2014.0,4.0
+wis6,Bahrain,2014.0,3.0
+wis7,Bahrain,2014.0,1.0
+wis8,Bahrain,2014.0,0.0
+wis9,Bahrain,2014.0,0.0
+wis10,Bahrain,2014.0,0.0
+wis11,Bahrain,2014.0,2.0
+wis12,Bahrain,2014.0,0.0
+wis13,Bahrain,2014.0,2.0
+wip2,Bahrain,2014.0,5.0
+wip3,Bahrain,2014.0,7.0
+wip4,Bahrain,2014.0,2.0
+wip5,Bahrain,2014.0,3.0
+wip6,Bahrain,2014.0,0.0
+wip7,Bahrain,2014.0,0.0
+wip8,Bahrain,2014.0,0.0
+wip9,Bahrain,2014.0,0.0
+wip10,Bahrain,2014.0,2.0
+odbc1,Bahrain,2013.0,4.0
+odbi1,Bahrain,2013.0,0.0
+odbi2,Bahrain,2013.0,0.0
+odbi3,Bahrain,2013.0,0.0
+odbi4,Bahrain,2013.0,0.0
+odbi5,Bahrain,2013.0,0.0
+odbi6,Bahrain,2013.0,0.0
+aia13,Bahrain,2014.0,0.0
+wis1,Bangladesh,2014.0,4.0
+wis2,Bangladesh,2014.0,1.0
+wis3,Bangladesh,2014.0,3.0
+wis4,Bangladesh,2014.0,1.0
+wis5,Bangladesh,2014.0,1.0
+wis6,Bangladesh,2014.0,5.0
+wis7,Bangladesh,2014.0,3.0
+wis8,Bangladesh,2014.0,3.0
+wis9,Bangladesh,2014.0,3.0
+wis10,Bangladesh,2014.0,4.0
+wis11,Bangladesh,2014.0,5.0
+wis12,Bangladesh,2014.0,1.0
+wis13,Bangladesh,2014.0,3.0
+wip2,Bangladesh,2014.0,5.0
+wip3,Bangladesh,2014.0,5.0
+wip4,Bangladesh,2014.0,4.0
+wip5,Bangladesh,2014.0,0.0
+wip6,Bangladesh,2014.0,8.0
+wip7,Bangladesh,2014.0,3.0
+wip8,Bangladesh,2014.0,3.0
+wip9,Bangladesh,2014.0,1.0
+wip10,Bangladesh,2014.0,3.0
+odbc1,Bangladesh,2013.0,0.0
+odbi1,Bangladesh,2013.0,0.0
+odbi2,Bangladesh,2013.0,0.0
+odbi3,Bangladesh,2013.0,0.0
+odbi4,Bangladesh,2013.0,0.0
+odbi5,Bangladesh,2013.0,0.0
+odbi6,Bangladesh,2013.0,1.0
+aia13,Bangladesh,2014.0,5.0
+wis1,Belgium,2014.0,5.0
+wis2,Belgium,2014.0,5.0
+wis3,Belgium,2014.0,8.0
+wis4,Belgium,2014.0,8.0
+wis5,Belgium,2014.0,5.0
+wis6,Belgium,2014.0,10.0
+wis7,Belgium,2014.0,8.0
+wis8,Belgium,2014.0,8.0
+wis9,Belgium,2014.0,8.0
+wis10,Belgium,2014.0,9.0
+wis11,Belgium,2014.0,9.0
+wis12,Belgium,2014.0,7.0
+wis13,Belgium,2014.0,8.0
+wip2,Belgium,2014.0,8.0
+wip3,Belgium,2014.0,8.0
+wip4,Belgium,2014.0,7.0
+wip5,Belgium,2014.0,9.0
+wip6,Belgium,2014.0,8.0
+wip7,Belgium,2014.0,5.0
+wip8,Belgium,2014.0,7.0
+wip9,Belgium,2014.0,6.0
+wip10,Belgium,2014.0,8.0
+odbc1,Belgium,2013.0,8.0
+odbi1,Belgium,2013.0,2.0
+odbi2,Belgium,2013.0,4.0
+odbi3,Belgium,2013.0,0.0
+odbi4,Belgium,2013.0,3.0
+odbi5,Belgium,2013.0,5.0
+odbi6,Belgium,2013.0,4.0
+aia13,Belgium,2014.0,8.0
+wis1,Benin,2014.0,2.0
+wis2,Benin,2014.0,1.0
+wis3,Benin,2014.0,2.0
+wis4,Benin,2014.0,3.0
+wis5,Benin,2014.0,0.0
+wis6,Benin,2014.0,0.0
+wis7,Benin,2014.0,3.0
+wis8,Benin,2014.0,1.0
+wis9,Benin,2014.0,1.0
+wis10,Benin,2014.0,1.0
+wis11,Benin,2014.0,1.0
+wis12,Benin,2014.0,1.0
+wis13,Benin,2014.0,3.0
+wip2,Benin,2014.0,2.0
+wip3,Benin,2014.0,1.0
+wip4,Benin,2014.0,8.0
+wip5,Benin,2014.0,5.0
+wip6,Benin,2014.0,2.0
+wip7,Benin,2014.0,3.0
+wip8,Benin,2014.0,3.0
+wip9,Benin,2014.0,3.0
+wip10,Benin,2014.0,1.0
+odbc1,Benin,2013.0,0.0
+odbi1,Benin,2013.0,0.0
+odbi2,Benin,2013.0,0.0
+odbi3,Benin,2013.0,0.0
+odbi4,Benin,2013.0,0.0
+odbi5,Benin,2013.0,0.0
+odbi6,Benin,2013.0,0.0
+aia13,Benin,2014.0,5.0
+wis1,Botswana,2014.0,5.0
+wis2,Botswana,2014.0,2.0
+wis3,Botswana,2014.0,4.0
+wis4,Botswana,2014.0,3.0
+wis5,Botswana,2014.0,1.0
+wis6,Botswana,2014.0,2.0
+wis7,Botswana,2014.0,2.0
+wis8,Botswana,2014.0,1.0
+wis9,Botswana,2014.0,2.0
+wis10,Botswana,2014.0,0.0
+wis11,Botswana,2014.0,1.0
+wis12,Botswana,2014.0,0.0
+wis13,Botswana,2014.0,3.0
+wip2,Botswana,2014.0,3.0
+wip3,Botswana,2014.0,2.0
+wip4,Botswana,2014.0,9.0
+wip5,Botswana,2014.0,1.0
+wip6,Botswana,2014.0,1.0
+wip7,Botswana,2014.0,1.0
+wip8,Botswana,2014.0,2.0
+wip9,Botswana,2014.0,4.0
+wip10,Botswana,2014.0,3.0
+odbc1,Botswana,2013.0,2.0
+odbi1,Botswana,2013.0,0.0
+odbi2,Botswana,2013.0,0.0
+odbi3,Botswana,2013.0,0.0
+odbi4,Botswana,2013.0,0.0
+odbi5,Botswana,2013.0,0.0
+odbi6,Botswana,2013.0,0.0
+aia13,Botswana,2014.0,2.0
+wis1,Brazil,2014.0,6.0
+wis2,Brazil,2014.0,6.0
+wis3,Brazil,2014.0,4.0
+wis4,Brazil,2014.0,4.0
+wis5,Brazil,2014.0,6.0
+wis6,Brazil,2014.0,5.0
+wis7,Brazil,2014.0,8.0
+wis8,Brazil,2014.0,5.0
+wis9,Brazil,2014.0,7.0
+wis10,Brazil,2014.0,7.0
+wis11,Brazil,2014.0,6.0
+wis12,Brazil,2014.0,4.0
+wis13,Brazil,2014.0,1.0
+wip2,Brazil,2014.0,5.0
+wip3,Brazil,2014.0,8.0
+wip4,Brazil,2014.0,7.0
+wip5,Brazil,2014.0,4.0
+wip6,Brazil,2014.0,8.0
+wip7,Brazil,2014.0,7.0
+wip8,Brazil,2014.0,7.0
+wip9,Brazil,2014.0,6.0
+wip10,Brazil,2014.0,7.0
+odbc1,Brazil,2013.0,6.0
+odbi1,Brazil,2013.0,1.0
+odbi2,Brazil,2013.0,1.0
+odbi3,Brazil,2013.0,0.0
+odbi4,Brazil,2013.0,0.0
+odbi5,Brazil,2013.0,0.0
+odbi6,Brazil,2013.0,1.0
+aia13,Brazil,2014.0,7.0
+wis1,Burkina Faso,2014.0,2.0
+wis2,Burkina Faso,2014.0,0.0
+wis3,Burkina Faso,2014.0,2.0
+wis4,Burkina Faso,2014.0,0.0
+wis5,Burkina Faso,2014.0,0.0
+wis6,Burkina Faso,2014.0,1.0
+wis7,Burkina Faso,2014.0,1.0
+wis8,Burkina Faso,2014.0,0.0
+wis9,Burkina Faso,2014.0,0.0
+wis10,Burkina Faso,2014.0,0.0
+wis11,Burkina Faso,2014.0,0.0
+wis12,Burkina Faso,2014.0,0.0
+wis13,Burkina Faso,2014.0,0.0
+wip2,Burkina Faso,2014.0,4.0
+wip3,Burkina Faso,2014.0,2.0
+wip4,Burkina Faso,2014.0,7.0
+wip5,Burkina Faso,2014.0,4.0
+wip6,Burkina Faso,2014.0,3.0
+wip7,Burkina Faso,2014.0,1.0
+wip8,Burkina Faso,2014.0,6.0
+wip9,Burkina Faso,2014.0,4.0
+wip10,Burkina Faso,2014.0,4.0
+odbc1,Burkina Faso,2013.0,5.0
+odbi1,Burkina Faso,2013.0,0.0
+odbi2,Burkina Faso,2013.0,0.0
+odbi3,Burkina Faso,2013.0,0.0
+odbi4,Burkina Faso,2013.0,0.0
+odbi5,Burkina Faso,2013.0,0.0
+odbi6,Burkina Faso,2013.0,0.0
+aia13,Burkina Faso,2014.0,0.0
+wis1,Cameroon,2014.0,5.0
+wis2,Cameroon,2014.0,0.0
+wis3,Cameroon,2014.0,1.0
+wis4,Cameroon,2014.0,3.0
+wis5,Cameroon,2014.0,0.0
+wis6,Cameroon,2014.0,4.0
+wis7,Cameroon,2014.0,3.0
+wis8,Cameroon,2014.0,4.0
+wis9,Cameroon,2014.0,2.0
+wis10,Cameroon,2014.0,0.0
+wis11,Cameroon,2014.0,1.0
+wis12,Cameroon,2014.0,0.0
+wis13,Cameroon,2014.0,3.0
+wip2,Cameroon,2014.0,1.0
+wip3,Cameroon,2014.0,0.0
+wip4,Cameroon,2014.0,8.0
+wip5,Cameroon,2014.0,1.0
+wip6,Cameroon,2014.0,0.0
+wip7,Cameroon,2014.0,2.0
+wip8,Cameroon,2014.0,0.0
+wip9,Cameroon,2014.0,0.0
+wip10,Cameroon,2014.0,3.0
+odbc1,Cameroon,2013.0,0.0
+odbi1,Cameroon,2013.0,0.0
+odbi2,Cameroon,2013.0,1.0
+odbi3,Cameroon,2013.0,0.0
+odbi4,Cameroon,2013.0,0.0
+odbi5,Cameroon,2013.0,0.0
+odbi6,Cameroon,2013.0,0.0
+aia13,Cameroon,2014.0,5.0
+wis1,Canada,2014.0,7.0
+wis2,Canada,2014.0,6.0
+wis3,Canada,2014.0,5.0
+wis4,Canada,2014.0,6.0
+wis5,Canada,2014.0,8.0
+wis6,Canada,2014.0,8.0
+wis7,Canada,2014.0,7.0
+wis8,Canada,2014.0,8.0
+wis9,Canada,2014.0,7.0
+wis10,Canada,2014.0,8.0
+wis11,Canada,2014.0,8.0
+wis12,Canada,2014.0,7.0
+wis13,Canada,2014.0,7.0
+wip2,Canada,2014.0,8.0
+wip3,Canada,2014.0,7.0
+wip4,Canada,2014.0,8.0
+wip5,Canada,2014.0,7.0
+wip6,Canada,2014.0,7.0
+wip7,Canada,2014.0,6.0
+wip8,Canada,2014.0,8.0
+wip9,Canada,2014.0,2.0
+wip10,Canada,2014.0,7.0
+odbc1,Canada,2013.0,7.0
+odbi1,Canada,2013.0,3.0
+odbi2,Canada,2013.0,3.0
+odbi3,Canada,2013.0,2.0
+odbi4,Canada,2013.0,3.0
+odbi5,Canada,2013.0,2.0
+odbi6,Canada,2013.0,4.0
+aia13,Canada,2014.0,7.0
+wis1,Chile,2014.0,3.0
+wis2,Chile,2014.0,2.0
+wis3,Chile,2014.0,7.0
+wis4,Chile,2014.0,6.0
+wis5,Chile,2014.0,6.0
+wis6,Chile,2014.0,7.0
+wis7,Chile,2014.0,6.0
+wis8,Chile,2014.0,8.0
+wis9,Chile,2014.0,7.0
+wis10,Chile,2014.0,7.0
+wis11,Chile,2014.0,4.0
+wis12,Chile,2014.0,5.0
+wis13,Chile,2014.0,2.0
+wip2,Chile,2014.0,8.0
+wip3,Chile,2014.0,8.0
+wip4,Chile,2014.0,9.0
+wip5,Chile,2014.0,7.0
+wip6,Chile,2014.0,8.0
+wip7,Chile,2014.0,8.0
+wip8,Chile,2014.0,8.0
+wip9,Chile,2014.0,7.0
+wip10,Chile,2014.0,6.0
+odbc1,Chile,2013.0,7.0
+odbi1,Chile,2013.0,0.0
+odbi2,Chile,2013.0,1.0
+odbi3,Chile,2013.0,0.0
+odbi4,Chile,2013.0,0.0
+odbi5,Chile,2013.0,0.0
+odbi6,Chile,2013.0,2.0
+aia13,Chile,2014.0,7.0
+wis1,China,2014.0,7.0
+wis2,China,2014.0,7.0
+wis3,China,2014.0,7.0
+wis4,China,2014.0,7.0
+wis5,China,2014.0,6.0
+wis6,China,2014.0,5.0
+wis7,China,2014.0,7.0
+wis8,China,2014.0,8.0
+wis9,China,2014.0,5.0
+wis10,China,2014.0,4.0
+wis11,China,2014.0,5.0
+wis12,China,2014.0,5.0
+wis13,China,2014.0,5.0
+wip2,China,2014.0,5.0
+wip3,China,2014.0,8.0
+wip4,China,2014.0,0.0
+wip5,China,2014.0,2.0
+wip6,China,2014.0,4.0
+wip7,China,2014.0,0.0
+wip8,China,2014.0,4.0
+wip9,China,2014.0,0.0
+wip10,China,2014.0,5.0
+odbc1,China,2013.0,3.0
+odbi1,China,2013.0,2.0
+odbi2,China,2013.0,1.0
+odbi3,China,2013.0,1.0
+odbi4,China,2013.0,0.0
+odbi5,China,2013.0,1.0
+odbi6,China,2013.0,1.0
+aia13,China,2014.0,6.0
+wis1,Colombia,2014.0,4.0
+wis2,Colombia,2014.0,3.0
+wis3,Colombia,2014.0,6.0
+wis4,Colombia,2014.0,7.0
+wis5,Colombia,2014.0,5.0
+wis6,Colombia,2014.0,2.0
+wis7,Colombia,2014.0,6.0
+wis8,Colombia,2014.0,3.0
+wis9,Colombia,2014.0,5.0
+wis10,Colombia,2014.0,6.0
+wis11,Colombia,2014.0,4.0
+wis12,Colombia,2014.0,0.0
+wis13,Colombia,2014.0,5.0
+wip2,Colombia,2014.0,5.0
+wip3,Colombia,2014.0,7.0
+wip4,Colombia,2014.0,8.0
+wip5,Colombia,2014.0,7.0
+wip6,Colombia,2014.0,7.0
+wip7,Colombia,2014.0,6.0
+wip8,Colombia,2014.0,3.0
+wip9,Colombia,2014.0,5.0
+wip10,Colombia,2014.0,7.0
+odbc1,Colombia,2013.0,6.0
+odbi1,Colombia,2013.0,1.0
+odbi2,Colombia,2013.0,2.0
+odbi3,Colombia,2013.0,1.0
+odbi4,Colombia,2013.0,0.0
+odbi5,Colombia,2013.0,1.0
+odbi6,Colombia,2013.0,2.0
+aia13,Colombia,2014.0,5.0
+wis1,Costa Rica,2014.0,5.0
+wis2,Costa Rica,2014.0,4.0
+wis3,Costa Rica,2014.0,7.0
+wis4,Costa Rica,2014.0,2.0
+wis5,Costa Rica,2014.0,5.0
+wis6,Costa Rica,2014.0,6.0
+wis7,Costa Rica,2014.0,6.0
+wis8,Costa Rica,2014.0,7.0
+wis9,Costa Rica,2014.0,6.0
+wis10,Costa Rica,2014.0,4.0
+wis11,Costa Rica,2014.0,4.0
+wis12,Costa Rica,2014.0,4.0
+wis13,Costa Rica,2014.0,4.0
+wip2,Costa Rica,2014.0,7.0
+wip3,Costa Rica,2014.0,6.0
+wip4,Costa Rica,2014.0,9.0
+wip5,Costa Rica,2014.0,6.0
+wip6,Costa Rica,2014.0,4.0
+wip7,Costa Rica,2014.0,2.0
+wip8,Costa Rica,2014.0,7.0
+wip9,Costa Rica,2014.0,6.0
+wip10,Costa Rica,2014.0,7.0
+odbc1,Costa Rica,2013.0,6.0
+odbi1,Costa Rica,2013.0,0.0
+odbi2,Costa Rica,2013.0,0.0
+odbi3,Costa Rica,2013.0,0.0
+odbi4,Costa Rica,2013.0,0.0
+odbi5,Costa Rica,2013.0,0.0
+odbi6,Costa Rica,2013.0,2.0
+aia13,Costa Rica,2014.0,6.0
+wis1,Czech Republic,2014.0,1.0
+wis2,Czech Republic,2014.0,2.0
+wis3,Czech Republic,2014.0,4.0
+wis4,Czech Republic,2014.0,5.0
+wis5,Czech Republic,2014.0,6.0
+wis6,Czech Republic,2014.0,5.0
+wis7,Czech Republic,2014.0,5.0
+wis8,Czech Republic,2014.0,6.0
+wis9,Czech Republic,2014.0,5.0
+wis10,Czech Republic,2014.0,5.0
+wis11,Czech Republic,2014.0,3.0
+wis12,Czech Republic,2014.0,3.0
+wis13,Czech Republic,2014.0,5.0
+wip2,Czech Republic,2014.0,8.0
+wip3,Czech Republic,2014.0,6.0
+wip4,Czech Republic,2014.0,10.0
+wip5,Czech Republic,2014.0,7.0
+wip6,Czech Republic,2014.0,7.0
+wip7,Czech Republic,2014.0,7.0
+wip8,Czech Republic,2014.0,5.0
+wip9,Czech Republic,2014.0,5.0
+wip10,Czech Republic,2014.0,7.0
+odbc1,Czech Republic,2013.0,5.0
+odbi1,Czech Republic,2013.0,4.0
+odbi2,Czech Republic,2013.0,2.0
+odbi3,Czech Republic,2013.0,3.0
+odbi4,Czech Republic,2013.0,0.0
+odbi5,Czech Republic,2013.0,2.0
+odbi6,Czech Republic,2013.0,4.0
+aia13,Czech Republic,2014.0,6.0
+wis1,Denmark,2014.0,7.0
+wis2,Denmark,2014.0,8.0
+wis3,Denmark,2014.0,8.0
+wis4,Denmark,2014.0,8.0
+wis5,Denmark,2014.0,8.0
+wis6,Denmark,2014.0,9.0
+wis7,Denmark,2014.0,8.0
+wis8,Denmark,2014.0,9.0
+wis9,Denmark,2014.0,9.0
+wis10,Denmark,2014.0,9.0
+wis11,Denmark,2014.0,9.0
+wis12,Denmark,2014.0,8.0
+wis13,Denmark,2014.0,8.0
+wip2,Denmark,2014.0,8.0
+wip3,Denmark,2014.0,8.0
+wip4,Denmark,2014.0,9.0
+wip5,Denmark,2014.0,8.0
+wip6,Denmark,2014.0,7.0
+wip7,Denmark,2014.0,7.0
+wip8,Denmark,2014.0,8.0
+wip9,Denmark,2014.0,5.0
+wip10,Denmark,2014.0,8.0
+odbc1,Denmark,2013.0,8.0
+odbi1,Denmark,2013.0,6.0
+odbi2,Denmark,2013.0,4.0
+odbi3,Denmark,2013.0,3.0
+odbi4,Denmark,2013.0,3.0
+odbi5,Denmark,2013.0,6.0
+odbi6,Denmark,2013.0,7.0
+aia13,Denmark,2014.0,9.0
+wis1,Ecuador,2014.0,2.0
+wis2,Ecuador,2014.0,2.0
+wis3,Ecuador,2014.0,4.0
+wis4,Ecuador,2014.0,5.0
+wis5,Ecuador,2014.0,4.0
+wis6,Ecuador,2014.0,3.0
+wis7,Ecuador,2014.0,5.0
+wis8,Ecuador,2014.0,4.0
+wis9,Ecuador,2014.0,5.0
+wis10,Ecuador,2014.0,6.0
+wis11,Ecuador,2014.0,1.0
+wis12,Ecuador,2014.0,1.0
+wis13,Ecuador,2014.0,2.0
+wip2,Ecuador,2014.0,6.0
+wip3,Ecuador,2014.0,5.0
+wip4,Ecuador,2014.0,5.0
+wip5,Ecuador,2014.0,6.0
+wip6,Ecuador,2014.0,6.0
+wip7,Ecuador,2014.0,0.0
+wip8,Ecuador,2014.0,0.0
+wip9,Ecuador,2014.0,5.0
+wip10,Ecuador,2014.0,5.0
+odbc1,Ecuador,2013.0,2.0
+odbi1,Ecuador,2013.0,0.0
+odbi2,Ecuador,2013.0,1.0
+odbi3,Ecuador,2013.0,1.0
+odbi4,Ecuador,2013.0,0.0
+odbi5,Ecuador,2013.0,0.0
+odbi6,Ecuador,2013.0,0.0
+aia13,Ecuador,2014.0,6.0
+wis1,Egypt,2014.0,3.0
+wis2,Egypt,2014.0,4.0
+wis3,Egypt,2014.0,5.0
+wis4,Egypt,2014.0,2.0
+wis5,Egypt,2014.0,3.0
+wis6,Egypt,2014.0,2.0
+wis7,Egypt,2014.0,4.0
+wis8,Egypt,2014.0,2.0
+wis9,Egypt,2014.0,5.0
+wis10,Egypt,2014.0,2.0
+wis11,Egypt,2014.0,5.0
+wis12,Egypt,2014.0,0.0
+wis13,Egypt,2014.0,2.0
+wip2,Egypt,2014.0,5.0
+wip3,Egypt,2014.0,8.0
+wip4,Egypt,2014.0,4.0
+wip5,Egypt,2014.0,2.0
+wip6,Egypt,2014.0,2.0
+wip7,Egypt,2014.0,0.0
+wip8,Egypt,2014.0,2.0
+wip9,Egypt,2014.0,0.0
+wip10,Egypt,2014.0,1.0
+odbc1,Egypt,2013.0,3.0
+odbi1,Egypt,2013.0,0.0
+odbi2,Egypt,2013.0,0.0
+odbi3,Egypt,2013.0,0.0
+odbi4,Egypt,2013.0,0.0
+odbi5,Egypt,2013.0,0.0
+odbi6,Egypt,2013.0,0.0
+aia13,Egypt,2014.0,4.0
+wis1,Estonia,2014.0,7.0
+wis2,Estonia,2014.0,4.0
+wis3,Estonia,2014.0,8.0
+wis4,Estonia,2014.0,6.0
+wis5,Estonia,2014.0,6.0
+wis6,Estonia,2014.0,6.0
+wis7,Estonia,2014.0,9.0
+wis8,Estonia,2014.0,6.0
+wis9,Estonia,2014.0,4.0
+wis10,Estonia,2014.0,8.0
+wis11,Estonia,2014.0,7.0
+wis12,Estonia,2014.0,6.0
+wis13,Estonia,2014.0,9.0
+wip2,Estonia,2014.0,9.0
+wip3,Estonia,2014.0,7.0
+wip4,Estonia,2014.0,9.0
+wip5,Estonia,2014.0,8.0
+wip6,Estonia,2014.0,8.0
+wip7,Estonia,2014.0,5.0
+wip8,Estonia,2014.0,4.0
+wip9,Estonia,2014.0,6.0
+wip10,Estonia,2014.0,7.0
+odbc1,Estonia,2013.0,6.0
+odbi1,Estonia,2013.0,3.0
+odbi2,Estonia,2013.0,4.0
+odbi3,Estonia,2013.0,2.0
+odbi4,Estonia,2013.0,2.0
+odbi5,Estonia,2013.0,4.0
+odbi6,Estonia,2013.0,5.0
+aia13,Estonia,2014.0,10.0
+wis1,Ethiopia,2014.0,3.0
+wis2,Ethiopia,2014.0,2.0
+wis3,Ethiopia,2014.0,2.0
+wis4,Ethiopia,2014.0,3.0
+wis5,Ethiopia,2014.0,1.0
+wis6,Ethiopia,2014.0,1.0
+wis7,Ethiopia,2014.0,3.0
+wis8,Ethiopia,2014.0,0.0
+wis9,Ethiopia,2014.0,0.0
+wis10,Ethiopia,2014.0,0.0
+wis11,Ethiopia,2014.0,0.0
+wis12,Ethiopia,2014.0,0.0
+wis13,Ethiopia,2014.0,0.0
+wip2,Ethiopia,2014.0,1.0
+wip3,Ethiopia,2014.0,0.0
+wip4,Ethiopia,2014.0,0.0
+wip5,Ethiopia,2014.0,1.0
+wip6,Ethiopia,2014.0,4.0
+wip7,Ethiopia,2014.0,0.0
+wip8,Ethiopia,2014.0,0.0
+wip9,Ethiopia,2014.0,0.0
+wip10,Ethiopia,2014.0,0.0
+odbc1,Ethiopia,2013.0,0.0
+odbi1,Ethiopia,2013.0,0.0
+odbi2,Ethiopia,2013.0,0.0
+odbi3,Ethiopia,2013.0,0.0
+odbi4,Ethiopia,2013.0,0.0
+odbi5,Ethiopia,2013.0,0.0
+odbi6,Ethiopia,2013.0,0.0
+aia13,Ethiopia,2014.0,0.0
+wis1,Finland,2014.0,8.0
+wis2,Finland,2014.0,7.0
+wis3,Finland,2014.0,7.0
+wis4,Finland,2014.0,7.0
+wis5,Finland,2014.0,8.0
+wis6,Finland,2014.0,10.0
+wis7,Finland,2014.0,8.0
+wis8,Finland,2014.0,7.0
+wis9,Finland,2014.0,8.0
+wis10,Finland,2014.0,9.0
+wis11,Finland,2014.0,8.0
+wis12,Finland,2014.0,8.0
+wis13,Finland,2014.0,8.0
+wip2,Finland,2014.0,9.0
+wip3,Finland,2014.0,8.0
+wip4,Finland,2014.0,9.0
+wip5,Finland,2014.0,9.0
+wip6,Finland,2014.0,9.0
+wip7,Finland,2014.0,6.0
+wip8,Finland,2014.0,9.0
+wip9,Finland,2014.0,9.0
+wip10,Finland,2014.0,9.0
+odbc1,Finland,2013.0,7.0
+odbi1,Finland,2013.0,1.0
+odbi2,Finland,2013.0,5.0
+odbi3,Finland,2013.0,3.0
+odbi4,Finland,2013.0,3.0
+odbi5,Finland,2013.0,6.0
+odbi6,Finland,2013.0,6.0
+aia13,Finland,2014.0,9.0
+wis1,France,2014.0,7.0
+wis2,France,2014.0,5.0
+wis3,France,2014.0,7.0
+wis4,France,2014.0,7.0
+wis5,France,2014.0,6.0
+wis6,France,2014.0,10.0
+wis7,France,2014.0,7.0
+wis8,France,2014.0,7.0
+wis9,France,2014.0,8.0
+wis10,France,2014.0,9.0
+wis11,France,2014.0,9.0
+wis12,France,2014.0,8.0
+wis13,France,2014.0,5.0
+wip2,France,2014.0,8.0
+wip3,France,2014.0,7.0
+wip4,France,2014.0,8.0
+wip5,France,2014.0,8.0
+wip6,France,2014.0,7.0
+wip7,France,2014.0,6.0
+wip8,France,2014.0,6.0
+wip9,France,2014.0,2.0
+wip10,France,2014.0,8.0
+odbc1,France,2013.0,9.0
+odbi1,France,2013.0,4.0
+odbi2,France,2013.0,5.0
+odbi3,France,2013.0,2.0
+odbi4,France,2013.0,3.0
+odbi5,France,2013.0,5.0
+odbi6,France,2013.0,7.0
+aia13,France,2014.0,8.0
+wis1,Germany,2014.0,5.0
+wis2,Germany,2014.0,5.0
+wis3,Germany,2014.0,6.0
+wis4,Germany,2014.0,8.0
+wis5,Germany,2014.0,7.0
+wis6,Germany,2014.0,10.0
+wis7,Germany,2014.0,8.0
+wis8,Germany,2014.0,7.0
+wis9,Germany,2014.0,8.0
+wis10,Germany,2014.0,9.0
+wis11,Germany,2014.0,9.0
+wis12,Germany,2014.0,7.0
+wis13,Germany,2014.0,8.0
+wip2,Germany,2014.0,9.0
+wip3,Germany,2014.0,8.0
+wip4,Germany,2014.0,8.0
+wip5,Germany,2014.0,10.0
+wip6,Germany,2014.0,7.0
+wip7,Germany,2014.0,6.0
+wip8,Germany,2014.0,7.0
+wip9,Germany,2014.0,4.0
+wip10,Germany,2014.0,8.0
+odbc1,Germany,2013.0,6.0
+odbi1,Germany,2013.0,3.0
+odbi2,Germany,2013.0,5.0
+odbi3,Germany,2013.0,3.0
+odbi4,Germany,2013.0,0.0
+odbi5,Germany,2013.0,2.0
+odbi6,Germany,2013.0,5.0
+aia13,Germany,2014.0,7.0
+wis1,Ghana,2014.0,3.0
+wis2,Ghana,2014.0,1.0
+wis3,Ghana,2014.0,1.0
+wis4,Ghana,2014.0,2.0
+wis5,Ghana,2014.0,1.0
+wis6,Ghana,2014.0,3.0
+wis7,Ghana,2014.0,1.0
+wis8,Ghana,2014.0,3.0
+wis9,Ghana,2014.0,0.0
+wis10,Ghana,2014.0,1.0
+wis11,Ghana,2014.0,0.0
+wis12,Ghana,2014.0,0.0
+wis13,Ghana,2014.0,2.0
+wip2,Ghana,2014.0,3.0
+wip3,Ghana,2014.0,3.0
+wip4,Ghana,2014.0,9.0
+wip5,Ghana,2014.0,6.0
+wip6,Ghana,2014.0,2.0
+wip7,Ghana,2014.0,5.0
+wip8,Ghana,2014.0,2.0
+wip9,Ghana,2014.0,2.0
+wip10,Ghana,2014.0,3.0
+odbc1,Ghana,2013.0,3.0
+odbi1,Ghana,2013.0,0.0
+odbi2,Ghana,2013.0,0.0
+odbi3,Ghana,2013.0,0.0
+odbi4,Ghana,2013.0,0.0
+odbi5,Ghana,2013.0,0.0
+odbi6,Ghana,2013.0,0.0
+aia13,Ghana,2014.0,5.0
+wis1,Greece,2014.0,2.0
+wis2,Greece,2014.0,3.0
+wis3,Greece,2014.0,7.0
+wis4,Greece,2014.0,5.0
+wis5,Greece,2014.0,4.0
+wis6,Greece,2014.0,5.0
+wis7,Greece,2014.0,6.0
+wis8,Greece,2014.0,4.0
+wis9,Greece,2014.0,0.0
+wis10,Greece,2014.0,7.0
+wis11,Greece,2014.0,5.0
+wis12,Greece,2014.0,6.0
+wis13,Greece,2014.0,0.0
+wip2,Greece,2014.0,7.0
+wip3,Greece,2014.0,5.0
+wip4,Greece,2014.0,9.0
+wip5,Greece,2014.0,8.0
+wip6,Greece,2014.0,5.0
+wip7,Greece,2014.0,5.0
+wip8,Greece,2014.0,6.0
+wip9,Greece,2014.0,8.0
+wip10,Greece,2014.0,5.0
+odbc1,Greece,2013.0,5.0
+odbi1,Greece,2013.0,0.0
+odbi2,Greece,2013.0,5.0
+odbi3,Greece,2013.0,0.0
+odbi4,Greece,2013.0,0.0
+odbi5,Greece,2013.0,0.0
+odbi6,Greece,2013.0,1.0
+aia13,Greece,2014.0,5.0
+wis1,Haiti,2014.0,1.0
+wis2,Haiti,2014.0,1.0
+wis3,Haiti,2014.0,5.0
+wis4,Haiti,2014.0,4.0
+wis5,Haiti,2014.0,0.0
+wis6,Haiti,2014.0,3.0
+wis7,Haiti,2014.0,1.0
+wis8,Haiti,2014.0,1.0
+wis9,Haiti,2014.0,0.0
+wis10,Haiti,2014.0,1.0
+wis11,Haiti,2014.0,0.0
+wis12,Haiti,2014.0,1.0
+wis13,Haiti,2014.0,1.0
+wip2,Haiti,2014.0,3.0
+wip3,Haiti,2014.0,2.0
+wip4,Haiti,2014.0,9.0
+wip5,Haiti,2014.0,0.0
+wip6,Haiti,2014.0,1.0
+wip7,Haiti,2014.0,3.0
+wip8,Haiti,2014.0,0.0
+wip9,Haiti,2014.0,0.0
+wip10,Haiti,2014.0,1.0
+odbc1,Haiti,2013.0,0.0
+odbi1,Haiti,2013.0,0.0
+odbi2,Haiti,2013.0,0.0
+odbi3,Haiti,2013.0,0.0
+odbi4,Haiti,2013.0,0.0
+odbi5,Haiti,2013.0,0.0
+odbi6,Haiti,2013.0,0.0
+aia13,Haiti,2014.0,0.0
+wis1,Hungary,2014.0,5.0
+wis2,Hungary,2014.0,4.0
+wis3,Hungary,2014.0,4.0
+wis4,Hungary,2014.0,5.0
+wis5,Hungary,2014.0,5.0
+wis6,Hungary,2014.0,9.0
+wis7,Hungary,2014.0,6.0
+wis8,Hungary,2014.0,8.0
+wis9,Hungary,2014.0,6.0
+wis10,Hungary,2014.0,6.0
+wis11,Hungary,2014.0,6.0
+wis12,Hungary,2014.0,6.0
+wis13,Hungary,2014.0,4.0
+wip2,Hungary,2014.0,9.0
+wip3,Hungary,2014.0,6.0
+wip4,Hungary,2014.0,5.0
+wip5,Hungary,2014.0,6.0
+wip6,Hungary,2014.0,6.0
+wip7,Hungary,2014.0,6.0
+wip8,Hungary,2014.0,8.0
+wip9,Hungary,2014.0,1.0
+wip10,Hungary,2014.0,5.0
+odbc1,Hungary,2013.0,3.0
+odbi1,Hungary,2013.0,2.0
+odbi2,Hungary,2013.0,4.0
+odbi3,Hungary,2013.0,1.0
+odbi4,Hungary,2013.0,0.0
+odbi5,Hungary,2013.0,2.0
+odbi6,Hungary,2013.0,2.0
+aia13,Hungary,2014.0,5.0
+wis1,Iceland,2014.0,7.0
+wis2,Iceland,2014.0,4.0
+wis3,Iceland,2014.0,7.0
+wis4,Iceland,2014.0,7.0
+wis5,Iceland,2014.0,8.0
+wis6,Iceland,2014.0,7.0
+wis7,Iceland,2014.0,7.0
+wis8,Iceland,2014.0,7.0
+wis9,Iceland,2014.0,9.0
+wis10,Iceland,2014.0,9.0
+wis11,Iceland,2014.0,9.0
+wis12,Iceland,2014.0,4.0
+wis13,Iceland,2014.0,9.0
+wip2,Iceland,2014.0,9.0
+wip3,Iceland,2014.0,8.0
+wip4,Iceland,2014.0,9.0
+wip5,Iceland,2014.0,9.0
+wip6,Iceland,2014.0,9.0
+wip7,Iceland,2014.0,7.0
+wip8,Iceland,2014.0,9.0
+wip9,Iceland,2014.0,8.0
+wip10,Iceland,2014.0,8.0
+odbc1,Iceland,2013.0,5.0
+odbi1,Iceland,2013.0,1.0
+odbi2,Iceland,2013.0,4.0
+odbi3,Iceland,2013.0,0.0
+odbi4,Iceland,2013.0,1.0
+odbi5,Iceland,2013.0,5.0
+odbi6,Iceland,2013.0,5.0
+aia13,Iceland,2014.0,9.0
+wis1,India,2014.0,3.0
+wis2,India,2014.0,4.0
+wis3,India,2014.0,6.0
+wis4,India,2014.0,5.0
+wis5,India,2014.0,6.0
+wis6,India,2014.0,4.0
+wis7,India,2014.0,6.0
+wis8,India,2014.0,5.0
+wis9,India,2014.0,2.0
+wis10,India,2014.0,3.0
+wis11,India,2014.0,3.0
+wis12,India,2014.0,7.0
+wis13,India,2014.0,4.0
+wip2,India,2014.0,7.0
+wip3,India,2014.0,8.0
+wip4,India,2014.0,4.0
+wip5,India,2014.0,5.0
+wip6,India,2014.0,8.0
+wip7,India,2014.0,2.0
+wip8,India,2014.0,6.0
+wip9,India,2014.0,3.0
+wip10,India,2014.0,5.0
+odbc1,India,2013.0,5.0
+odbi1,India,2013.0,0.0
+odbi2,India,2013.0,1.0
+odbi3,India,2013.0,0.0
+odbi4,India,2013.0,0.0
+odbi5,India,2013.0,0.0
+odbi6,India,2013.0,0.0
+aia13,India,2014.0,5.0
+wis1,Indonesia,2014.0,3.0
+wis2,Indonesia,2014.0,3.0
+wis3,Indonesia,2014.0,2.0
+wis4,Indonesia,2014.0,3.0
+wis5,Indonesia,2014.0,3.0
+wis6,Indonesia,2014.0,4.0
+wis7,Indonesia,2014.0,2.0
+wis8,Indonesia,2014.0,2.0
+wis9,Indonesia,2014.0,4.0
+wis10,Indonesia,2014.0,5.0
+wis11,Indonesia,2014.0,2.0
+wis12,Indonesia,2014.0,1.0
+wis13,Indonesia,2014.0,3.0
+wip2,Indonesia,2014.0,5.0
+wip3,Indonesia,2014.0,6.0
+wip4,Indonesia,2014.0,5.0
+wip5,Indonesia,2014.0,4.0
+wip6,Indonesia,2014.0,6.0
+wip7,Indonesia,2014.0,0.0
+wip8,Indonesia,2014.0,3.0
+wip9,Indonesia,2014.0,2.0
+wip10,Indonesia,2014.0,3.0
+odbc1,Indonesia,2013.0,5.0
+odbi1,Indonesia,2013.0,1.0
+odbi2,Indonesia,2013.0,1.0
+odbi3,Indonesia,2013.0,0.0
+odbi4,Indonesia,2013.0,2.0
+odbi5,Indonesia,2013.0,0.0
+odbi6,Indonesia,2013.0,0.0
+aia13,Indonesia,2014.0,5.0
+wis1,Ireland,2014.0,4.0
+wis2,Ireland,2014.0,4.0
+wis3,Ireland,2014.0,7.0
+wis4,Ireland,2014.0,7.0
+wis5,Ireland,2014.0,6.0
+wis6,Ireland,2014.0,8.0
+wis7,Ireland,2014.0,7.0
+wis8,Ireland,2014.0,5.0
+wis9,Ireland,2014.0,6.0
+wis10,Ireland,2014.0,5.0
+wis11,Ireland,2014.0,6.0
+wis12,Ireland,2014.0,7.0
+wis13,Ireland,2014.0,6.0
+wip2,Ireland,2014.0,8.0
+wip3,Ireland,2014.0,8.0
+wip4,Ireland,2014.0,8.0
+wip5,Ireland,2014.0,8.0
+wip6,Ireland,2014.0,7.0
+wip7,Ireland,2014.0,6.0
+wip8,Ireland,2014.0,7.0
+wip9,Ireland,2014.0,4.0
+wip10,Ireland,2014.0,7.0
+odbc1,Ireland,2013.0,4.0
+odbi1,Ireland,2013.0,1.0
+odbi2,Ireland,2013.0,1.0
+odbi3,Ireland,2013.0,0.0
+odbi4,Ireland,2013.0,0.0
+odbi5,Ireland,2013.0,0.0
+odbi6,Ireland,2013.0,3.0
+aia13,Ireland,2014.0,5.0
+wis1,Israel,2014.0,4.0
+wis2,Israel,2014.0,4.0
+wis3,Israel,2014.0,6.0
+wis4,Israel,2014.0,8.0
+wis5,Israel,2014.0,8.0
+wis6,Israel,2014.0,8.0
+wis7,Israel,2014.0,9.0
+wis8,Israel,2014.0,8.0
+wis9,Israel,2014.0,6.0
+wis10,Israel,2014.0,7.0
+wis11,Israel,2014.0,6.0
+wis12,Israel,2014.0,3.0
+wis13,Israel,2014.0,5.0
+wip2,Israel,2014.0,9.0
+wip3,Israel,2014.0,8.0
+wip4,Israel,2014.0,5.0
+wip5,Israel,2014.0,7.0
+wip6,Israel,2014.0,5.0
+wip7,Israel,2014.0,8.0
+wip8,Israel,2014.0,4.0
+wip9,Israel,2014.0,3.0
+wip10,Israel,2014.0,6.0
+odbc1,Israel,2013.0,5.0
+odbi1,Israel,2013.0,3.0
+odbi2,Israel,2013.0,5.0
+odbi3,Israel,2013.0,0.0
+odbi4,Israel,2013.0,1.0
+odbi5,Israel,2013.0,0.0
+odbi6,Israel,2013.0,5.0
+aia13,Israel,2014.0,8.0
+wis1,Italy,2014.0,4.0
+wis2,Italy,2014.0,2.0
+wis3,Italy,2014.0,4.0
+wis4,Italy,2014.0,4.0
+wis5,Italy,2014.0,7.0
+wis6,Italy,2014.0,3.0
+wis7,Italy,2014.0,4.0
+wis8,Italy,2014.0,8.0
+wis9,Italy,2014.0,6.0
+wis10,Italy,2014.0,4.0
+wis11,Italy,2014.0,4.0
+wis12,Italy,2014.0,8.0
+wis13,Italy,2014.0,0.0
+wip2,Italy,2014.0,9.0
+wip3,Italy,2014.0,8.0
+wip4,Italy,2014.0,7.0
+wip5,Italy,2014.0,8.0
+wip6,Italy,2014.0,4.0
+wip7,Italy,2014.0,2.0
+wip8,Italy,2014.0,6.0
+wip9,Italy,2014.0,4.0
+wip10,Italy,2014.0,8.0
+odbc1,Italy,2013.0,6.0
+odbi1,Italy,2013.0,3.0
+odbi2,Italy,2013.0,2.0
+odbi3,Italy,2013.0,1.0
+odbi4,Italy,2013.0,0.0
+odbi5,Italy,2013.0,2.0
+odbi6,Italy,2013.0,4.0
+aia13,Italy,2014.0,5.0
+wis1,Jamaica,2014.0,2.0
+wis2,Jamaica,2014.0,1.0
+wis3,Jamaica,2014.0,5.0
+wis4,Jamaica,2014.0,3.0
+wis5,Jamaica,2014.0,5.0
+wis6,Jamaica,2014.0,5.0
+wis7,Jamaica,2014.0,4.0
+wis8,Jamaica,2014.0,4.0
+wis9,Jamaica,2014.0,2.0
+wis10,Jamaica,2014.0,4.0
+wis11,Jamaica,2014.0,2.0
+wis12,Jamaica,2014.0,4.0
+wis13,Jamaica,2014.0,2.0
+wip2,Jamaica,2014.0,5.0
+wip3,Jamaica,2014.0,5.0
+wip4,Jamaica,2014.0,9.0
+wip5,Jamaica,2014.0,2.0
+wip6,Jamaica,2014.0,6.0
+wip7,Jamaica,2014.0,3.0
+wip8,Jamaica,2014.0,5.0
+wip9,Jamaica,2014.0,5.0
+wip10,Jamaica,2014.0,6.0
+odbc1,Jamaica,2013.0,3.0
+odbi1,Jamaica,2013.0,0.0
+odbi2,Jamaica,2013.0,0.0
+odbi3,Jamaica,2013.0,0.0
+odbi4,Jamaica,2013.0,1.0
+odbi5,Jamaica,2013.0,0.0
+odbi6,Jamaica,2013.0,2.0
+aia13,Jamaica,2014.0,5.0
+wis1,Japan,2014.0,7.0
+wis2,Japan,2014.0,5.0
+wis3,Japan,2014.0,7.0
+wis4,Japan,2014.0,6.0
+wis5,Japan,2014.0,7.0
+wis6,Japan,2014.0,8.0
+wis7,Japan,2014.0,8.0
+wis8,Japan,2014.0,7.0
+wis9,Japan,2014.0,4.0
+wis10,Japan,2014.0,7.0
+wis11,Japan,2014.0,5.0
+wis12,Japan,2014.0,4.0
+wis13,Japan,2014.0,7.0
+wip2,Japan,2014.0,8.0
+wip3,Japan,2014.0,7.0
+wip4,Japan,2014.0,6.0
+wip5,Japan,2014.0,7.0
+wip6,Japan,2014.0,7.0
+wip7,Japan,2014.0,7.0
+wip8,Japan,2014.0,8.0
+wip9,Japan,2014.0,5.0
+wip10,Japan,2014.0,8.0
+odbc1,Japan,2013.0,7.0
+odbi1,Japan,2013.0,1.0
+odbi2,Japan,2013.0,1.0
+odbi3,Japan,2013.0,5.0
+odbi4,Japan,2013.0,0.0
+odbi5,Japan,2013.0,1.0
+odbi6,Japan,2013.0,2.0
+aia13,Japan,2014.0,7.0
+wis1,Jordan,2014.0,3.0
+wis2,Jordan,2014.0,1.0
+wis3,Jordan,2014.0,1.0
+wis4,Jordan,2014.0,2.0
+wis5,Jordan,2014.0,2.0
+wis6,Jordan,2014.0,2.0
+wis7,Jordan,2014.0,4.0
+wis8,Jordan,2014.0,2.0
+wis9,Jordan,2014.0,0.0
+wis10,Jordan,2014.0,0.0
+wis11,Jordan,2014.0,2.0
+wis12,Jordan,2014.0,0.0
+wis13,Jordan,2014.0,0.0
+wip2,Jordan,2014.0,2.0
+wip3,Jordan,2014.0,6.0
+wip4,Jordan,2014.0,2.0
+wip5,Jordan,2014.0,1.0
+wip6,Jordan,2014.0,2.0
+wip7,Jordan,2014.0,0.0
+wip8,Jordan,2014.0,2.0
+wip9,Jordan,2014.0,1.0
+wip10,Jordan,2014.0,2.0
+odbc1,Jordan,2013.0,4.0
+odbi1,Jordan,2013.0,0.0
+odbi2,Jordan,2013.0,0.0
+odbi3,Jordan,2013.0,0.0
+odbi4,Jordan,2013.0,0.0
+odbi5,Jordan,2013.0,0.0
+odbi6,Jordan,2013.0,0.0
+aia13,Jordan,2014.0,0.0
+wis1,Kazakhstan,2014.0,3.0
+wis2,Kazakhstan,2014.0,1.0
+wis3,Kazakhstan,2014.0,1.0
+wis4,Kazakhstan,2014.0,5.0
+wis5,Kazakhstan,2014.0,4.0
+wis6,Kazakhstan,2014.0,6.0
+wis7,Kazakhstan,2014.0,3.0
+wis8,Kazakhstan,2014.0,3.0
+wis9,Kazakhstan,2014.0,0.0
+wis10,Kazakhstan,2014.0,5.0
+wis11,Kazakhstan,2014.0,1.0
+wis12,Kazakhstan,2014.0,2.0
+wis13,Kazakhstan,2014.0,3.0
+wip2,Kazakhstan,2014.0,3.0
+wip3,Kazakhstan,2014.0,2.0
+wip4,Kazakhstan,2014.0,0.0
+wip5,Kazakhstan,2014.0,6.0
+wip6,Kazakhstan,2014.0,1.0
+wip7,Kazakhstan,2014.0,3.0
+wip8,Kazakhstan,2014.0,3.0
+wip9,Kazakhstan,2014.0,3.0
+wip10,Kazakhstan,2014.0,2.0
+odbc1,Kazakhstan,2013.0,3.0
+odbi1,Kazakhstan,2013.0,0.0
+odbi2,Kazakhstan,2013.0,1.0
+odbi3,Kazakhstan,2013.0,0.0
+odbi4,Kazakhstan,2013.0,0.0
+odbi5,Kazakhstan,2013.0,0.0
+odbi6,Kazakhstan,2013.0,0.0
+aia13,Kazakhstan,2014.0,3.0
+wis1,Kenya,2014.0,3.0
+wis2,Kenya,2014.0,5.0
+wis3,Kenya,2014.0,6.0
+wis4,Kenya,2014.0,5.0
+wis5,Kenya,2014.0,5.0
+wis6,Kenya,2014.0,5.0
+wis7,Kenya,2014.0,5.0
+wis8,Kenya,2014.0,4.0
+wis9,Kenya,2014.0,3.0
+wis10,Kenya,2014.0,4.0
+wis11,Kenya,2014.0,4.0
+wis12,Kenya,2014.0,0.0
+wis13,Kenya,2014.0,1.0
+wip2,Kenya,2014.0,6.0
+wip3,Kenya,2014.0,6.0
+wip4,Kenya,2014.0,7.0
+wip5,Kenya,2014.0,4.0
+wip6,Kenya,2014.0,4.0
+wip7,Kenya,2014.0,5.0
+wip8,Kenya,2014.0,2.0
+wip9,Kenya,2014.0,2.0
+wip10,Kenya,2014.0,2.0
+odbc1,Kenya,2013.0,2.0
+odbi1,Kenya,2013.0,1.0
+odbi2,Kenya,2013.0,2.0
+odbi3,Kenya,2013.0,0.0
+odbi4,Kenya,2013.0,1.0
+odbi5,Kenya,2013.0,1.0
+odbi6,Kenya,2013.0,1.0
+aia13,Kenya,2014.0,4.0
+wis1,Malawi,2014.0,3.0
+wis2,Malawi,2014.0,1.0
+wis3,Malawi,2014.0,2.0
+wis4,Malawi,2014.0,1.0
+wis5,Malawi,2014.0,1.0
+wis6,Malawi,2014.0,4.0
+wis7,Malawi,2014.0,1.0
+wis8,Malawi,2014.0,0.0
+wis9,Malawi,2014.0,1.0
+wis10,Malawi,2014.0,1.0
+wis11,Malawi,2014.0,0.0
+wis12,Malawi,2014.0,0.0
+wis13,Malawi,2014.0,1.0
+wip2,Malawi,2014.0,2.0
+wip3,Malawi,2014.0,2.0
+wip4,Malawi,2014.0,5.0
+wip5,Malawi,2014.0,5.0
+wip6,Malawi,2014.0,3.0
+wip7,Malawi,2014.0,2.0
+wip8,Malawi,2014.0,2.0
+wip9,Malawi,2014.0,2.0
+wip10,Malawi,2014.0,1.0
+odbc1,Malawi,2013.0,5.0
+odbi1,Malawi,2013.0,0.0
+odbi2,Malawi,2013.0,0.0
+odbi3,Malawi,2013.0,0.0
+odbi4,Malawi,2013.0,0.0
+odbi5,Malawi,2013.0,0.0
+odbi6,Malawi,2013.0,0.0
+aia13,Malawi,2014.0,5.0
+wis1,Malaysia,2014.0,5.0
+wis2,Malaysia,2014.0,3.0
+wis3,Malaysia,2014.0,5.0
+wis4,Malaysia,2014.0,3.0
+wis5,Malaysia,2014.0,2.0
+wis6,Malaysia,2014.0,4.0
+wis7,Malaysia,2014.0,5.0
+wis8,Malaysia,2014.0,4.0
+wis9,Malaysia,2014.0,4.0
+wis10,Malaysia,2014.0,4.0
+wis11,Malaysia,2014.0,3.0
+wis12,Malaysia,2014.0,2.0
+wis13,Malaysia,2014.0,2.0
+wip2,Malaysia,2014.0,5.0
+wip3,Malaysia,2014.0,6.0
+wip4,Malaysia,2014.0,4.0
+wip5,Malaysia,2014.0,5.0
+wip6,Malaysia,2014.0,1.0
+wip7,Malaysia,2014.0,6.0
+wip8,Malaysia,2014.0,1.0
+wip9,Malaysia,2014.0,3.0
+wip10,Malaysia,2014.0,4.0
+odbc1,Malaysia,2013.0,5.0
+odbi1,Malaysia,2013.0,0.0
+odbi2,Malaysia,2013.0,0.0
+odbi3,Malaysia,2013.0,0.0
+odbi4,Malaysia,2013.0,0.0
+odbi5,Malaysia,2013.0,0.0
+odbi6,Malaysia,2013.0,1.0
+aia13,Malaysia,2014.0,7.0
+wis1,Mali,2014.0,3.0
+wis2,Mali,2014.0,3.0
+wis3,Mali,2014.0,0.0
+wis4,Mali,2014.0,0.0
+wis5,Mali,2014.0,1.0
+wis6,Mali,2014.0,1.0
+wis7,Mali,2014.0,1.0
+wis8,Mali,2014.0,1.0
+wis9,Mali,2014.0,1.0
+wis10,Mali,2014.0,2.0
+wis11,Mali,2014.0,1.0
+wis12,Mali,2014.0,0.0
+wis13,Mali,2014.0,1.0
+wip2,Mali,2014.0,2.0
+wip3,Mali,2014.0,2.0
+wip4,Mali,2014.0,7.0
+wip5,Mali,2014.0,5.0
+wip6,Mali,2014.0,1.0
+wip7,Mali,2014.0,2.0
+wip8,Mali,2014.0,2.0
+wip9,Mali,2014.0,3.0
+wip10,Mali,2014.0,0.0
+odbc1,Mali,2013.0,0.0
+odbi1,Mali,2013.0,0.0
+odbi2,Mali,2013.0,0.0
+odbi3,Mali,2013.0,0.0
+odbi4,Mali,2013.0,0.0
+odbi5,Mali,2013.0,0.0
+odbi6,Mali,2013.0,1.0
+aia13,Mali,2014.0,2.0
+wis1,Mauritius,2014.0,2.0
+wis2,Mauritius,2014.0,2.0
+wis3,Mauritius,2014.0,5.0
+wis4,Mauritius,2014.0,6.0
+wis5,Mauritius,2014.0,6.0
+wis6,Mauritius,2014.0,5.0
+wis7,Mauritius,2014.0,5.0
+wis8,Mauritius,2014.0,4.0
+wis9,Mauritius,2014.0,2.0
+wis10,Mauritius,2014.0,2.0
+wis11,Mauritius,2014.0,5.0
+wis12,Mauritius,2014.0,2.0
+wis13,Mauritius,2014.0,5.0
+wip2,Mauritius,2014.0,5.0
+wip3,Mauritius,2014.0,6.0
+wip4,Mauritius,2014.0,7.0
+wip5,Mauritius,2014.0,8.0
+wip6,Mauritius,2014.0,0.0
+wip7,Mauritius,2014.0,3.0
+wip8,Mauritius,2014.0,6.0
+wip9,Mauritius,2014.0,5.0
+wip10,Mauritius,2014.0,4.0
+odbc1,Mauritius,2013.0,2.0
+odbi1,Mauritius,2013.0,0.0
+odbi2,Mauritius,2013.0,1.0
+odbi3,Mauritius,2013.0,0.0
+odbi4,Mauritius,2013.0,0.0
+odbi5,Mauritius,2013.0,0.0
+odbi6,Mauritius,2013.0,0.0
+aia13,Mauritius,2014.0,7.0
+wis1,Mexico,2014.0,4.0
+wis2,Mexico,2014.0,3.0
+wis3,Mexico,2014.0,5.0
+wis4,Mexico,2014.0,3.0
+wis5,Mexico,2014.0,3.0
+wis6,Mexico,2014.0,7.0
+wis7,Mexico,2014.0,5.0
+wis8,Mexico,2014.0,3.0
+wis9,Mexico,2014.0,5.0
+wis10,Mexico,2014.0,7.0
+wis11,Mexico,2014.0,4.0
+wis12,Mexico,2014.0,4.0
+wis13,Mexico,2014.0,5.0
+wip2,Mexico,2014.0,7.0
+wip3,Mexico,2014.0,8.0
+wip4,Mexico,2014.0,5.0
+wip5,Mexico,2014.0,7.0
+wip6,Mexico,2014.0,8.0
+wip7,Mexico,2014.0,3.0
+wip8,Mexico,2014.0,4.0
+wip9,Mexico,2014.0,2.0
+wip10,Mexico,2014.0,7.0
+odbc1,Mexico,2013.0,7.0
+odbi1,Mexico,2013.0,2.0
+odbi2,Mexico,2013.0,2.0
+odbi3,Mexico,2013.0,0.0
+odbi4,Mexico,2013.0,0.0
+odbi5,Mexico,2013.0,2.0
+odbi6,Mexico,2013.0,2.0
+aia13,Mexico,2014.0,7.0
+wis1,Morocco,2014.0,4.0
+wis2,Morocco,2014.0,2.0
+wis3,Morocco,2014.0,3.0
+wis4,Morocco,2014.0,3.0
+wis5,Morocco,2014.0,5.0
+wis6,Morocco,2014.0,4.0
+wis7,Morocco,2014.0,5.0
+wis8,Morocco,2014.0,1.0
+wis9,Morocco,2014.0,3.0
+wis10,Morocco,2014.0,0.0
+wis11,Morocco,2014.0,5.0
+wis12,Morocco,2014.0,0.0
+wis13,Morocco,2014.0,0.0
+wip2,Morocco,2014.0,7.0
+wip3,Morocco,2014.0,7.0
+wip4,Morocco,2014.0,7.0
+wip5,Morocco,2014.0,7.0
+wip6,Morocco,2014.0,5.0
+wip7,Morocco,2014.0,3.0
+wip8,Morocco,2014.0,7.0
+wip9,Morocco,2014.0,5.0
+wip10,Morocco,2014.0,5.0
+odbc1,Morocco,2013.0,5.0
+odbi1,Morocco,2013.0,2.0
+odbi2,Morocco,2013.0,2.0
+odbi3,Morocco,2013.0,0.0
+odbi4,Morocco,2013.0,1.0
+odbi5,Morocco,2013.0,0.0
+odbi6,Morocco,2013.0,0.0
+aia13,Morocco,2014.0,5.0
+wis1,Mozambique,2014.0,3.0
+wis2,Mozambique,2014.0,2.0
+wis3,Mozambique,2014.0,5.0
+wis4,Mozambique,2014.0,2.0
+wis5,Mozambique,2014.0,0.0
+wis6,Mozambique,2014.0,1.0
+wis7,Mozambique,2014.0,4.0
+wis8,Mozambique,2014.0,3.0
+wis9,Mozambique,2014.0,0.0
+wis10,Mozambique,2014.0,1.0
+wis11,Mozambique,2014.0,0.0
+wis12,Mozambique,2014.0,1.0
+wis13,Mozambique,2014.0,0.0
+wip2,Mozambique,2014.0,2.0
+wip3,Mozambique,2014.0,2.0
+wip4,Mozambique,2014.0,5.0
+wip5,Mozambique,2014.0,4.0
+wip6,Mozambique,2014.0,5.0
+wip7,Mozambique,2014.0,0.0
+wip8,Mozambique,2014.0,2.0
+wip9,Mozambique,2014.0,3.0
+wip10,Mozambique,2014.0,2.0
+odbc1,Mozambique,2013.0,0.0
+odbi1,Mozambique,2013.0,0.0
+odbi2,Mozambique,2013.0,0.0
+odbi3,Mozambique,2013.0,0.0
+odbi4,Mozambique,2013.0,0.0
+odbi5,Mozambique,2013.0,0.0
+odbi6,Mozambique,2013.0,0.0
+aia13,Mozambique,2014.0,4.0
+wis1,Myanmar,2014.0,2.0
+wis2,Myanmar,2014.0,1.0
+wis3,Myanmar,2014.0,2.0
+wis4,Myanmar,2014.0,4.0
+wis5,Myanmar,2014.0,0.0
+wis6,Myanmar,2014.0,0.0
+wis7,Myanmar,2014.0,3.0
+wis8,Myanmar,2014.0,4.0
+wis9,Myanmar,2014.0,1.0
+wis10,Myanmar,2014.0,3.0
+wis11,Myanmar,2014.0,0.0
+wis12,Myanmar,2014.0,0.0
+wis13,Myanmar,2014.0,0.0
+wip2,Myanmar,2014.0,3.0
+wip3,Myanmar,2014.0,5.0
+wip4,Myanmar,2014.0,4.0
+wip5,Myanmar,2014.0,0.0
+wip6,Myanmar,2014.0,0.0
+wip7,Myanmar,2014.0,0.0
+wip8,Myanmar,2014.0,2.0
+wip9,Myanmar,2014.0,4.0
+wip10,Myanmar,2014.0,2.0
+odbc1,Myanmar,2013.0,0.0
+odbi1,Myanmar,2013.0,0.0
+odbi2,Myanmar,2013.0,0.0
+odbi3,Myanmar,2013.0,0.0
+odbi4,Myanmar,2013.0,0.0
+odbi5,Myanmar,2013.0,0.0
+odbi6,Myanmar,2013.0,0.0
+aia13,Myanmar,2014.0,5.0
+wis1,Namibia,2014.0,3.0
+wis2,Namibia,2014.0,0.0
+wis3,Namibia,2014.0,3.0
+wis4,Namibia,2014.0,5.0
+wis5,Namibia,2014.0,1.0
+wis6,Namibia,2014.0,2.0
+wis7,Namibia,2014.0,1.0
+wis8,Namibia,2014.0,0.0
+wis9,Namibia,2014.0,0.0
+wis10,Namibia,2014.0,0.0
+wis11,Namibia,2014.0,0.0
+wis12,Namibia,2014.0,0.0
+wis13,Namibia,2014.0,1.0
+wip2,Namibia,2014.0,3.0
+wip3,Namibia,2014.0,0.0
+wip4,Namibia,2014.0,8.0
+wip5,Namibia,2014.0,3.0
+wip6,Namibia,2014.0,0.0
+wip7,Namibia,2014.0,1.0
+wip8,Namibia,2014.0,2.0
+wip9,Namibia,2014.0,4.0
+wip10,Namibia,2014.0,1.0
+odbc1,Namibia,2013.0,3.0
+odbi1,Namibia,2013.0,0.0
+odbi2,Namibia,2013.0,0.0
+odbi3,Namibia,2013.0,0.0
+odbi4,Namibia,2013.0,0.0
+odbi5,Namibia,2013.0,0.0
+odbi6,Namibia,2013.0,0.0
+aia13,Namibia,2014.0,3.0
+wis1,Nepal,2014.0,3.0
+wis2,Nepal,2014.0,2.0
+wis3,Nepal,2014.0,4.0
+wis4,Nepal,2014.0,1.0
+wis5,Nepal,2014.0,3.0
+wis6,Nepal,2014.0,2.0
+wis7,Nepal,2014.0,5.0
+wis8,Nepal,2014.0,4.0
+wis9,Nepal,2014.0,4.0
+wis10,Nepal,2014.0,4.0
+wis11,Nepal,2014.0,1.0
+wis12,Nepal,2014.0,1.0
+wis13,Nepal,2014.0,1.0
+wip2,Nepal,2014.0,4.0
+wip3,Nepal,2014.0,5.0
+wip4,Nepal,2014.0,4.0
+wip5,Nepal,2014.0,3.0
+wip6,Nepal,2014.0,6.0
+wip7,Nepal,2014.0,5.0
+wip8,Nepal,2014.0,4.0
+wip9,Nepal,2014.0,2.0
+wip10,Nepal,2014.0,3.0
+odbc1,Nepal,2013.0,3.0
+odbi1,Nepal,2013.0,0.0
+odbi2,Nepal,2013.0,0.0
+odbi3,Nepal,2013.0,0.0
+odbi4,Nepal,2013.0,0.0
+odbi5,Nepal,2013.0,0.0
+odbi6,Nepal,2013.0,0.0
+aia13,Nepal,2014.0,5.0
+wis1,Netherlands,2014.0,5.0
+wis2,Netherlands,2014.0,6.0
+wis3,Netherlands,2014.0,7.0
+wis4,Netherlands,2014.0,7.0
+wis5,Netherlands,2014.0,8.0
+wis6,Netherlands,2014.0,8.0
+wis7,Netherlands,2014.0,7.0
+wis8,Netherlands,2014.0,7.0
+wis9,Netherlands,2014.0,8.0
+wis10,Netherlands,2014.0,8.0
+wis11,Netherlands,2014.0,9.0
+wis12,Netherlands,2014.0,5.0
+wis13,Netherlands,2014.0,8.0
+wip2,Netherlands,2014.0,9.0
+wip3,Netherlands,2014.0,7.0
+wip4,Netherlands,2014.0,8.0
+wip5,Netherlands,2014.0,8.0
+wip6,Netherlands,2014.0,6.0
+wip7,Netherlands,2014.0,8.0
+wip8,Netherlands,2014.0,7.0
+wip9,Netherlands,2014.0,4.0
+wip10,Netherlands,2014.0,7.0
+odbc1,Netherlands,2013.0,7.0
+odbi1,Netherlands,2013.0,5.0
+odbi2,Netherlands,2013.0,4.0
+odbi3,Netherlands,2013.0,3.0
+odbi4,Netherlands,2013.0,0.0
+odbi5,Netherlands,2013.0,2.0
+odbi6,Netherlands,2013.0,5.0
+aia13,Netherlands,2014.0,7.0
+wis1,New Zealand,2014.0,5.0
+wis2,New Zealand,2014.0,5.0
+wis3,New Zealand,2014.0,8.0
+wis4,New Zealand,2014.0,8.0
+wis5,New Zealand,2014.0,7.0
+wis6,New Zealand,2014.0,7.0
+wis7,New Zealand,2014.0,8.0
+wis8,New Zealand,2014.0,6.0
+wis9,New Zealand,2014.0,7.0
+wis10,New Zealand,2014.0,9.0
+wis11,New Zealand,2014.0,8.0
+wis12,New Zealand,2014.0,7.0
+wis13,New Zealand,2014.0,7.0
+wip2,New Zealand,2014.0,8.0
+wip3,New Zealand,2014.0,7.0
+wip4,New Zealand,2014.0,9.0
+wip5,New Zealand,2014.0,9.0
+wip6,New Zealand,2014.0,8.0
+wip7,New Zealand,2014.0,4.0
+wip8,New Zealand,2014.0,4.0
+wip9,New Zealand,2014.0,1.0
+wip10,New Zealand,2014.0,7.0
+odbc1,New Zealand,2013.0,8.0
+odbi1,New Zealand,2013.0,5.0
+odbi2,New Zealand,2013.0,3.0
+odbi3,New Zealand,2013.0,0.0
+odbi4,New Zealand,2013.0,0.0
+odbi5,New Zealand,2013.0,5.0
+odbi6,New Zealand,2013.0,5.0
+aia13,New Zealand,2014.0,6.0
+wis1,Nigeria,2014.0,3.0
+wis2,Nigeria,2014.0,3.0
+wis3,Nigeria,2014.0,4.0
+wis4,Nigeria,2014.0,4.0
+wis5,Nigeria,2014.0,2.0
+wis6,Nigeria,2014.0,0.0
+wis7,Nigeria,2014.0,2.0
+wis8,Nigeria,2014.0,1.0
+wis9,Nigeria,2014.0,5.0
+wis10,Nigeria,2014.0,3.0
+wis11,Nigeria,2014.0,2.0
+wis12,Nigeria,2014.0,3.0
+wis13,Nigeria,2014.0,5.0
+wip2,Nigeria,2014.0,4.0
+wip3,Nigeria,2014.0,6.0
+wip4,Nigeria,2014.0,8.0
+wip5,Nigeria,2014.0,3.0
+wip6,Nigeria,2014.0,5.0
+wip7,Nigeria,2014.0,0.0
+wip8,Nigeria,2014.0,3.0
+wip9,Nigeria,2014.0,2.0
+wip10,Nigeria,2014.0,1.0
+odbc1,Nigeria,2013.0,3.0
+odbi1,Nigeria,2013.0,0.0
+odbi2,Nigeria,2013.0,0.0
+odbi3,Nigeria,2013.0,0.0
+odbi4,Nigeria,2013.0,0.0
+odbi5,Nigeria,2013.0,1.0
+odbi6,Nigeria,2013.0,1.0
+aia13,Nigeria,2014.0,5.0
+wis1,Norway,2014.0,7.0
+wis2,Norway,2014.0,5.0
+wis3,Norway,2014.0,7.0
+wis4,Norway,2014.0,8.0
+wis5,Norway,2014.0,8.0
+wis6,Norway,2014.0,10.0
+wis7,Norway,2014.0,9.0
+wis8,Norway,2014.0,7.0
+wis9,Norway,2014.0,8.0
+wis10,Norway,2014.0,9.0
+wis11,Norway,2014.0,9.0
+wis12,Norway,2014.0,7.0
+wis13,Norway,2014.0,8.0
+wip2,Norway,2014.0,9.0
+wip3,Norway,2014.0,8.0
+wip4,Norway,2014.0,9.0
+wip5,Norway,2014.0,9.0
+wip6,Norway,2014.0,7.0
+wip7,Norway,2014.0,7.0
+wip8,Norway,2014.0,8.0
+wip9,Norway,2014.0,8.0
+wip10,Norway,2014.0,8.0
+odbc1,Norway,2013.0,8.0
+odbi1,Norway,2013.0,6.0
+odbi2,Norway,2013.0,6.0
+odbi3,Norway,2013.0,2.0
+odbi4,Norway,2013.0,0.0
+odbi5,Norway,2013.0,5.0
+odbi6,Norway,2013.0,2.0
+aia13,Norway,2014.0,9.0
+wis1,Pakistan,2014.0,5.0
+wis2,Pakistan,2014.0,1.0
+wis3,Pakistan,2014.0,2.0
+wis4,Pakistan,2014.0,3.0
+wis5,Pakistan,2014.0,3.0
+wis6,Pakistan,2014.0,3.0
+wis7,Pakistan,2014.0,1.0
+wis8,Pakistan,2014.0,0.0
+wis9,Pakistan,2014.0,0.0
+wis10,Pakistan,2014.0,2.0
+wis11,Pakistan,2014.0,3.0
+wis12,Pakistan,2014.0,0.0
+wis13,Pakistan,2014.0,0.0
+wip2,Pakistan,2014.0,3.0
+wip3,Pakistan,2014.0,3.0
+wip4,Pakistan,2014.0,2.0
+wip5,Pakistan,2014.0,4.0
+wip6,Pakistan,2014.0,5.0
+wip7,Pakistan,2014.0,2.0
+wip8,Pakistan,2014.0,5.0
+wip9,Pakistan,2014.0,1.0
+wip10,Pakistan,2014.0,3.0
+odbc1,Pakistan,2013.0,0.0
+odbi1,Pakistan,2013.0,0.0
+odbi2,Pakistan,2013.0,0.0
+odbi3,Pakistan,2013.0,0.0
+odbi4,Pakistan,2013.0,0.0
+odbi5,Pakistan,2013.0,0.0
+odbi6,Pakistan,2013.0,1.0
+aia13,Pakistan,2014.0,0.0
+wis1,Peru,2014.0,3.0
+wis2,Peru,2014.0,1.0
+wis3,Peru,2014.0,5.0
+wis4,Peru,2014.0,4.0
+wis5,Peru,2014.0,2.0
+wis6,Peru,2014.0,0.0
+wis7,Peru,2014.0,7.0
+wis8,Peru,2014.0,7.0
+wis9,Peru,2014.0,7.0
+wis10,Peru,2014.0,4.0
+wis11,Peru,2014.0,3.0
+wis12,Peru,2014.0,3.0
+wis13,Peru,2014.0,1.0
+wip2,Peru,2014.0,6.0
+wip3,Peru,2014.0,6.0
+wip4,Peru,2014.0,9.0
+wip5,Peru,2014.0,6.0
+wip6,Peru,2014.0,7.0
+wip7,Peru,2014.0,6.0
+wip8,Peru,2014.0,2.0
+wip9,Peru,2014.0,5.0
+wip10,Peru,2014.0,7.0
+odbc1,Peru,2013.0,3.0
+odbi1,Peru,2013.0,0.0
+odbi2,Peru,2013.0,0.0
+odbi3,Peru,2013.0,0.0
+odbi4,Peru,2013.0,0.0
+odbi5,Peru,2013.0,0.0
+odbi6,Peru,2013.0,0.0
+aia13,Peru,2014.0,2.0
+wis1,Philippines,2014.0,5.0
+wis2,Philippines,2014.0,4.0
+wis3,Philippines,2014.0,4.0
+wis4,Philippines,2014.0,2.0
+wis5,Philippines,2014.0,5.0
+wis6,Philippines,2014.0,5.0
+wis7,Philippines,2014.0,6.0
+wis8,Philippines,2014.0,4.0
+wis9,Philippines,2014.0,6.0
+wis10,Philippines,2014.0,1.0
+wis11,Philippines,2014.0,4.0
+wis12,Philippines,2014.0,5.0
+wis13,Philippines,2014.0,1.0
+wip2,Philippines,2014.0,8.0
+wip3,Philippines,2014.0,7.0
+wip4,Philippines,2014.0,7.0
+wip5,Philippines,2014.0,7.0
+wip6,Philippines,2014.0,3.0
+wip7,Philippines,2014.0,3.0
+wip8,Philippines,2014.0,5.0
+wip9,Philippines,2014.0,3.0
+wip10,Philippines,2014.0,6.0
+odbc1,Philippines,2013.0,7.0
+odbi1,Philippines,2013.0,0.0
+odbi2,Philippines,2013.0,1.0
+odbi3,Philippines,2013.0,0.0
+odbi4,Philippines,2013.0,1.0
+odbi5,Philippines,2013.0,0.0
+odbi6,Philippines,2013.0,0.0
+aia13,Philippines,2014.0,2.0
+wis1,Poland,2014.0,6.0
+wis2,Poland,2014.0,5.0
+wis3,Poland,2014.0,5.0
+wis4,Poland,2014.0,6.0
+wis5,Poland,2014.0,5.0
+wis6,Poland,2014.0,5.0
+wis7,Poland,2014.0,5.0
+wis8,Poland,2014.0,7.0
+wis9,Poland,2014.0,6.0
+wis10,Poland,2014.0,6.0
+wis11,Poland,2014.0,5.0
+wis12,Poland,2014.0,6.0
+wis13,Poland,2014.0,6.0
+wip2,Poland,2014.0,8.0
+wip3,Poland,2014.0,7.0
+wip4,Poland,2014.0,6.0
+wip5,Poland,2014.0,6.0
+wip6,Poland,2014.0,7.0
+wip7,Poland,2014.0,2.0
+wip8,Poland,2014.0,6.0
+wip9,Poland,2014.0,4.0
+wip10,Poland,2014.0,8.0
+odbc1,Poland,2013.0,1.0
+odbi1,Poland,2013.0,0.0
+odbi2,Poland,2013.0,1.0
+odbi3,Poland,2013.0,0.0
+odbi4,Poland,2013.0,0.0
+odbi5,Poland,2013.0,0.0
+odbi6,Poland,2013.0,1.0
+aia13,Poland,2014.0,5.0
+wis1,Portugal,2014.0,4.0
+wis2,Portugal,2014.0,3.0
+wis3,Portugal,2014.0,4.0
+wis4,Portugal,2014.0,7.0
+wis5,Portugal,2014.0,7.0
+wis6,Portugal,2014.0,6.0
+wis7,Portugal,2014.0,7.0
+wis8,Portugal,2014.0,3.0
+wis9,Portugal,2014.0,7.0
+wis10,Portugal,2014.0,8.0
+wis11,Portugal,2014.0,7.0
+wis12,Portugal,2014.0,4.0
+wis13,Portugal,2014.0,6.0
+wip2,Portugal,2014.0,8.0
+wip3,Portugal,2014.0,8.0
+wip4,Portugal,2014.0,9.0
+wip5,Portugal,2014.0,8.0
+wip6,Portugal,2014.0,6.0
+wip7,Portugal,2014.0,4.0
+wip8,Portugal,2014.0,8.0
+wip9,Portugal,2014.0,5.0
+wip10,Portugal,2014.0,7.0
+odbc1,Portugal,2013.0,6.0
+odbi1,Portugal,2013.0,1.0
+odbi2,Portugal,2013.0,3.0
+odbi3,Portugal,2013.0,0.0
+odbi4,Portugal,2013.0,0.0
+odbi5,Portugal,2013.0,0.0
+odbi6,Portugal,2013.0,1.0
+aia13,Portugal,2014.0,6.0
+wis1,Qatar,2014.0,3.0
+wis2,Qatar,2014.0,2.0
+wis3,Qatar,2014.0,1.0
+wis4,Qatar,2014.0,0.0
+wis5,Qatar,2014.0,1.0
+wis6,Qatar,2014.0,0.0
+wis7,Qatar,2014.0,3.0
+wis8,Qatar,2014.0,1.0
+wis9,Qatar,2014.0,0.0
+wis10,Qatar,2014.0,1.0
+wis11,Qatar,2014.0,2.0
+wis12,Qatar,2014.0,0.0
+wis13,Qatar,2014.0,3.0
+wip2,Qatar,2014.0,1.0
+wip3,Qatar,2014.0,0.0
+wip4,Qatar,2014.0,0.0
+wip5,Qatar,2014.0,4.0
+wip6,Qatar,2014.0,1.0
+wip7,Qatar,2014.0,0.0
+wip8,Qatar,2014.0,1.0
+wip9,Qatar,2014.0,0.0
+wip10,Qatar,2014.0,2.0
+odbc1,Qatar,2013.0,4.0
+odbi1,Qatar,2013.0,0.0
+odbi2,Qatar,2013.0,0.0
+odbi3,Qatar,2013.0,0.0
+odbi4,Qatar,2013.0,0.0
+odbi5,Qatar,2013.0,0.0
+odbi6,Qatar,2013.0,0.0
+aia13,Qatar,2014.0,5.0
+wis1,Republic Of Korea,2014.0,8.0
+wis2,Republic Of Korea,2014.0,8.0
+wis3,Republic Of Korea,2014.0,9.0
+wis4,Republic Of Korea,2014.0,9.0
+wis5,Republic Of Korea,2014.0,6.0
+wis6,Republic Of Korea,2014.0,10.0
+wis7,Republic Of Korea,2014.0,8.0
+wis8,Republic Of Korea,2014.0,7.0
+wis9,Republic Of Korea,2014.0,5.0
+wis10,Republic Of Korea,2014.0,5.0
+wis11,Republic Of Korea,2014.0,6.0
+wis12,Republic Of Korea,2014.0,7.0
+wis13,Republic Of Korea,2014.0,4.0
+wip2,Republic Of Korea,2014.0,9.0
+wip3,Republic Of Korea,2014.0,8.0
+wip4,Republic Of Korea,2014.0,5.0
+wip5,Republic Of Korea,2014.0,8.0
+wip6,Republic Of Korea,2014.0,8.0
+wip7,Republic Of Korea,2014.0,6.0
+wip8,Republic Of Korea,2014.0,4.0
+wip9,Republic Of Korea,2014.0,7.0
+wip10,Republic Of Korea,2014.0,7.0
+odbc1,Republic Of Korea,2013.0,8.0
+odbi1,Republic Of Korea,2013.0,4.0
+odbi2,Republic Of Korea,2013.0,3.0
+odbi3,Republic Of Korea,2013.0,2.0
+odbi4,Republic Of Korea,2013.0,0.0
+odbi5,Republic Of Korea,2013.0,2.0
+odbi6,Republic Of Korea,2013.0,5.0
+aia13,Republic Of Korea,2014.0,10.0
+wis1,Russian Federation,2014.0,4.0
+wis2,Russian Federation,2014.0,4.0
+wis3,Russian Federation,2014.0,5.0
+wis4,Russian Federation,2014.0,7.0
+wis5,Russian Federation,2014.0,5.0
+wis6,Russian Federation,2014.0,5.0
+wis7,Russian Federation,2014.0,3.0
+wis8,Russian Federation,2014.0,3.0
+wis9,Russian Federation,2014.0,5.0
+wis10,Russian Federation,2014.0,7.0
+wis11,Russian Federation,2014.0,1.0
+wis12,Russian Federation,2014.0,5.0
+wis13,Russian Federation,2014.0,6.0
+wip2,Russian Federation,2014.0,7.0
+wip3,Russian Federation,2014.0,6.0
+wip4,Russian Federation,2014.0,5.0
+wip5,Russian Federation,2014.0,7.0
+wip6,Russian Federation,2014.0,6.0
+wip7,Russian Federation,2014.0,3.0
+wip8,Russian Federation,2014.0,5.0
+wip9,Russian Federation,2014.0,1.0
+wip10,Russian Federation,2014.0,5.0
+odbc1,Russian Federation,2013.0,5.0
+odbi1,Russian Federation,2013.0,2.0
+odbi2,Russian Federation,2013.0,3.0
+odbi3,Russian Federation,2013.0,1.0
+odbi4,Russian Federation,2013.0,0.0
+odbi5,Russian Federation,2013.0,5.0
+odbi6,Russian Federation,2013.0,4.0
+aia13,Russian Federation,2014.0,5.0
+wis1,Rwanda,2014.0,5.0
+wis2,Rwanda,2014.0,3.0
+wis3,Rwanda,2014.0,5.0
+wis4,Rwanda,2014.0,5.0
+wis5,Rwanda,2014.0,1.0
+wis6,Rwanda,2014.0,5.0
+wis7,Rwanda,2014.0,3.0
+wis8,Rwanda,2014.0,1.0
+wis9,Rwanda,2014.0,4.0
+wis10,Rwanda,2014.0,2.0
+wis11,Rwanda,2014.0,1.0
+wis12,Rwanda,2014.0,2.0
+wis13,Rwanda,2014.0,4.0
+wip2,Rwanda,2014.0,2.0
+wip3,Rwanda,2014.0,0.0
+wip4,Rwanda,2014.0,3.0
+wip5,Rwanda,2014.0,3.0
+wip6,Rwanda,2014.0,5.0
+wip7,Rwanda,2014.0,0.0
+wip8,Rwanda,2014.0,4.0
+wip9,Rwanda,2014.0,3.0
+wip10,Rwanda,2014.0,2.0
+odbc1,Rwanda,2013.0,2.0
+odbi1,Rwanda,2013.0,1.0
+odbi2,Rwanda,2013.0,0.0
+odbi3,Rwanda,2013.0,0.0
+odbi4,Rwanda,2013.0,0.0
+odbi5,Rwanda,2013.0,0.0
+odbi6,Rwanda,2013.0,0.0
+aia13,Rwanda,2014.0,7.0
+wis1,Saudi Arabia,2014.0,1.0
+wis2,Saudi Arabia,2014.0,0.0
+wis3,Saudi Arabia,2014.0,0.0
+wis4,Saudi Arabia,2014.0,1.0
+wis5,Saudi Arabia,2014.0,1.0
+wis6,Saudi Arabia,2014.0,3.0
+wis7,Saudi Arabia,2014.0,2.0
+wis8,Saudi Arabia,2014.0,0.0
+wis9,Saudi Arabia,2014.0,3.0
+wis10,Saudi Arabia,2014.0,1.0
+wis11,Saudi Arabia,2014.0,1.0
+wis12,Saudi Arabia,2014.0,0.0
+wis13,Saudi Arabia,2014.0,0.0
+wip2,Saudi Arabia,2014.0,2.0
+wip3,Saudi Arabia,2014.0,2.0
+wip4,Saudi Arabia,2014.0,2.0
+wip5,Saudi Arabia,2014.0,2.0
+wip6,Saudi Arabia,2014.0,0.0
+wip7,Saudi Arabia,2014.0,0.0
+wip8,Saudi Arabia,2014.0,1.0
+wip9,Saudi Arabia,2014.0,1.0
+wip10,Saudi Arabia,2014.0,4.0
+odbc1,Saudi Arabia,2013.0,2.0
+odbi1,Saudi Arabia,2013.0,0.0
+odbi2,Saudi Arabia,2013.0,0.0
+odbi3,Saudi Arabia,2013.0,0.0
+odbi4,Saudi Arabia,2013.0,0.0
+odbi5,Saudi Arabia,2013.0,0.0
+odbi6,Saudi Arabia,2013.0,0.0
+aia13,Saudi Arabia,2014.0,0.0
+wis1,Senegal,2014.0,0.0
+wis2,Senegal,2014.0,0.0
+wis3,Senegal,2014.0,3.0
+wis4,Senegal,2014.0,3.0
+wis5,Senegal,2014.0,0.0
+wis6,Senegal,2014.0,2.0
+wis7,Senegal,2014.0,3.0
+wis8,Senegal,2014.0,1.0
+wis9,Senegal,2014.0,1.0
+wis10,Senegal,2014.0,1.0
+wis11,Senegal,2014.0,1.0
+wis12,Senegal,2014.0,0.0
+wis13,Senegal,2014.0,1.0
+wip2,Senegal,2014.0,4.0
+wip3,Senegal,2014.0,3.0
+wip4,Senegal,2014.0,4.0
+wip5,Senegal,2014.0,6.0
+wip6,Senegal,2014.0,2.0
+wip7,Senegal,2014.0,2.0
+wip8,Senegal,2014.0,4.0
+wip9,Senegal,2014.0,2.0
+wip10,Senegal,2014.0,6.0
+odbc1,Senegal,2013.0,0.0
+odbi1,Senegal,2013.0,0.0
+odbi2,Senegal,2013.0,0.0
+odbi3,Senegal,2013.0,0.0
+odbi4,Senegal,2013.0,0.0
+odbi5,Senegal,2013.0,0.0
+odbi6,Senegal,2013.0,0.0
+aia13,Senegal,2014.0,6.0
+wis1,Sierra Leone,2014.0,3.0
+wis2,Sierra Leone,2014.0,1.0
+wis3,Sierra Leone,2014.0,4.0
+wis4,Sierra Leone,2014.0,3.0
+wis5,Sierra Leone,2014.0,0.0
+wis6,Sierra Leone,2014.0,3.0
+wis7,Sierra Leone,2014.0,3.0
+wis8,Sierra Leone,2014.0,2.0
+wis9,Sierra Leone,2014.0,0.0
+wis10,Sierra Leone,2014.0,1.0
+wis11,Sierra Leone,2014.0,2.0
+wis12,Sierra Leone,2014.0,0.0
+wis13,Sierra Leone,2014.0,3.0
+wip2,Sierra Leone,2014.0,2.0
+wip3,Sierra Leone,2014.0,1.0
+wip4,Sierra Leone,2014.0,7.0
+wip5,Sierra Leone,2014.0,3.0
+wip6,Sierra Leone,2014.0,5.0
+wip7,Sierra Leone,2014.0,0.0
+wip8,Sierra Leone,2014.0,1.0
+wip9,Sierra Leone,2014.0,5.0
+wip10,Sierra Leone,2014.0,1.0
+odbc1,Sierra Leone,2013.0,1.0
+odbi1,Sierra Leone,2013.0,0.0
+odbi2,Sierra Leone,2013.0,0.0
+odbi3,Sierra Leone,2013.0,0.0
+odbi4,Sierra Leone,2013.0,0.0
+odbi5,Sierra Leone,2013.0,0.0
+odbi6,Sierra Leone,2013.0,0.0
+aia13,Sierra Leone,2014.0,3.0
+wis1,Singapore,2014.0,8.0
+wis2,Singapore,2014.0,7.0
+wis3,Singapore,2014.0,7.0
+wis4,Singapore,2014.0,8.0
+wis5,Singapore,2014.0,7.0
+wis6,Singapore,2014.0,2.0
+wis7,Singapore,2014.0,7.0
+wis8,Singapore,2014.0,4.0
+wis9,Singapore,2014.0,6.0
+wis10,Singapore,2014.0,7.0
+wis11,Singapore,2014.0,7.0
+wis12,Singapore,2014.0,7.0
+wis13,Singapore,2014.0,8.0
+wip2,Singapore,2014.0,8.0
+wip3,Singapore,2014.0,4.0
+wip4,Singapore,2014.0,4.0
+wip5,Singapore,2014.0,6.0
+wip6,Singapore,2014.0,0.0
+wip7,Singapore,2014.0,7.0
+wip8,Singapore,2014.0,5.0
+wip9,Singapore,2014.0,0.0
+wip10,Singapore,2014.0,7.0
+odbc1,Singapore,2013.0,7.0
+odbi1,Singapore,2013.0,3.0
+odbi2,Singapore,2013.0,0.0
+odbi3,Singapore,2013.0,5.0
+odbi4,Singapore,2013.0,0.0
+odbi5,Singapore,2013.0,1.0
+odbi6,Singapore,2013.0,5.0
+aia13,Singapore,2014.0,8.0
+wis1,South Africa,2014.0,2.0
+wis2,South Africa,2014.0,3.0
+wis3,South Africa,2014.0,3.0
+wis4,South Africa,2014.0,2.0
+wis5,South Africa,2014.0,4.0
+wis6,South Africa,2014.0,4.0
+wis7,South Africa,2014.0,4.0
+wis8,South Africa,2014.0,1.0
+wis9,South Africa,2014.0,4.0
+wis10,South Africa,2014.0,6.0
+wis11,South Africa,2014.0,4.0
+wis12,South Africa,2014.0,3.0
+wis13,South Africa,2014.0,3.0
+wip2,South Africa,2014.0,7.0
+wip3,South Africa,2014.0,5.0
+wip4,South Africa,2014.0,7.0
+wip5,South Africa,2014.0,6.0
+wip6,South Africa,2014.0,6.0
+wip7,South Africa,2014.0,2.0
+wip8,South Africa,2014.0,4.0
+wip9,South Africa,2014.0,3.0
+wip10,South Africa,2014.0,7.0
+odbc1,South Africa,2013.0,1.0
+odbi1,South Africa,2013.0,2.0
+odbi2,South Africa,2013.0,1.0
+odbi3,South Africa,2013.0,0.0
+odbi4,South Africa,2013.0,1.0
+odbi5,South Africa,2013.0,0.0
+odbi6,South Africa,2013.0,0.0
+aia13,South Africa,2014.0,5.0
+wis1,Spain,2014.0,4.0
+wis2,Spain,2014.0,4.0
+wis3,Spain,2014.0,6.0
+wis4,Spain,2014.0,6.0
+wis5,Spain,2014.0,7.0
+wis6,Spain,2014.0,6.0
+wis7,Spain,2014.0,5.0
+wis8,Spain,2014.0,3.0
+wis9,Spain,2014.0,6.0
+wis10,Spain,2014.0,6.0
+wis11,Spain,2014.0,4.0
+wis12,Spain,2014.0,5.0
+wis13,Spain,2014.0,8.0
+wip2,Spain,2014.0,8.0
+wip3,Spain,2014.0,7.0
+wip4,Spain,2014.0,8.0
+wip5,Spain,2014.0,9.0
+wip6,Spain,2014.0,5.0
+wip7,Spain,2014.0,4.0
+wip8,Spain,2014.0,7.0
+wip9,Spain,2014.0,4.0
+wip10,Spain,2014.0,8.0
+odbc1,Spain,2013.0,6.0
+odbi1,Spain,2013.0,2.0
+odbi2,Spain,2013.0,2.0
+odbi3,Spain,2013.0,2.0
+odbi4,Spain,2013.0,0.0
+odbi5,Spain,2013.0,3.0
+odbi6,Spain,2013.0,5.0
+aia13,Spain,2014.0,5.0
+wis1,Sweden,2014.0,7.0
+wis2,Sweden,2014.0,8.0
+wis3,Sweden,2014.0,9.0
+wis4,Sweden,2014.0,9.0
+wis5,Sweden,2014.0,8.0
+wis6,Sweden,2014.0,9.0
+wis7,Sweden,2014.0,8.0
+wis8,Sweden,2014.0,8.0
+wis9,Sweden,2014.0,8.0
+wis10,Sweden,2014.0,9.0
+wis11,Sweden,2014.0,7.0
+wis12,Sweden,2014.0,7.0
+wis13,Sweden,2014.0,8.0
+wip2,Sweden,2014.0,8.0
+wip3,Sweden,2014.0,8.0
+wip4,Sweden,2014.0,9.0
+wip5,Sweden,2014.0,9.0
+wip6,Sweden,2014.0,8.0
+wip7,Sweden,2014.0,6.0
+wip8,Sweden,2014.0,5.0
+wip9,Sweden,2014.0,4.0
+wip10,Sweden,2014.0,8.0
+odbc1,Sweden,2013.0,8.0
+odbi1,Sweden,2013.0,6.0
+odbi2,Sweden,2013.0,4.0
+odbi3,Sweden,2013.0,4.0
+odbi4,Sweden,2013.0,4.0
+odbi5,Sweden,2013.0,3.0
+odbi6,Sweden,2013.0,5.0
+aia13,Sweden,2014.0,8.0
+wis1,Switzerland,2014.0,6.0
+wis2,Switzerland,2014.0,6.0
+wis3,Switzerland,2014.0,5.0
+wis4,Switzerland,2014.0,9.0
+wis5,Switzerland,2014.0,8.0
+wis6,Switzerland,2014.0,7.0
+wis7,Switzerland,2014.0,8.0
+wis8,Switzerland,2014.0,10.0
+wis9,Switzerland,2014.0,8.0
+wis10,Switzerland,2014.0,9.0
+wis11,Switzerland,2014.0,8.0
+wis12,Switzerland,2014.0,7.0
+wis13,Switzerland,2014.0,6.0
+wip2,Switzerland,2014.0,9.0
+wip3,Switzerland,2014.0,7.0
+wip4,Switzerland,2014.0,9.0
+wip5,Switzerland,2014.0,8.0
+wip6,Switzerland,2014.0,6.0
+wip7,Switzerland,2014.0,3.0
+wip8,Switzerland,2014.0,6.0
+wip9,Switzerland,2014.0,6.0
+wip10,Switzerland,2014.0,9.0
+odbc1,Switzerland,2013.0,7.0
+odbi1,Switzerland,2013.0,6.0
+odbi2,Switzerland,2013.0,5.0
+odbi3,Switzerland,2013.0,2.0
+odbi4,Switzerland,2013.0,0.0
+odbi5,Switzerland,2013.0,3.0
+odbi6,Switzerland,2013.0,5.0
+aia13,Switzerland,2014.0,4.0
+wis1,Thailand,2014.0,3.0
+wis2,Thailand,2014.0,1.0
+wis3,Thailand,2014.0,5.0
+wis4,Thailand,2014.0,3.0
+wis5,Thailand,2014.0,5.0
+wis6,Thailand,2014.0,5.0
+wis7,Thailand,2014.0,3.0
+wis8,Thailand,2014.0,4.0
+wis9,Thailand,2014.0,2.0
+wis10,Thailand,2014.0,3.0
+wis11,Thailand,2014.0,2.0
+wis12,Thailand,2014.0,0.0
+wis13,Thailand,2014.0,5.0
+wip2,Thailand,2014.0,7.0
+wip3,Thailand,2014.0,8.0
+wip4,Thailand,2014.0,2.0
+wip5,Thailand,2014.0,3.0
+wip6,Thailand,2014.0,4.0
+wip7,Thailand,2014.0,3.0
+wip8,Thailand,2014.0,0.0
+wip9,Thailand,2014.0,2.0
+wip10,Thailand,2014.0,5.0
+odbc1,Thailand,2013.0,2.0
+odbi1,Thailand,2013.0,0.0
+odbi2,Thailand,2013.0,0.0
+odbi3,Thailand,2013.0,0.0
+odbi4,Thailand,2013.0,0.0
+odbi5,Thailand,2013.0,0.0
+odbi6,Thailand,2013.0,0.0
+aia13,Thailand,2014.0,6.0
+wis1,Tunisia,2014.0,2.0
+wis2,Tunisia,2014.0,1.0
+wis3,Tunisia,2014.0,4.0
+wis4,Tunisia,2014.0,6.0
+wis5,Tunisia,2014.0,4.0
+wis6,Tunisia,2014.0,5.0
+wis7,Tunisia,2014.0,2.0
+wis8,Tunisia,2014.0,1.0
+wis9,Tunisia,2014.0,4.0
+wis10,Tunisia,2014.0,4.0
+wis11,Tunisia,2014.0,6.0
+wis12,Tunisia,2014.0,0.0
+wis13,Tunisia,2014.0,7.0
+wip2,Tunisia,2014.0,5.0
+wip3,Tunisia,2014.0,6.0
+wip4,Tunisia,2014.0,6.0
+wip5,Tunisia,2014.0,7.0
+wip6,Tunisia,2014.0,7.0
+wip7,Tunisia,2014.0,6.0
+wip8,Tunisia,2014.0,4.0
+wip9,Tunisia,2014.0,4.0
+wip10,Tunisia,2014.0,3.0
+odbc1,Tunisia,2013.0,5.0
+odbi1,Tunisia,2013.0,4.0
+odbi2,Tunisia,2013.0,2.0
+odbi3,Tunisia,2013.0,0.0
+odbi4,Tunisia,2013.0,0.0
+odbi5,Tunisia,2013.0,1.0
+odbi6,Tunisia,2013.0,3.0
+aia13,Tunisia,2014.0,5.0
+wis1,Turkey,2014.0,3.0
+wis2,Turkey,2014.0,3.0
+wis3,Turkey,2014.0,7.0
+wis4,Turkey,2014.0,7.0
+wis5,Turkey,2014.0,7.0
+wis6,Turkey,2014.0,6.0
+wis7,Turkey,2014.0,6.0
+wis8,Turkey,2014.0,7.0
+wis9,Turkey,2014.0,6.0
+wis10,Turkey,2014.0,7.0
+wis11,Turkey,2014.0,7.0
+wis12,Turkey,2014.0,5.0
+wis13,Turkey,2014.0,6.0
+wip2,Turkey,2014.0,9.0
+wip3,Turkey,2014.0,9.0
+wip4,Turkey,2014.0,2.0
+wip5,Turkey,2014.0,4.0
+wip6,Turkey,2014.0,6.0
+wip7,Turkey,2014.0,5.0
+wip8,Turkey,2014.0,3.0
+wip9,Turkey,2014.0,2.0
+wip10,Turkey,2014.0,7.0
+odbc1,Turkey,2013.0,2.0
+odbi1,Turkey,2013.0,1.0
+odbi2,Turkey,2013.0,1.0
+odbi3,Turkey,2013.0,0.0
+odbi4,Turkey,2013.0,0.0
+odbi5,Turkey,2013.0,0.0
+odbi6,Turkey,2013.0,0.0
+aia13,Turkey,2014.0,7.0
+wis1,Uganda,2014.0,5.0
+wis2,Uganda,2014.0,5.0
+wis3,Uganda,2014.0,4.0
+wis4,Uganda,2014.0,5.0
+wis5,Uganda,2014.0,3.0
+wis6,Uganda,2014.0,3.0
+wis7,Uganda,2014.0,1.0
+wis8,Uganda,2014.0,1.0
+wis9,Uganda,2014.0,2.0
+wis10,Uganda,2014.0,5.0
+wis11,Uganda,2014.0,4.0
+wis12,Uganda,2014.0,1.0
+wis13,Uganda,2014.0,3.0
+wip2,Uganda,2014.0,2.0
+wip3,Uganda,2014.0,6.0
+wip4,Uganda,2014.0,7.0
+wip5,Uganda,2014.0,3.0
+wip6,Uganda,2014.0,4.0
+wip7,Uganda,2014.0,2.0
+wip8,Uganda,2014.0,6.0
+wip9,Uganda,2014.0,5.0
+wip10,Uganda,2014.0,5.0
+odbc1,Uganda,2013.0,1.0
+odbi1,Uganda,2013.0,0.0
+odbi2,Uganda,2013.0,1.0
+odbi3,Uganda,2013.0,0.0
+odbi4,Uganda,2013.0,0.0
+odbi5,Uganda,2013.0,0.0
+odbi6,Uganda,2013.0,0.0
+aia13,Uganda,2014.0,7.0
+wis1,Ukraine,2014.0,2.0
+wis2,Ukraine,2014.0,3.0
+wis3,Ukraine,2014.0,3.0
+wis4,Ukraine,2014.0,7.0
+wis5,Ukraine,2014.0,5.0
+wis6,Ukraine,2014.0,1.0
+wis7,Ukraine,2014.0,6.0
+wis8,Ukraine,2014.0,5.0
+wis9,Ukraine,2014.0,4.0
+wis10,Ukraine,2014.0,7.0
+wis11,Ukraine,2014.0,6.0
+wis12,Ukraine,2014.0,1.0
+wis13,Ukraine,2014.0,1.0
+wip2,Ukraine,2014.0,6.0
+wip3,Ukraine,2014.0,8.0
+wip4,Ukraine,2014.0,8.0
+wip5,Ukraine,2014.0,7.0
+wip6,Ukraine,2014.0,5.0
+wip7,Ukraine,2014.0,2.0
+wip8,Ukraine,2014.0,8.0
+wip9,Ukraine,2014.0,5.0
+wip10,Ukraine,2014.0,2.0
+odbc1,Ukraine,2013.0,5.0
+odbi1,Ukraine,2013.0,0.0
+odbi2,Ukraine,2013.0,0.0
+odbi3,Ukraine,2013.0,0.0
+odbi4,Ukraine,2013.0,0.0
+odbi5,Ukraine,2013.0,0.0
+odbi6,Ukraine,2013.0,2.0
+aia13,Ukraine,2014.0,6.0
+wis1,United Arab Emirates,2014.0,2.0
+wis2,United Arab Emirates,2014.0,1.0
+wis3,United Arab Emirates,2014.0,4.0
+wis4,United Arab Emirates,2014.0,4.0
+wis5,United Arab Emirates,2014.0,3.0
+wis6,United Arab Emirates,2014.0,5.0
+wis7,United Arab Emirates,2014.0,7.0
+wis8,United Arab Emirates,2014.0,0.0
+wis9,United Arab Emirates,2014.0,1.0
+wis10,United Arab Emirates,2014.0,1.0
+wis11,United Arab Emirates,2014.0,1.0
+wis12,United Arab Emirates,2014.0,4.0
+wis13,United Arab Emirates,2014.0,5.0
+wip2,United Arab Emirates,2014.0,3.0
+wip3,United Arab Emirates,2014.0,2.0
+wip4,United Arab Emirates,2014.0,2.0
+wip5,United Arab Emirates,2014.0,5.0
+wip6,United Arab Emirates,2014.0,0.0
+wip7,United Arab Emirates,2014.0,0.0
+wip8,United Arab Emirates,2014.0,0.0
+wip9,United Arab Emirates,2014.0,0.0
+wip10,United Arab Emirates,2014.0,4.0
+odbc1,United Arab Emirates,2013.0,6.0
+odbi1,United Arab Emirates,2013.0,0.0
+odbi2,United Arab Emirates,2013.0,3.0
+odbi3,United Arab Emirates,2013.0,0.0
+odbi4,United Arab Emirates,2013.0,0.0
+odbi5,United Arab Emirates,2013.0,0.0
+odbi6,United Arab Emirates,2013.0,0.0
+aia13,United Arab Emirates,2014.0,2.0
+wis1,United Kingdom Of Great Britain And Northern Ireland,2014.0,7.0
+wis2,United Kingdom Of Great Britain And Northern Ireland,2014.0,6.0
+wis3,United Kingdom Of Great Britain And Northern Ireland,2014.0,8.0
+wis4,United Kingdom Of Great Britain And Northern Ireland,2014.0,8.0
+wis5,United Kingdom Of Great Britain And Northern Ireland,2014.0,8.0
+wis6,United Kingdom Of Great Britain And Northern Ireland,2014.0,9.0
+wis7,United Kingdom Of Great Britain And Northern Ireland,2014.0,7.0
+wis8,United Kingdom Of Great Britain And Northern Ireland,2014.0,8.0
+wis9,United Kingdom Of Great Britain And Northern Ireland,2014.0,8.0
+wis10,United Kingdom Of Great Britain And Northern Ireland,2014.0,9.0
+wis11,United Kingdom Of Great Britain And Northern Ireland,2014.0,9.0
+wis12,United Kingdom Of Great Britain And Northern Ireland,2014.0,7.0
+wis13,United Kingdom Of Great Britain And Northern Ireland,2014.0,6.0
+wip2,United Kingdom Of Great Britain And Northern Ireland,2014.0,9.0
+wip3,United Kingdom Of Great Britain And Northern Ireland,2014.0,8.0
+wip4,United Kingdom Of Great Britain And Northern Ireland,2014.0,8.0
+wip5,United Kingdom Of Great Britain And Northern Ireland,2014.0,6.0
+wip6,United Kingdom Of Great Britain And Northern Ireland,2014.0,8.0
+wip7,United Kingdom Of Great Britain And Northern Ireland,2014.0,6.0
+wip8,United Kingdom Of Great Britain And Northern Ireland,2014.0,7.0
+wip9,United Kingdom Of Great Britain And Northern Ireland,2014.0,1.0
+wip10,United Kingdom Of Great Britain And Northern Ireland,2014.0,8.0
+odbc1,United Kingdom Of Great Britain And Northern Ireland,2013.0,10.0
+odbi1,United Kingdom Of Great Britain And Northern Ireland,2013.0,5.0
+odbi2,United Kingdom Of Great Britain And Northern Ireland,2013.0,7.0
+odbi3,United Kingdom Of Great Britain And Northern Ireland,2013.0,4.0
+odbi4,United Kingdom Of Great Britain And Northern Ireland,2013.0,3.0
+odbi5,United Kingdom Of Great Britain And Northern Ireland,2013.0,6.0
+odbi6,United Kingdom Of Great Britain And Northern Ireland,2013.0,6.0
+aia13,United Kingdom Of Great Britain And Northern Ireland,2014.0,7.0
+wis1,United Republic Of Tanzania,2014.0,3.0
+wis2,United Republic Of Tanzania,2014.0,1.0
+wis3,United Republic Of Tanzania,2014.0,5.0
+wis4,United Republic Of Tanzania,2014.0,5.0
+wis5,United Republic Of Tanzania,2014.0,4.0
+wis6,United Republic Of Tanzania,2014.0,2.0
+wis7,United Republic Of Tanzania,2014.0,2.0
+wis8,United Republic Of Tanzania,2014.0,1.0
+wis9,United Republic Of Tanzania,2014.0,1.0
+wis10,United Republic Of Tanzania,2014.0,3.0
+wis11,United Republic Of Tanzania,2014.0,0.0
+wis12,United Republic Of Tanzania,2014.0,1.0
+wis13,United Republic Of Tanzania,2014.0,1.0
+wip2,United Republic Of Tanzania,2014.0,5.0
+wip3,United Republic Of Tanzania,2014.0,3.0
+wip4,United Republic Of Tanzania,2014.0,7.0
+wip5,United Republic Of Tanzania,2014.0,0.0
+wip6,United Republic Of Tanzania,2014.0,1.0
+wip7,United Republic Of Tanzania,2014.0,0.0
+wip8,United Republic Of Tanzania,2014.0,1.0
+wip9,United Republic Of Tanzania,2014.0,4.0
+wip10,United Republic Of Tanzania,2014.0,1.0
+odbc1,United Republic Of Tanzania,2013.0,1.0
+odbi1,United Republic Of Tanzania,2013.0,0.0
+odbi2,United Republic Of Tanzania,2013.0,0.0
+odbi3,United Republic Of Tanzania,2013.0,0.0
+odbi4,United Republic Of Tanzania,2013.0,0.0
+odbi5,United Republic Of Tanzania,2013.0,0.0
+odbi6,United Republic Of Tanzania,2013.0,1.0
+aia13,United Republic Of Tanzania,2014.0,1.0
+wis1,United States Of America,2014.0,6.0
+wis2,United States Of America,2014.0,7.0
+wis3,United States Of America,2014.0,8.0
+wis4,United States Of America,2014.0,8.0
+wis5,United States Of America,2014.0,8.0
+wis6,United States Of America,2014.0,10.0
+wis7,United States Of America,2014.0,7.0
+wis8,United States Of America,2014.0,8.0
+wis9,United States Of America,2014.0,8.0
+wis10,United States Of America,2014.0,8.0
+wis11,United States Of America,2014.0,9.0
+wis12,United States Of America,2014.0,9.0
+wis13,United States Of America,2014.0,7.0
+wip2,United States Of America,2014.0,9.0
+wip3,United States Of America,2014.0,9.0
+wip4,United States Of America,2014.0,9.0
+wip5,United States Of America,2014.0,5.0
+wip6,United States Of America,2014.0,8.0
+wip7,United States Of America,2014.0,6.0
+wip8,United States Of America,2014.0,8.0
+wip9,United States Of America,2014.0,2.0
+wip10,United States Of America,2014.0,8.0
+odbc1,United States Of America,2013.0,9.0
+odbi1,United States Of America,2013.0,5.0
+odbi2,United States Of America,2013.0,7.0
+odbi3,United States Of America,2013.0,3.0
+odbi4,United States Of America,2013.0,2.0
+odbi5,United States Of America,2013.0,7.0
+odbi6,United States Of America,2013.0,8.0
+aia13,United States Of America,2014.0,7.0
+wis1,Uruguay,2014.0,3.0
+wis2,Uruguay,2014.0,2.0
+wis3,Uruguay,2014.0,7.0
+wis4,Uruguay,2014.0,7.0
+wis5,Uruguay,2014.0,4.0
+wis6,Uruguay,2014.0,5.0
+wis7,Uruguay,2014.0,7.0
+wis8,Uruguay,2014.0,6.0
+wis9,Uruguay,2014.0,4.0
+wis10,Uruguay,2014.0,6.0
+wis11,Uruguay,2014.0,7.0
+wis12,Uruguay,2014.0,0.0
+wis13,Uruguay,2014.0,6.0
+wip2,Uruguay,2014.0,6.0
+wip3,Uruguay,2014.0,6.0
+wip4,Uruguay,2014.0,10.0
+wip5,Uruguay,2014.0,9.0
+wip6,Uruguay,2014.0,8.0
+wip7,Uruguay,2014.0,2.0
+wip8,Uruguay,2014.0,2.0
+wip9,Uruguay,2014.0,7.0
+wip10,Uruguay,2014.0,6.0
+odbc1,Uruguay,2013.0,6.0
+odbi1,Uruguay,2013.0,1.0
+odbi2,Uruguay,2013.0,2.0
+odbi3,Uruguay,2013.0,2.0
+odbi4,Uruguay,2013.0,1.0
+odbi5,Uruguay,2013.0,1.0
+odbi6,Uruguay,2013.0,2.0
+aia13,Uruguay,2014.0,4.0
+wis1,Venezuela (Bolivarian Republic Of),2014.0,5.0
+wis2,Venezuela (Bolivarian Republic Of),2014.0,0.0
+wis3,Venezuela (Bolivarian Republic Of),2014.0,4.0
+wis4,Venezuela (Bolivarian Republic Of),2014.0,5.0
+wis5,Venezuela (Bolivarian Republic Of),2014.0,2.0
+wis6,Venezuela (Bolivarian Republic Of),2014.0,1.0
+wis7,Venezuela (Bolivarian Republic Of),2014.0,7.0
+wis8,Venezuela (Bolivarian Republic Of),2014.0,3.0
+wis9,Venezuela (Bolivarian Republic Of),2014.0,2.0
+wis10,Venezuela (Bolivarian Republic Of),2014.0,3.0
+wis11,Venezuela (Bolivarian Republic Of),2014.0,1.0
+wis12,Venezuela (Bolivarian Republic Of),2014.0,1.0
+wis13,Venezuela (Bolivarian Republic Of),2014.0,4.0
+wip2,Venezuela (Bolivarian Republic Of),2014.0,7.0
+wip3,Venezuela (Bolivarian Republic Of),2014.0,8.0
+wip4,Venezuela (Bolivarian Republic Of),2014.0,1.0
+wip5,Venezuela (Bolivarian Republic Of),2014.0,2.0
+wip6,Venezuela (Bolivarian Republic Of),2014.0,1.0
+wip7,Venezuela (Bolivarian Republic Of),2014.0,0.0
+wip8,Venezuela (Bolivarian Republic Of),2014.0,1.0
+wip9,Venezuela (Bolivarian Republic Of),2014.0,2.0
+wip10,Venezuela (Bolivarian Republic Of),2014.0,7.0
+odbc1,Venezuela (Bolivarian Republic Of),2013.0,1.0
+odbi1,Venezuela (Bolivarian Republic Of),2013.0,0.0
+odbi2,Venezuela (Bolivarian Republic Of),2013.0,0.0
+odbi3,Venezuela (Bolivarian Republic Of),2013.0,0.0
+odbi4,Venezuela (Bolivarian Republic Of),2013.0,0.0
+odbi5,Venezuela (Bolivarian Republic Of),2013.0,0.0
+odbi6,Venezuela (Bolivarian Republic Of),2013.0,0.0
+aia13,Venezuela (Bolivarian Republic Of),2014.0,3.0
+wis1,Viet Nam,2014.0,0.0
+wis2,Viet Nam,2014.0,1.0
+wis3,Viet Nam,2014.0,2.0
+wis4,Viet Nam,2014.0,2.0
+wis5,Viet Nam,2014.0,3.0
+wis6,Viet Nam,2014.0,4.0
+wis7,Viet Nam,2014.0,5.0
+wis8,Viet Nam,2014.0,1.0
+wis9,Viet Nam,2014.0,0.0
+wis10,Viet Nam,2014.0,3.0
+wis11,Viet Nam,2014.0,1.0
+wis12,Viet Nam,2014.0,3.0
+wis13,Viet Nam,2014.0,3.0
+wip2,Viet Nam,2014.0,1.0
+wip3,Viet Nam,2014.0,5.0
+wip4,Viet Nam,2014.0,1.0
+wip5,Viet Nam,2014.0,3.0
+wip6,Viet Nam,2014.0,0.0
+wip7,Viet Nam,2014.0,0.0
+wip8,Viet Nam,2014.0,1.0
+wip9,Viet Nam,2014.0,1.0
+wip10,Viet Nam,2014.0,3.0
+odbc1,Viet Nam,2013.0,0.0
+odbi1,Viet Nam,2013.0,0.0
+odbi2,Viet Nam,2013.0,0.0
+odbi3,Viet Nam,2013.0,0.0
+odbi4,Viet Nam,2013.0,0.0
+odbi5,Viet Nam,2013.0,1.0
+odbi6,Viet Nam,2013.0,0.0
+aia13,Viet Nam,2014.0,3.0
+wis1,Yemen,2014.0,1.0
+wis2,Yemen,2014.0,0.0
+wis3,Yemen,2014.0,2.0
+wis4,Yemen,2014.0,1.0
+wis5,Yemen,2014.0,2.0
+wis6,Yemen,2014.0,0.0
+wis7,Yemen,2014.0,3.0
+wis8,Yemen,2014.0,3.0
+wis9,Yemen,2014.0,1.0
+wis10,Yemen,2014.0,1.0
+wis11,Yemen,2014.0,0.0
+wis12,Yemen,2014.0,0.0
+wis13,Yemen,2014.0,0.0
+wip2,Yemen,2014.0,7.0
+wip3,Yemen,2014.0,4.0
+wip4,Yemen,2014.0,5.0
+wip5,Yemen,2014.0,0.0
+wip6,Yemen,2014.0,4.0
+wip7,Yemen,2014.0,0.0
+wip8,Yemen,2014.0,2.0
+wip9,Yemen,2014.0,0.0
+wip10,Yemen,2014.0,0.0
+odbc1,Yemen,2013.0,0.0
+odbi1,Yemen,2013.0,0.0
+odbi2,Yemen,2013.0,0.0
+odbi3,Yemen,2013.0,0.0
+odbi4,Yemen,2013.0,0.0
+odbi5,Yemen,2013.0,0.0
+odbi6,Yemen,2013.0,1.0
+aia13,Yemen,2014.0,0.0
+wis1,Zambia,2014.0,4.0
+wis2,Zambia,2014.0,3.0
+wis3,Zambia,2014.0,4.0
+wis4,Zambia,2014.0,4.0
+wis5,Zambia,2014.0,4.0
+wis6,Zambia,2014.0,4.0
+wis7,Zambia,2014.0,4.0
+wis8,Zambia,2014.0,2.0
+wis9,Zambia,2014.0,1.0
+wis10,Zambia,2014.0,1.0
+wis11,Zambia,2014.0,0.0
+wis12,Zambia,2014.0,1.0
+wis13,Zambia,2014.0,1.0
+wip2,Zambia,2014.0,2.0
+wip3,Zambia,2014.0,3.0
+wip4,Zambia,2014.0,5.0
+wip5,Zambia,2014.0,4.0
+wip6,Zambia,2014.0,1.0
+wip7,Zambia,2014.0,3.0
+wip8,Zambia,2014.0,6.0
+wip9,Zambia,2014.0,5.0
+wip10,Zambia,2014.0,3.0
+odbc1,Zambia,2013.0,0.0
+odbi1,Zambia,2013.0,0.0
+odbi2,Zambia,2013.0,0.0
+odbi3,Zambia,2013.0,0.0
+odbi4,Zambia,2013.0,0.0
+odbi5,Zambia,2013.0,0.0
+odbi6,Zambia,2013.0,0.0
+aia13,Zambia,2014.0,4.0
+wis1,Zimbabwe,2014.0,4.0
+wis2,Zimbabwe,2014.0,2.0
+wis3,Zimbabwe,2014.0,3.0
+wis4,Zimbabwe,2014.0,5.0
+wis5,Zimbabwe,2014.0,1.0
+wis6,Zimbabwe,2014.0,1.0
+wis7,Zimbabwe,2014.0,1.0
+wis8,Zimbabwe,2014.0,3.0
+wis9,Zimbabwe,2014.0,1.0
+wis10,Zimbabwe,2014.0,1.0
+wis11,Zimbabwe,2014.0,1.0
+wis12,Zimbabwe,2014.0,1.0
+wis13,Zimbabwe,2014.0,2.0
+wip2,Zimbabwe,2014.0,5.0
+wip3,Zimbabwe,2014.0,2.0
+wip4,Zimbabwe,2014.0,7.0
+wip5,Zimbabwe,2014.0,4.0
+wip6,Zimbabwe,2014.0,2.0
+wip7,Zimbabwe,2014.0,3.0
+wip8,Zimbabwe,2014.0,2.0
+wip9,Zimbabwe,2014.0,0.0
+wip10,Zimbabwe,2014.0,3.0
+odbc1,Zimbabwe,2013.0,1.0
+odbi1,Zimbabwe,2013.0,0.0
+odbi2,Zimbabwe,2013.0,1.0
+odbi3,Zimbabwe,2013.0,0.0
+odbi4,Zimbabwe,2013.0,0.0
+odbi5,Zimbabwe,2013.0,0.0
+odbi6,Zimbabwe,2013.0,0.0
+aia13,Zimbabwe,2014.0,3.0

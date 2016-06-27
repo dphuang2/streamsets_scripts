@@ -1,0 +1,157 @@
+indicator,country,date,value
+ipr_m,Australia,2013.0,84.0
+ipr_f,Australia,2013.0,82.0
+ipr_m,Austria,2013.0,84.0
+ipr_f,Austria,2013.0,77.0
+ipr_m,Bahamas,2010.0,62.0
+ipr_f,Bahamas,2010.0,67.0
+ipr_m,Bahrain,2014.0,88.0
+ipr_f,Bahrain,2014.0,95.0
+ipr_m,Bangladesh,2013.0,8.0
+ipr_f,Bangladesh,2013.0,5.0
+ipr_m,Belarus,2014.0,62.0
+ipr_f,Belarus,2014.0,56.0
+ipr_m,Belgium,2013.0,84.0
+ipr_f,Belgium,2013.0,80.0
+ipr_m,Belize,2010.0,28.0
+ipr_f,Belize,2010.0,28.0
+ipr_m,Bolivia,2014.0,37.0
+ipr_f,Bolivia,2014.0,32.0
+ipr_m,Brazil,2014.0,55.0
+ipr_f,Brazil,2014.0,54.0
+ipr_m,Bulgaria,2013.0,54.0
+ipr_f,Bulgaria,2013.0,51.0
+ipr_m,Cambodia,2013.0,6.0
+ipr_f,Cambodia,2013.0,5.0
+ipr_m,Canada,2010.0,81.0
+ipr_f,Canada,2010.0,79.0
+ipr_m,Colombia,2014.0,52.0
+ipr_f,Colombia,2014.0,52.0
+ipr_m,Costa Rica,2012.0,48.0
+ipr_f,Costa Rica,2012.0,46.0
+ipr_m,Croatia,2013.0,74.0
+ipr_f,Croatia,2013.0,59.0
+ipr_m,Cuba,2013.0,25.0
+ipr_f,Cuba,2013.0,29.0
+ipr_m,Cyprus,2013.0,67.0
+ipr_f,Cyprus,2013.0,63.0
+ipr_m,Czech Republic,2013.0,75.0
+ipr_f,Czech Republic,2013.0,73.0
+ipr_m,Denmark,2013.0,94.0
+ipr_f,Denmark,2013.0,94.0
+ipr_m,Ecuador,2012.0,36.0
+ipr_f,Ecuador,2012.0,34.0
+ipr_m,Egypt,2014.0,36.0
+ipr_f,Egypt,2014.0,31.0
+ipr_m,El Salvador,2014.0,26.0
+ipr_f,El Salvador,2014.0,23.0
+ipr_m,Estonia,2013.0,80.0
+ipr_f,Estonia,2013.0,79.0
+ipr_m,Finland,2013.0,92.0
+ipr_f,Finland,2013.0,91.0
+ipr_m,France,2013.0,84.0
+ipr_f,France,2013.0,79.0
+ipr_m,Georgia,2014.0,51.0
+ipr_f,Georgia,2014.0,47.0
+ipr_m,Germany,2013.0,86.0
+ipr_f,Germany,2013.0,81.0
+ipr_m,Ghana,2010.0,10.0
+ipr_f,Ghana,2010.0,5.0
+ipr_m,Greece,2013.0,63.0
+ipr_f,Greece,2013.0,56.0
+ipr_m,"Hong Kong, China",2014.0,81.0
+ipr_f,"Hong Kong, China",2014.0,78.0
+ipr_m,Hungary,2013.0,73.0
+ipr_f,Hungary,2013.0,71.0
+ipr_m,Iceland,2013.0,97.0
+ipr_f,Iceland,2013.0,95.0
+ipr_m,Indonesia,2014.0,18.0
+ipr_f,Indonesia,2014.0,15.0
+ipr_m,Iran (I.R.),2013.0,33.0
+ipr_f,Iran (I.R.),2013.0,25.0
+ipr_m,Ireland,2013.0,78.0
+ipr_f,Ireland,2013.0,78.0
+ipr_m,Israel,2014.0,76.0
+ipr_f,Israel,2014.0,73.0
+ipr_m,Italy,2013.0,63.0
+ipr_f,Italy,2013.0,54.0
+ipr_m,Jamaica,2014.0,36.0
+ipr_f,Jamaica,2014.0,44.0
+ipr_m,Japan,2014.0,91.0
+ipr_f,Japan,2014.0,86.0
+ipr_m,Kazakhstan,2014.0,64.0
+ipr_f,Kazakhstan,2014.0,65.0
+ipr_m,Korea (Rep.),2014.0,90.0
+ipr_f,Korea (Rep.),2014.0,84.0
+ipr_m,Latvia,2013.0,75.0
+ipr_f,Latvia,2013.0,74.0
+ipr_m,Lithuania,2013.0,68.0
+ipr_f,Lithuania,2013.0,68.0
+ipr_m,Luxembourg,2013.0,95.0
+ipr_f,Luxembourg,2013.0,91.0
+ipr_m,"Macao, China",2014.0,70.0
+ipr_f,"Macao, China",2014.0,69.0
+ipr_m,Malta,2013.0,70.0
+ipr_f,Malta,2013.0,66.0
+ipr_m,Mauritius,2014.0,48.0
+ipr_f,Mauritius,2014.0,41.0
+ipr_m,Mexico,2014.0,46.0
+ipr_f,Mexico,2014.0,42.0
+ipr_m,Montenegro,2011.0,38.0
+ipr_f,Montenegro,2011.0,32.0
+ipr_m,Morocco,2014.0,66.0
+ipr_f,Morocco,2014.0,47.0
+ipr_m,Netherlands,2013.0,95.0
+ipr_f,Netherlands,2013.0,92.0
+ipr_m,New Zealand,2012.0,81.0
+ipr_f,New Zealand,2012.0,82.0
+ipr_m,Norway,2013.0,95.0
+ipr_f,Norway,2013.0,94.0
+ipr_m,Oman,2013.0,71.0
+ipr_f,Oman,2013.0,59.0
+ipr_m,Panama,2012.0,38.0
+ipr_f,Panama,2012.0,41.0
+ipr_m,Paraguay,2014.0,43.0
+ipr_f,Paraguay,2014.0,42.0
+ipr_m,Peru,2013.0,42.0
+ipr_f,Peru,2013.0,36.0
+ipr_m,Poland,2013.0,63.0
+ipr_f,Poland,2013.0,61.0
+ipr_m,Portugal,2013.0,66.0
+ipr_f,Portugal,2013.0,58.0
+ipr_m,Qatar,2013.0,97.0
+ipr_f,Qatar,2013.0,99.0
+ipr_m,Romania,2013.0,51.0
+ipr_f,Romania,2013.0,48.0
+ipr_m,Russian Federation,2014.0,67.0
+ipr_f,Russian Federation,2014.0,66.0
+ipr_m,Singapore,2014.0,81.0
+ipr_f,Singapore,2014.0,77.0
+ipr_m,Slovakia,2013.0,77.0
+ipr_f,Slovakia,2013.0,78.0
+ipr_m,Slovenia,2013.0,74.0
+ipr_f,Slovenia,2013.0,71.0
+ipr_m,Spain,2013.0,73.0
+ipr_f,Spain,2013.0,69.0
+ipr_m,Sweden,2013.0,95.0
+ipr_f,Sweden,2013.0,94.0
+ipr_m,Switzerland,2014.0,87.0
+ipr_f,Switzerland,2014.0,79.0
+ipr_m,TFYR Macedonia,2012.0,60.0
+ipr_f,TFYR Macedonia,2012.0,54.0
+ipr_m,Thailand,2014.0,38.0
+ipr_f,Thailand,2014.0,34.0
+ipr_m,Turkey,2013.0,51.0
+ipr_f,Turkey,2013.0,32.0
+ipr_m,Ukraine,2013.0,43.0
+ipr_f,Ukraine,2013.0,38.0
+ipr_m,United Arab Emirates,2012.0,85.0
+ipr_f,United Arab Emirates,2012.0,83.0
+ipr_m,United Kingdom,2013.0,90.0
+ipr_f,United Kingdom,2013.0,89.0
+ipr_m,United States,2012.0,74.0
+ipr_f,United States,2012.0,75.0
+ipr_m,Uruguay,2014.0,56.0
+ipr_f,Uruguay,2014.0,56.0
+ipr_m,Venezuela,2012.0,47.0
+ipr_f,Venezuela,2012.0,50.0
