@@ -360,6 +360,85 @@ function WebIndexSurvey(){
     }
     writeRecord(Values, country);
 }
+function WebIndexScores(){
+    function writeRecords(Values, Countries){
+        var regex = new RegExp(".+?(?=-)");
+        for(key in Values){
+            var value = Values[key];
+            var country = Countries[key];
+            var indicator;
+            switch(key){
+                case 'Universal Access':
+                    indicator = 'wiuniversalaccess';
+                    break;
+                case 'Freedom & Openness':
+                    indicator = 'wifreedom';
+                    break;
+                case 'Relevant content':
+                    indicator = 'wirelevantcontent';
+                    break;
+                case 'Empowerment':
+                    indicator = 'wiempowerment';
+                    break;
+                case 'Communications Infrastructure':
+                    indicator = 'wiinfrastructure';
+                    break;
+                case 'Access & Affordability':
+                    indicator = 'wiaccess';
+                    break;
+                case 'Education and Awareness':
+                    indicator = 'wieducation';
+                    break;
+                case 'Free & Open':
+                    indicator = 'wifreeopen';
+                    break;
+                case 'Content & use':
+                    indicator = 'wicontent';
+                    break;
+                case 'Economic':
+                    indicator = 'wieconomic';
+                    break;
+                case 'Political':
+                    indicator = 'wipolitical';
+                    break;
+                case 'Social and Environmental':
+                    indicator = 'wisocial';
+                    break;
+                case 'Overall score':
+                    indicator = 'wiscore';
+                    break;
+                case 'Overall rank':
+                    indicator = 'wirank';
+                    break;
+            }
+            // value : country scores
+            record = records[i] //Make new variable just called for easier reading
+                // Note: this is a pass by reference so a new record is not created
+                record.value = { 
+                    '${ID}' : indicator,
+                    '${CT}' : country,
+                    '${DT}' : 2014,
+                    '${VL}' : parseInt(value),
+                };
+            output.write(record);
+        }
+    } 
+    var regex = new RegExp(".+?(?=-)");
+    var Countries = {}; // Key is indicator and value is country
+    var Values = {};
+    for(key in records[i].value){
+        var value = records[i].value[key];
+        if(key != 'filename'){
+            if(regex.test(key)){
+                var indicator = regex.exec(key);
+                Countries[indicator] = value;
+            } else {
+                Values[key] = value;
+            }
+        }
+    }
+    writeRecords(Values, Countries);
+}
 
 // ____________________________________________________
 // This code runs the logic for which script to run
@@ -391,6 +470,9 @@ for(var i = 0; i < records.length; i++) {
                 break;
             case (fn == 'Survey Scores Primary Raw Data.csv'):
                 WebIndexSurvey();
+                break;
+            case (fn == 'RanksScores.csv'):
+                WebIndexScores();
                 break;
         }
     } catch (e) {
