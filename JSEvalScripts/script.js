@@ -42,7 +42,7 @@ function ONI(){
     var Values = {};
     for (key in records[i].value){
         var value = records[i].value[key];
-        if(key != 'filename' && key != 'social_description' && key != 'tools_description' && key != 'conflict_security_description' && key != 'political_description' && key != 'country' && key != 'country_code' && key != 'testing_date' && key != 'url'){
+        if(value != 'n/a' && key != 'filename' && key != 'social_description' && key != 'tools_description' && key != 'conflict_security_description' && key != 'political_description' && key != 'country' && key != 'country_code' && key != 'testing_date' && key != 'url'){
             //records[i].value['Values'][key] = value;
             Values[key] = value;
         }
@@ -155,7 +155,7 @@ function nri1_68(){
         records[i].value.Values = {};
         for(key in records[i].value){
             var value = records[i].value[key];
-            if(key.length == 3 && value != ""){
+            if(key.length == 3 && value != "" && value != 'n/a'){
                 records[i].value['Values'][key] = value;
             }
         }
