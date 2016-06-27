@@ -13,17 +13,17 @@
 <h4> Pseudocode for understanding the script: </h4>
 ```javascript
 function indicator(){
-    writeRecordS(){
-        Write data to record and output record
-        ${ID}, ${CT}, ${DT}, ${VL} are constants defined by pipeline
+    writeRecord(){
+        - Write data to record and output record
+        - ${ID}, ${CT}, ${DT}, ${VL} are constants defined by pipeline
+        output.write(record); // Syntax for outputting a record
     }
-    // save data if needed
-    var cc ...
-        var country ...
-        var year ...
+    // save data if needed for writeRecord function
+    var cc = records[i].value['header name'];
+    var country = records[i].value['Country']; // Example of header name
+    var year = records[i].value['testing date']; // Example of header name
 
-        var Values = {}; // Create empty map of values
-
+    var Values = {}; // Create empty map of values
     // populate map with values and header (key)
     for(key in records[i].value){
         var value = records[i].value[key];
@@ -39,6 +39,8 @@ function indicator2(){
 ...
 more functions for more indicators
 ...
+
+// ______LOGIC FOR WHICH FUNCTION TO EXECUTE DEPENDING ON FILENAME______
 for(var i = 0; i <  records.length; i++){
     declare any variables needed for function execution logic
         try {
