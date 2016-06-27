@@ -328,7 +328,38 @@ function WebIndexData(){
     var Values = records[i].value['Values'];
     writeRecord(Values); // will write errors when there are no values in the Values map (ie. '..' and '')
 }
-
+function WebIndexSurvey(){
+    function writeRecord(Values, country){
+        var regex1 = new RegExp("[A-Z]{2,3}");
+        var regex2 = new RegExp("[0-9]{4}");
+        var regex3 = new RegExp("[A-Z][0-9]+");
+        for(key in Values){
+            var value = Values[key];
+            // value : survey score
+            var year = regex2.exec(key); // grab year from key
+            var indicator = regex1.exec(key) + regex3.exec(key); // grab correct format of indicator from key
+            record = records[i] //Make new variable just called for easier reading
+                // Note: this is a pass by reference so a new record is not created
+                record.value = { 
+                    '${ID}' : indicator.toLowerCase(),
+                    '${CT}' : country,
+                    '${DT}' : parseInt(year),
+                    '${VL}' : parseInt(value),
+                };
+            output.write(record);
+            // what is written to the record is what it outputs
+        }
+    } 
+    var country = records[i].value['Country'];
+    var Values = {};
+    for (key in records[i].value){
+        var value = records[i].value[key];
+        if(key != 'Country' && key != 'filename'){
+            Values[key] = value;
+        }
+    }
+    writeRecord(Values, country);
+}
 
 // ____________________________________________________
 // This code runs the logic for which script to run
@@ -357,6 +388,9 @@ for(var i = 0; i < records.length; i++) {
                 break;
             case (regex.test(fn)):
                 WebIndexData();
+                break;
+            case (fn == 'Survey Scores Primary Raw Data.csv'):
+                WebIndexSurvey();
                 break;
         }
     } catch (e) {
