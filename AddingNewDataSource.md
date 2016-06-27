@@ -43,8 +43,17 @@ more functions for more indicators
 // ______LOGIC FOR WHICH FUNCTION TO EXECUTE DEPENDING ON FILENAME______
 for(var i = 0; i <  records.length; i++){
     declare any variables needed for function execution logic
+    var fn = records[i].value['filename'];
         try {
-            switch statement that provides logic for which indicator function to execute
+            // switch statement that provides logic for which indicator function to execute
+            switch(true){
+                case (fn == '<insert file name>'):
+                    indicatorFunction();
+                    break;
+                case (another condition for another file):
+                    indicatorFunction();
+                    break;
+            }
         } catch(e){
             // Send record to error
             error.write(records[i],e );
