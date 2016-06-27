@@ -343,7 +343,7 @@ for(var i = 0; i < records.length; i++) {
             case (fn == 'oni_country_data_2013-09-20.csv'):
                 ONI();
                 break;
-            case (fn == 'API_NY.GDP.PCAP.CD_DS2_en_csv_v2.csv' || fn == 'API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2.csv' || fn == 'API_SP.POPTOTL_DS2_en_csv_v2.csv'):
+            case (fn == 'API_NY.GDP.PCAP.CD_DS2_en_csv_v2.csv' || fn == 'API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2.csv' || fn == 'API_SP.POP.TOTL_DS2_en_csv_v2.csv'):
                 gdp_pop();
                 break;
             case (fn == 'WEF_NRI_2012-2015_Historical_Dataset.csv'):
