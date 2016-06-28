@@ -36,6 +36,7 @@ function ONI(){
             output.write(record);
         }
     }
+
     var cc = records[i].value['country_code'];
     var country = records[i].value['country'];
     var year = records[i].value['testing_date'];
@@ -48,6 +49,7 @@ function ONI(){
         }
     }
     writeRecord(Values, year, country, cc);
+
 }
 function cellsub(){ 
     function writeRecord(Values, country){
@@ -120,10 +122,8 @@ function gdp_pop(){
         }
     }
     // output.write(records[i]);
-
     var Values = records[i].value['Values'];
     writeRecord(Values, indicator);
-
 }
 function nri1_68(){
     function writeRecord(Values, year, indicator){
@@ -439,7 +439,21 @@ function WebIndexScores(){
     }
     writeRecords(Values, Countries);
 }
-
+function hhnet(){
+    var record = records[i];
+    var value = record.value['value'];
+    var date = record.value['date'];
+    var country = record.value['country'];
+    if(value != ""){
+        record.value = { 
+            '${ID}' : 'hhnet',
+            '${CT}' : country,
+            '${DT}' : date,
+            '${VL}' : value,
+        };
+        output.write(record);
+    }
+}
 // ____________________________________________________
 // This code runs the logic for which script to run
 for(var i = 0; i < records.length; i++) {
@@ -473,6 +487,9 @@ for(var i = 0; i < records.length; i++) {
                 break;
             case (fn == 'RanksScores.csv'):
                 WebIndexScores();
+                break;
+            case (fn == 'CoreHouseholdIndicator.csv'):
+                hhnet();
                 break;
         }
     } catch (e) {
