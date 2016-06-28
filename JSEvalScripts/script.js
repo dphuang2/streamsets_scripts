@@ -1,5 +1,5 @@
 function ONI(){
-    function writeRecord(Values, year, country, cc){
+    function writeRecords(Values, year, country, cc){
         for(key in Values){
             var value = Values[key];
             // value : Political Score
@@ -48,11 +48,11 @@ function ONI(){
             Values[key] = value;
         }
     }
-    writeRecord(Values, year, country, cc);
+    writeRecords(Values, year, country, cc);
 
 }
 function cellsub(){ 
-    function writeRecord(Values, country){
+    function writeRecords(Values, country){
         for(key in Values){
             var value = Values[key];
             // value : cellsub
@@ -79,10 +79,10 @@ function cellsub(){
     }
     // output.write(records[i]); 
     var Values = records[i].value['Values'];
-    writeRecord(Values, country); 
+    writeRecords(Values, country); 
 }
 function gdp_pop(){ 
-    function writeRecord(Values, indicator){
+    function writeRecords(Values, indicator){
         var ind;
         switch (indicator){
             case 'GDP per capita (current US$)':
@@ -123,10 +123,10 @@ function gdp_pop(){
     }
     // output.write(records[i]);
     var Values = records[i].value['Values'];
-    writeRecord(Values, indicator);
+    writeRecords(Values, indicator);
 }
 function nri1_68(){
-    function writeRecord(Values, year, indicator){
+    function writeRecords(Values, year, indicator){
         for(key in Values){
             var value = Values[key];
             // value : GDP per capita
@@ -164,12 +164,12 @@ function nri1_68(){
         // Save the map of values that was originally saved in the Record 
         // Under the 'Values' field
         var Values = records[i].value['Values'];
-        writeRecord(Values, year, indicator);
+        writeRecords(Values, year, indicator);
 
     }
 }
 function ipr_mf(){
-    function writeRecord(Values, year, country){
+    function writeRecords(Values, year, country){
         for(key in Values){
             var value = Values[key];
             var indicator;
@@ -205,18 +205,24 @@ function ipr_mf(){
     }
     // Save the map of values that was originally saved in the Record 
     // Under the 'Values' field
-    writeRecord(Values, year, country);
+    writeRecords(Values, year, country);
 }
-function ipr(){
-    function writeRecord(Values){
+function ipr_fixnetsub(){
+    function writeRecords(Values, filename){
         for(key in Values){
+            var indicator;
+            if(filename = 'Fixed_broadband_2000-2014.csv'){
+                indicator = 'fixnetsub';
+            } else {
+                indicator = 'ipr';
+            }
             var value = Values[key];
-            // value : ipr
+            // value : ipr, fixnetsub
             // key   : year
             record = records[i] //Make new variable just called for easier reading
                 // Note: this is a pass by reference so a new record is not created
                 record.value = { 
-                    '${ID}' : 'ipr',
+                    '${ID}' : indicator,
                     '${CT}' : records[i].value['${CT}'],
                     '${DT}' : key,
                     '${VL}' : value,
@@ -225,8 +231,10 @@ function ipr(){
             // what is written to the record is what it outputs
         }
     }
+    
     records[i].value.Values = {};
     records[i].value['${CT}'] = records[i].value['country']; // 1. Alter this line to the column that identifys the Country
+    var filename = records[i].value['filename'];
     for(key in records[i].value){
         var value = records[i].value[key];
         if(value != "" && key > 1950){
@@ -234,10 +242,10 @@ function ipr(){
         }
     }
     var Values = records[i].value['Values'];
-    writeRecord(Values);
+    writeRecords(Values, filename);
 }
 function WebIndexData(){
-    function writeRecord(Values){
+    function writeRecords(Values){
         for(key in Values){
             var value = Values[key];
             // value : GDP per capita
@@ -326,10 +334,10 @@ function WebIndexData(){
         }
     }
     var Values = records[i].value['Values'];
-    writeRecord(Values); // will write errors when there are no values in the Values map (ie. '..' and '')
+    writeRecords(Values); // will write errors when there are no values in the Values map (ie. '..' and '')
 }
 function WebIndexSurvey(){
-    function writeRecord(Values, country){
+    function writeRecords(Values, country){
         var regex1 = new RegExp("[A-Z]{2,3}");
         var regex2 = new RegExp("[0-9]{4}");
         var regex3 = new RegExp("[A-Z][0-9]+");
@@ -358,7 +366,7 @@ function WebIndexSurvey(){
             Values[key] = value;
         }
     }
-    writeRecord(Values, country);
+    writeRecords(Values, country);
 }
 function WebIndexScores(){
     function writeRecords(Values, Countries){
@@ -476,8 +484,8 @@ for(var i = 0; i < records.length; i++) {
             case (fn == 'Gender_2010-2014.csv'):
                 ipr_mf();
                 break;
-            case (fn == 'Individuals_Internet_2000-2014.csv'):
-                ipr();
+            case (fn == 'Individuals_Internet_2000-2014.csv' || fn == 'Fixed_broadband_2000-2014.csv'):
+                ipr_fixnetsub();
                 break;
             case (regex.test(fn)):
                 WebIndexData();
