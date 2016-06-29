@@ -1,10 +1,19 @@
 function outputRecord(record, indicator, country, date, value){
-    record.value = { 
-        '${ID}' : indicator,
-        '${CT}' : country,
-        '${DT}' : parseFloat(date),
-        '${VL}' : parseFloat(value),
-    };
+    if(parseFloat(value).isNaN()){
+        record.value = { 
+            '${ID}' : indicator,
+            '${CT}' : country,
+            '${DT}' : parseFloat(date),
+            '${VL}' : value,
+        };
+    } else {
+        record.value = { 
+            '${ID}' : indicator,
+            '${CT}' : country,
+            '${DT}' : parseFloat(date),
+            '${VL}' : parseFloat(value.replace(',', '')),
+        };
+    }
     output.write(record);
 }
 function ONI(){
@@ -185,7 +194,6 @@ function ipr_fixnetsub(){
             var value = Values[key];
             // value : ipr, fixnetsub
             // key   : year
-            //
             outputRecord(records[i], indicator, records[i].value['${CT}'], key, value);
         }
     }
