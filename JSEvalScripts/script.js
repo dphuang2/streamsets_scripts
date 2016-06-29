@@ -186,7 +186,7 @@ function ipr_fixnetsub(){
             // value : ipr, fixnetsub
             // key   : year
             //
-            outputRecord(records[i], records[i].value['${CT}'], key, value);
+            outputRecord(records[i], indicator, records[i].value['${CT}'], key, value);
         }
     }
 
