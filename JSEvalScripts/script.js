@@ -1,10 +1,11 @@
-function outputRecord(record, indicator, country, date, value){
+function outputRecord(record, indicator, country, date, value, filename){
     if(parseFloat(value).isNaN()){
         record.value = { 
             '${ID}' : indicator.toString(),
             '${CT}' : country.toString(),
             '${DT}' : parseFloat(date),
             '${VL}' : value.toString(),
+            'filename' : filename.toString(),
         };
     } else {
         record.value = { 
@@ -12,6 +13,7 @@ function outputRecord(record, indicator, country, date, value){
             '${CT}' : country.toString(),
             '${DT}' : parseFloat(date).toString(),
             '${VL}' : parseFloat(value.replace(',', '')),
+            'filename' : filename.toString(),
         };
     }
     output.write(record);
@@ -43,7 +45,7 @@ function ONI(){
                     ind = "ONIco";
                     break;
             }
-            outputRecord(records[i], ind, cc, year, value);
+            outputRecord(records[i], ind, cc, year, value, fn);
         }
     }
 
@@ -67,7 +69,7 @@ function cellsub(){
             var value = Values[key];
             // value : cellsub
             // key   : year
-            outputRecord(records[i],'cellsub',country, key, value);
+            outputRecord(records[i],'cellsub',country, key, value, fn);
         }
     } 
     records[i].value.Values = {};
@@ -100,7 +102,7 @@ function gdp_pop(){
             var value = Values[key];
             // value : gdpcapppp, gdpcapus, or pop
             // key   : year
-            outputRecord(records[i], ind, records[i].value['${CT}'], key, value);
+            outputRecord(records[i], ind, records[i].value['${CT}'], key, value, fn);
         }
     } 
     var indicator = records[i].value['Indicator Name'];
@@ -123,7 +125,7 @@ function nri1_68(){
             var value = Values[key];
             // value : GDP per capita
             // key   : year
-            outputRecord(records[i],'nri'+indicator,key, year, value);
+            outputRecord(records[i],'nri'+indicator,key, year, value, fn);
         }
     }
     if(records[i].value['Attribute'] == 'Value'){
@@ -163,7 +165,7 @@ function ipr_mf(){
                 indicator = 'ipr_f';
             }
 
-            outputRecord(records[i], indicator, country, year, value);
+            outputRecord(records[i], indicator, country, year, value, fn);
         }
     }
     // Save Country Data
@@ -194,7 +196,7 @@ function ipr_fixnetsub(){
             var value = Values[key];
             // value : ipr, fixnetsub
             // key   : year
-            outputRecord(records[i], indicator, records[i].value['${CT}'], key, value);
+            outputRecord(records[i], indicator, records[i].value['${CT}'], key, value, fn);
         }
     }
 
@@ -216,7 +218,7 @@ function WebIndexData(){
             var value = Values[key];
             // value : GDP per capita
             // key   : year
-            outputRecord(records[i], records[i].value['${ID}'], records[i].value['${CT}'], key, value);
+            outputRecord(records[i], records[i].value['${ID}'], records[i].value['${CT}'], key, value, fn);
         }
     }
     function findIndicator(i){
@@ -299,7 +301,7 @@ function WebIndexSurvey(){
             // value : survey score
             var year = regex2.exec(key); // grab year from key
             var indicator = regex1.exec(key) + regex3.exec(key); // grab correct format of indicator from key
-            outputRecord(records[i], indicator.toLowerCase(), country, year, value);
+            outputRecord(records[i], indicator.toLowerCase(), country, year, value, fn);
         }
     } 
     var country = records[i].value['Country'];
@@ -364,7 +366,7 @@ function WebIndexScores(){
                     break;
             }
             // value : country scores
-            outputRecord(records[i], indicator, country, 2014, value);
+            outputRecord(records[i], indicator, country, 2014, value, fn);
         }
     } 
     var regex = new RegExp(".+?(?=-)");
@@ -389,7 +391,7 @@ function hhnet(){
     var date = record.value['date'];
     var country = record.value['country'];
     if(value != ""){
-        outputRecord(record, 'hhnet', country, date, value);
+        outputRecord(record, 'hhnet', country, date, value, fn);
     }
 }
 // ____________________________________________________
@@ -423,7 +425,7 @@ for(var i = 0; i < records.length; i++) {
             case (fn == 'Survey Scores Primary Raw Data.csv'):
                 WebIndexSurvey();
                 break;
-            case (fn == 'RanksScores.csv'):
+            case (fn == 'Ranks & Scores.csv'):
                 WebIndexScores();
                 break;
             case (fn == 'CoreHouseholdIndicator.csv'):
