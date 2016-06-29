@@ -1,19 +1,19 @@
-function outputRecord(record, indicator, country, date, value, filename){
+function outputRecord(record, indicator, country, date, value){
     if(parseFloat(value).isNaN()){
         record.value = { 
             '${ID}' : indicator.toString(),
             '${CT}' : country.toString(),
             '${DT}' : parseFloat(date),
             '${VL}' : value.toString(),
-            'filename' : filename.toString(),
+            'filename' : fn.toString(),
         };
     } else {
         record.value = { 
             '${ID}' : indicator.toString(),
             '${CT}' : country.toString(),
-            '${DT}' : parseFloat(date).toString(),
+            '${DT}' : parseFloat(date),
             '${VL}' : parseFloat(value.replace(',', '')),
-            'filename' : filename.toString(),
+            'filename' : fn.toString(),
         };
     }
     output.write(record);
@@ -45,7 +45,7 @@ function ONI(){
                     ind = "ONIco";
                     break;
             }
-            outputRecord(records[i], ind, cc, year, value, fn);
+            outputRecord(records[i], ind, cc, year, value);
         }
     }
 
@@ -69,7 +69,7 @@ function cellsub(){
             var value = Values[key];
             // value : cellsub
             // key   : year
-            outputRecord(records[i],'cellsub',country, key, value, fn);
+            outputRecord(records[i],'cellsub',country, key, value);
         }
     } 
     records[i].value.Values = {};
@@ -80,7 +80,6 @@ function cellsub(){
             records[i].value['Values'][key] = value;
         }
     }
-    // output.write(records[i]); 
     var Values = records[i].value['Values'];
     writeRecords(Values, country); 
 }
@@ -102,7 +101,7 @@ function gdp_pop(){
             var value = Values[key];
             // value : gdpcapppp, gdpcapus, or pop
             // key   : year
-            outputRecord(records[i], ind, records[i].value['${CT}'], key, value, fn);
+            outputRecord(records[i], ind, records[i].value['${CT}'], key, value);
         }
     } 
     var indicator = records[i].value['Indicator Name'];
@@ -115,7 +114,6 @@ function gdp_pop(){
             records[i].value['Values'][key] = value;
         }
     }
-    // output.write(records[i]);
     var Values = records[i].value['Values'];
     writeRecords(Values, indicator);
 }
@@ -125,7 +123,7 @@ function nri1_68(){
             var value = Values[key];
             // value : GDP per capita
             // key   : year
-            outputRecord(records[i],'nri'+indicator,key, year, value, fn);
+            outputRecord(records[i],'nri'+indicator,key, year, value);
         }
     }
     if(records[i].value['Attribute'] == 'Value'){
@@ -144,8 +142,6 @@ function nri1_68(){
                 records[i].value['Values'][key] = value;
             }
         }
-        //output.write(records[i]);
-
         // Save the map of values that was originally saved in the Record 
         // Under the 'Values' field
         var Values = records[i].value['Values'];
@@ -165,7 +161,7 @@ function ipr_mf(){
                 indicator = 'ipr_f';
             }
 
-            outputRecord(records[i], indicator, country, year, value, fn);
+            outputRecord(records[i], indicator, country, year, value);
         }
     }
     // Save Country Data
@@ -196,7 +192,7 @@ function ipr_fixnetsub(){
             var value = Values[key];
             // value : ipr, fixnetsub
             // key   : year
-            outputRecord(records[i], indicator, records[i].value['${CT}'], key, value, fn);
+            outputRecord(records[i], indicator, records[i].value['${CT}'], key, value);
         }
     }
 
@@ -218,7 +214,7 @@ function WebIndexData(){
             var value = Values[key];
             // value : GDP per capita
             // key   : year
-            outputRecord(records[i], records[i].value['${ID}'], records[i].value['${CT}'], key, value, fn);
+            outputRecord(records[i], records[i].value['${ID}'], records[i].value['${CT}'], key, value);
         }
     }
     function findIndicator(i){
@@ -301,7 +297,7 @@ function WebIndexSurvey(){
             // value : survey score
             var year = regex2.exec(key); // grab year from key
             var indicator = regex1.exec(key) + regex3.exec(key); // grab correct format of indicator from key
-            outputRecord(records[i], indicator.toLowerCase(), country, year, value, fn);
+            outputRecord(records[i], indicator.toLowerCase(), country, year, value);
         }
     } 
     var country = records[i].value['Country'];
@@ -366,7 +362,7 @@ function WebIndexScores(){
                     break;
             }
             // value : country scores
-            outputRecord(records[i], indicator, country, 2014, value, fn);
+            outputRecord(records[i], indicator, country, 2014, value);
         }
     } 
     var regex = new RegExp(".+?(?=-)");
@@ -391,7 +387,41 @@ function hhnet(){
     var date = record.value['date'];
     var country = record.value['country'];
     if(value != ""){
-        outputRecord(record, 'hhnet', country, date, value, fn);
+        outputRecord(record, 'hhnet', country, date, value);
+    }
+}
+function FOTN(){
+    var country = records[i].value['Country'];
+    var regex = new RegExp("[0-9]{4}");
+    records[i].value['Values'] = {};
+    for(key in records[i].value){
+        var value = records[i].value[key];
+        if(key != 'filename' && key != 'Country'){
+            records[i].value['Values'][key] = value;
+        }
+    }
+    var Values = records[i].value['Values'];
+    for(key in Values){
+        var value = Values[key];
+        var ind;
+        switch(key){
+            case 'Internet Freedom Status':
+                ind = 'FOTNstatus';
+                break;
+            case 'Internet Freedom Total Score':
+                ind = 'FOTNtotal';
+                break;
+            case 'A: Obstacles to Access':
+                 ind = 'FOTNobstacles';
+                 break;
+            case 'B: Limits on Content':
+                 ind = 'FOTNlimits';
+                 break;
+            case 'C: Violations of User Rights':
+                 ind = 'FOTNviolations';
+                 break;
+        } 
+        outputRecord(records[i], ind, country, regex.exec(records[i].value['filename']), value);
     }
 }
 // ____________________________________________________
@@ -399,6 +429,7 @@ function hhnet(){
 for(var i = 0; i < records.length; i++) {
     var fn = records[i].value['filename'];
     var regex = new RegExp("([A-Z]{2})[A-Z]?[^A-Z][A-Z].csv");
+    var regexFOTN = new RegExp("FOTN [0-9]{4}.csv");
     try {
         switch(true){
             case (fn == 'Mobile_cellular_2000-2014.csv'):
@@ -431,6 +462,9 @@ for(var i = 0; i < records.length; i++) {
             case (fn == 'CoreHouseholdIndicator.csv'):
                 hhnet();
                 break;
+            case (regexFOTN.test(fn)):
+                FOTN();
+                break; 
         }
     } catch (e) {
         // Send record to error
