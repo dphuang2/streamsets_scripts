@@ -1,3 +1,12 @@
+function outputRecord(record, indicator, country, date, value){
+    record.value = { 
+        '${ID}' : indicator,
+        '${CT}' : country,
+        '${DT}' : parseFloat(date),
+        '${VL}' : parseFloat(value),
+    };
+    output.write(record);
+}
 function ONI(){
     function writeRecords(Values, year, country, cc){
         for(key in Values){
@@ -25,15 +34,7 @@ function ONI(){
                     ind = "ONIco";
                     break;
             }
-            record = records[i] //Make new variable just called for easier reading
-                // Note: this is a pass by reference so a new record is not created
-                record.value = { 
-                    '${ID}' : ind,
-                    '${CT}' : cc,
-                    '${DT}' : parseInt(year),
-                    '${VL}' : parseInt(value),
-                };
-            output.write(record);
+            outputRecord(records[i], ind, cc, year, value);
         }
     }
 
@@ -57,16 +58,7 @@ function cellsub(){
             var value = Values[key];
             // value : cellsub
             // key   : year
-            record = records[i] //Make new variable just called for easier reading
-                // Note: this is a pass by reference so a new record is not created
-                record.value = { 
-                    '${ID}' : 'cellsub',
-                    '${CT}' : country,
-                    '${DT}' : parseInt(key),
-                    '${VL}' : parseInt(value),
-                };
-            output.write(record);
-            // what is written to the record is what it outputs
+            outputRecord(records[i],'cellsub',country, key, value);
         }
     } 
     records[i].value.Values = {};
@@ -99,16 +91,7 @@ function gdp_pop(){
             var value = Values[key];
             // value : gdpcapppp, gdpcapus, or pop
             // key   : year
-            record = records[i] //Make new variable just called for easier reading
-                // Note: this is a pass by reference so a new record is not created
-                record.value = { 
-                    '${ID}' : ind,
-                    '${CT}' : records[i].value['${CT}'],
-                    '${DT}' : parseInt(key),
-                    '${VL}' : parseInt(value),
-                };
-            output.write(record);
-            // what is written to the record is what it outputs
+            outputRecord(records[i], ind, records[i].value['${CT}'], key, value);
         }
     } 
     var indicator = records[i].value['Indicator Name'];
@@ -131,16 +114,7 @@ function nri1_68(){
             var value = Values[key];
             // value : GDP per capita
             // key   : year
-            record = records[i] //Make new variable just called for easier reading
-                // Note: this is a pass by reference so a new record is not created
-                record.value = { 
-                    '${ID}' : 'nri'+indicator,
-                    '${CT}' : key,
-                    '${DT}' : parseInt(year),
-                    '${VL}' : parseInt(value),
-                };
-            output.write(record);
-            // what is written to the record is what it outputs
+            outputRecord(records[i],'nri'+indicator,key, year, value);
         }
     }
     if(records[i].value['Attribute'] == 'Value'){
@@ -180,16 +154,7 @@ function ipr_mf(){
                 indicator = 'ipr_f';
             }
 
-            record = records[i] //Make new variable just called for easier reading
-                // Note: this is a pass by reference so a new record is not created
-                record.value = { 
-                    '${ID}' : indicator,
-                    '${CT}' : country,
-                    '${DT}' : parseInt(year),
-                    '${VL}' : parseInt(value),
-                };
-            output.write(record);
-            // what is written to the record is what it outputs
+            outputRecord(records[i], indicator, country, year, value);
         }
     }
     // Save Country Data
@@ -209,29 +174,22 @@ function ipr_mf(){
 }
 function ipr_fixnetsub(){
     function writeRecords(Values, filename){
+        var indicator;
+        if(filename == 'Fixed_broadband_2000-2014.csv'){
+            indicator = 'fixnetsub';
+        }
+        if(filename == 'Individuals_Internet_2000-2014.csv'){
+            indicator = 'ipr';
+        }
         for(key in Values){
-            var indicator;
-            if(filename = 'Fixed_broadband_2000-2014.csv'){
-                indicator = 'fixnetsub';
-            } else {
-                indicator = 'ipr';
-            }
             var value = Values[key];
             // value : ipr, fixnetsub
             // key   : year
-            record = records[i] //Make new variable just called for easier reading
-                // Note: this is a pass by reference so a new record is not created
-                record.value = { 
-                    '${ID}' : indicator,
-                    '${CT}' : records[i].value['${CT}'],
-                    '${DT}' : key,
-                    '${VL}' : value,
-                };
-            output.write(record);
-            // what is written to the record is what it outputs
+            //
+            outputRecord(records[i], records[i].value['${CT}'], key value);
         }
     }
-    
+
     records[i].value.Values = {};
     records[i].value['${CT}'] = records[i].value['country']; // 1. Alter this line to the column that identifys the Country
     var filename = records[i].value['filename'];
@@ -250,16 +208,7 @@ function WebIndexData(){
             var value = Values[key];
             // value : GDP per capita
             // key   : year
-            record = records[i] //Make new variable just called for easier reading
-                // Note: this is a pass by reference so a new record is not created
-                record.value = { 
-                    '${ID}' : records[i].value['${ID}'],
-                    '${CT}' : records[i].value['${CT}'],
-                    '${DT}' : key,
-                    '${VL}' : value,
-                };
-            output.write(record);
-            // what is written to the record is what it outputs
+            outputRecord(records[i], records[i].value['${ID}'], records[i].value['${CT}'], key, value);
         }
     }
     function findIndicator(i){
@@ -346,16 +295,7 @@ function WebIndexSurvey(){
             // value : survey score
             var year = regex2.exec(key); // grab year from key
             var indicator = regex1.exec(key) + regex3.exec(key); // grab correct format of indicator from key
-            record = records[i] //Make new variable just called for easier reading
-                // Note: this is a pass by reference so a new record is not created
-                record.value = { 
-                    '${ID}' : indicator.toLowerCase(),
-                    '${CT}' : country,
-                    '${DT}' : parseInt(year),
-                    '${VL}' : parseInt(value),
-                };
-            output.write(record);
-            // what is written to the record is what it outputs
+            outputRecord(records[i], indicator.toLowerCase(), year, value);
         }
     } 
     var country = records[i].value['Country'];
@@ -420,15 +360,7 @@ function WebIndexScores(){
                     break;
             }
             // value : country scores
-            record = records[i] //Make new variable just called for easier reading
-                // Note: this is a pass by reference so a new record is not created
-                record.value = { 
-                    '${ID}' : indicator,
-                    '${CT}' : country,
-                    '${DT}' : 2014,
-                    '${VL}' : parseInt(value),
-                };
-            output.write(record);
+            outputRecord(records[i], indicator, country, 2014, value);
         }
     } 
     var regex = new RegExp(".+?(?=-)");
@@ -453,13 +385,7 @@ function hhnet(){
     var date = record.value['date'];
     var country = record.value['country'];
     if(value != ""){
-        record.value = { 
-            '${ID}' : 'hhnet',
-            '${CT}' : country,
-            '${DT}' : date,
-            '${VL}' : value,
-        };
-        output.write(record);
+        outputRecord(record, 'hhnet', country, date, value);
     }
 }
 // ____________________________________________________
