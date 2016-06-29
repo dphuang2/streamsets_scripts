@@ -1,16 +1,16 @@
 function outputRecord(record, indicator, country, date, value){
     if(parseFloat(value).isNaN()){
         record.value = { 
-            '${ID}' : indicator,
-            '${CT}' : country,
+            '${ID}' : indicator.toString(),
+            '${CT}' : country.toString(),
             '${DT}' : parseFloat(date),
-            '${VL}' : value,
+            '${VL}' : value.toString(),
         };
     } else {
         record.value = { 
-            '${ID}' : indicator,
-            '${CT}' : country,
-            '${DT}' : parseFloat(date),
+            '${ID}' : indicator.toString(),
+            '${CT}' : country.toString(),
+            '${DT}' : parseFloat(date).toString(),
             '${VL}' : parseFloat(value.replace(',', '')),
         };
     }
@@ -227,10 +227,6 @@ function WebIndexData(){
                     records[i].value["${CT}"] = records[i].value["WB H school life expectancy female/male"];
                     indicator = "wbschoollifeexpfm";
                     break;
-                case "Freedom House - Freedom of the press": 
-                    records[i].value["${CT}"] = records[i].value["Freedom House - Freedom of the press"];
-                    indicator = "fhpress";
-                    break;
                 case "Secondary enrolment rates (gross)": // WB D.csv
                     records[i].value["${CT}"] = records[i].value["Secondary enrolment rates (gross)"];
                     indicator = "secondenroll";
@@ -303,7 +299,7 @@ function WebIndexSurvey(){
             // value : survey score
             var year = regex2.exec(key); // grab year from key
             var indicator = regex1.exec(key) + regex3.exec(key); // grab correct format of indicator from key
-            outputRecord(records[i], indicator.toLowerCase(), year, value);
+            outputRecord(records[i], indicator.toLowerCase(), country, year, value);
         }
     } 
     var country = records[i].value['Country'];
