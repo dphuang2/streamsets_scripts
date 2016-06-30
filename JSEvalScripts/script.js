@@ -56,7 +56,6 @@ function ONI(){
     for (key in records[i].value){
         var value = records[i].value[key];
         if(value != 'n/a' && key != 'filename' && key != 'social_description' && key != 'tools_description' && key != 'conflict_security_description' && key != 'political_description' && key != 'country' && key != 'country_code' && key != 'testing_date' && key != 'url'){
-            //records[i].value['Values'][key] = value;
             Values[key] = value;
         }
     }
@@ -393,18 +392,17 @@ function hhnet(){
 function FOTN(){
     var country = records[i].value['Country'];
     var regex = new RegExp("[0-9]{4}");
-    records[i].value['Values'] = {};
-    for(key in records[i].value){
+    var Values = {}; 
+    for(key in records[i].value){ // Settings a 'Values' key map in records[i] will cause there to be a [object Object] variable included in the for loop
         var value = records[i].value[key];
         if(key != 'filename' && key != 'Country'){
-            records[i].value['Values'][key] = value;
+            Values[key] = value;
         }
     }
-    var Values = records[i].value['Values'];
     for(key in Values){
         var value = Values[key];
         var ind;
-        switch(key){
+        switch(key){ // had to change file headers to make them consistent
             case 'Internet Freedom Status':
                 ind = 'FOTNstatus';
                 break;
