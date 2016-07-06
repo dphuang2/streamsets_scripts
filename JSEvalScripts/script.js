@@ -1,5 +1,5 @@
 function outputRecord(record, indicator, country, date, value){
-    if(parseFloat(value).isNaN()){
+    if(parseFloat(value).isNaN()){ // if the value is a string, then output value as string
         record.value = { 
             '${ID}' : indicator.toString(),
             '${CT}' : country.toString(),
@@ -7,7 +7,7 @@ function outputRecord(record, indicator, country, date, value){
             '${VL}' : value.toString(),
             'filename' : fn.toString(),
         };
-    } else {
+    } else { // otherwise, replace commas with nil and parseFloat() the value
         record.value = { 
             '${ID}' : indicator.toString(),
             '${CT}' : country.toString(),
@@ -60,7 +60,6 @@ function ONI(){
         }
     }
     writeRecords(Values, year, country, cc);
-
 }
 function cellsub(){ 
     function writeRecords(Values, country){
@@ -82,7 +81,7 @@ function cellsub(){
     var Values = records[i].value['Values'];
     writeRecords(Values, country); 
 }
-function gdp_pop(){ 
+function gdp_pop_fixbb(){ 
     function writeRecords(Values, indicator){
         var ind;
         switch (indicator){
@@ -95,6 +94,9 @@ function gdp_pop(){
             case 'Population, total':
                 ind = 'pop';
                 break; 
+            case 'Fixed broadband subscriptions':
+                ind = 'fixbb';
+                break;
         }
         for(key in Values){
             var value = Values[key];
@@ -120,7 +122,6 @@ function nri1_68(){
     function writeRecords(Values, year, indicator){
         for(key in Values){
             var value = Values[key];
-            // value : GDP per capita
             // key   : year
             outputRecord(records[i],'nri'+indicator,key, year, value);
         }
@@ -211,7 +212,6 @@ function WebIndexData(){
     function writeRecords(Values){
         for(key in Values){
             var value = Values[key];
-            // value : GDP per capita
             // key   : year
             outputRecord(records[i], records[i].value['${ID}'], records[i].value['${CT}'], key, value);
         }
@@ -422,6 +422,31 @@ function FOTN(){
         outputRecord(records[i], ind, country, regex.exec(records[i].value['filename']), value);
     }
 }
+function HDI(){
+    function writeRecords(Values){
+        for(key in Values){
+            var value = Values[key];
+            var ind; 
+            if(key == 'rank'){
+                ind = 'HDIr';
+                key = '2014';
+            } else {
+                ind = 'HDI';
+            }
+            outputRecord(records[i], ind, records[i].value['${CT}'], key, value);
+        }
+    } 
+    var Values = {};
+    records[i].value['${CT}'] = records[i].value['country'];
+    for(key in records[i].value){
+        var value = records[i].value[key];
+        if(key != 'country' && key != 'filename'){
+            Values[key] = value;
+        }
+    }
+    records[i].value['Values'] = Values;
+    writeRecords(Values);
+}
 // ____________________________________________________
 // This code runs the logic for which script to run
 for(var i = 0; i < records.length; i++) {
@@ -436,8 +461,8 @@ for(var i = 0; i < records.length; i++) {
             case (fn == 'oni_country_data_2013-09-20.csv'):
                 ONI();
                 break;
-            case (fn == 'API_NY.GDP.PCAP.CD_DS2_en_csv_v2.csv' || fn == 'API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2.csv' || fn == 'API_SP.POP.TOTL_DS2_en_csv_v2.csv'):
-                gdp_pop();
+            case (fn == 'API_NY.GDP.PCAP.CD_DS2_en_csv_v2.csv' || fn == 'API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2.csv' || fn == 'API_SP.POP.TOTL_DS2_en_csv_v2.csv' || fn == 'API_IT.NET.BBND_DS2_en_csv_v2.csv'):
+                gdp_pop_fixbb();
                 break;
             case (fn == 'WEF_NRI_2012-2015_Historical_Dataset.csv'):
                 nri1_68();
@@ -463,6 +488,9 @@ for(var i = 0; i < records.length; i++) {
             case (regexFOTN.test(fn)):
                 FOTN();
                 break; 
+            case (fn == 'tabula-2015_human_development_report.csv'):
+                HDI();
+                break;
         }
     } catch (e) {
         // Send record to error

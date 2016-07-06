@@ -12,12 +12,43 @@
 
 <h4> Pseudocode for understanding the script: </h4>
 ```javascript
-function indicator(){
-    writeRecord(){
-        - Write data to record and output record
-        - ${ID}, ${CT}, ${DT}, ${VL} are constants defined by pipeline
-        output.write(record); // Syntax for outputting a record
+(defined at the top of the script.js file)
+function outputRecord(record, indicator, country, date, value){
+    if(parseFloat(value).isNaN()){
+        record.value = { 
+            '${ID}' : indicator.toString(),
+            '${CT}' : country.toString(),
+            '${DT}' : parseFloat(date),
+            '${VL}' : value.toString(),
+            'filename' : fn.toString(),
+        };
+    } else {
+        record.value = { 
+            '${ID}' : indicator.toString(),
+            '${CT}' : country.toString(),
+            '${DT}' : parseFloat(date),
+            '${VL}' : parseFloat(value.replace(',', '')),
+            'filename' : fn.toString(),
+        };
     }
+    output.write(record);
+}
+
+...
+indicator functions
+...
+
+function indicator(){
+    (defined at the top of a indicator function)
+    writeRecord(Values){
+    // iterate through Values hash and output record for each value
+        for(key in Values){
+            var value = Values[key];
+            outputRecord(records[i], indicator, country, year, value); // Use outputRecord that is defined above to output all the records for the row that is being evaluated
+        }
+
+    }
+
     // save data if needed for writeRecord function
     var cc = records[i].value['header name'];
     var country = records[i].value['Country']; // Example of header name
@@ -31,6 +62,7 @@ function indicator(){
             Values[key] = value;
         }
     }
+    writeRecord(Values);
 }
 function indicator2(){
     ...
