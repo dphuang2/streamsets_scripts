@@ -440,11 +440,28 @@ function HDI(){
     records[i].value['${CT}'] = records[i].value['country'];
     for(key in records[i].value){
         var value = records[i].value[key];
-        if(key != 'country' && key != 'filename'){
+        if(value != ".." && value != "" && key != 'country' && key != 'filename'){
             Values[key] = value;
         }
     }
     records[i].value['Values'] = Values;
+    writeRecords(Values);
+}
+function bbcost(){
+    function writeRecords(Values){ 
+        for(key in Values){
+            var value = Values[key] 
+            outputRecord(records[i], key, country, 2014, value);
+        }
+    } 
+    var country = records[i].value['country'];
+    var Values = {}
+    for(key in records[i].value){
+        var value = records[i].value[key];
+        if(key != 'filename' && value != '' && key != 'country'){
+            Values[key] = value;
+        }
+    }
     writeRecords(Values);
 }
 // ____________________________________________________
@@ -490,6 +507,9 @@ for(var i = 0; i < records.length; i++) {
                 break; 
             case (fn == 'tabula-2015_human_development_report.csv'):
                 HDI();
+                break;
+            case (fn == 'bbcost_IM_AccessIndexData_2014-07-01.csv'):
+                bbcost();
                 break;
         }
     } catch (e) {
