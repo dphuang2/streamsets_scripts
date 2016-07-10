@@ -12,7 +12,7 @@ function outputRecord(record, indicator, country, date, value){
             '${ID}' : indicator.toString(),
             '${CT}' : country.toString(),
             '${DT}' : parseInt(date),
-            '${VL}' : parseFloat(value.replace(',', '')),
+            '${VL}' : parseFloat(value.toString().replace(',','')),
             'filename' : fn.toString(),
         };
     }
@@ -467,10 +467,15 @@ function bbcost(){
 function Akamai(){
     function writeRecords(Values){ 
         for(key in Values){
+            var value = Values[key];
             var regexYear = new RegExp("[0-9]{4}");
             var year = regexYear.exec(fn);
-            var value = Values[key] 
-            outputRecord(records[i], key, country, year, value);
+            if(key == 'speedmbps' || key == 'peakspeedmbps'){
+                outputRecord(records[i], key.replace("mbps","kbps"), country, year, (value * 1000))
+                outputRecord(records[i], key, country, year, value);
+            } else {
+                outputRecord(records[i], key, country, year, value);
+            }
         }
     } 
     var country = records[i].value['country'];
