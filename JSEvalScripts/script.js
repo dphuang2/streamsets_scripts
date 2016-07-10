@@ -3,7 +3,7 @@ function outputRecord(record, indicator, country, date, value){
         record.value = { 
             '${ID}' : indicator.toString(),
             '${CT}' : country.toString(),
-            '${DT}' : parseFloat(date),
+            '${DT}' : parseInt(date),
             '${VL}' : value.toString(),
             'filename' : fn.toString(),
         };
@@ -11,7 +11,7 @@ function outputRecord(record, indicator, country, date, value){
         record.value = { 
             '${ID}' : indicator.toString(),
             '${CT}' : country.toString(),
-            '${DT}' : parseFloat(date),
+            '${DT}' : parseInt(date),
             '${VL}' : parseFloat(value.replace(',', '')),
             'filename' : fn.toString(),
         };
@@ -404,19 +404,19 @@ function FOTN(){
         var ind;
         switch(key){ // had to change file headers to make them consistent
             case 'Internet Freedom Status':
-                ind = 'FOTNstatus';
+                ind = 'FOTNs';
                 break;
             case 'Internet Freedom Total Score':
-                ind = 'FOTNtotal';
+                ind = 'FOTNt';
                 break;
             case 'A: Obstacles to Access':
-                 ind = 'FOTNobstacles';
+                 ind = 'FOTNo';
                  break;
             case 'B: Limits on Content':
-                 ind = 'FOTNlimits';
+                 ind = 'FOTNl';
                  break;
             case 'C: Violations of User Rights':
-                 ind = 'FOTNviolations';
+                 ind = 'FOTNv';
                  break;
         } 
         outputRecord(records[i], ind, country, regex.exec(records[i].value['filename']), value);
@@ -464,12 +464,32 @@ function bbcost(){
     }
     writeRecords(Values);
 }
+function Akamai(){
+    function writeRecords(Values){ 
+        for(key in Values){
+            var regexYear = new RegExp("[0-9]{4}");
+            var year = regexYear.exec(fn);
+            var value = Values[key] 
+            outputRecord(records[i], key, country, year, value);
+        }
+    } 
+    var country = records[i].value['country'];
+    var Values = {}
+    for(key in records[i].value){
+        var value = records[i].value[key];
+        if(key != 'filename' && value != '' && key != 'country'){
+            Values[key] = value;
+        }
+    }
+    writeRecords(Values);
+}
 // ____________________________________________________
 // This code runs the logic for which script to run
 for(var i = 0; i < records.length; i++) {
     var fn = records[i].value['filename'];
-    var regex = new RegExp("([A-Z]{2})[A-Z]?[^A-Z][A-Z].csv");
+    var regexWI = new RegExp("([A-Z]{2})[A-Z]?[^A-Z][A-Z].csv");
     var regexFOTN = new RegExp("FOTN [0-9]{4}.csv");
+    var regexAkamai = new RegExp("tabula-akamai-state-of-the-internet-report-[a-z|0-9]{2}-[0-9]{4}.csv")
     try {
         switch(true){
             case (fn == 'Mobile_cellular_2000-2014.csv'):
@@ -490,7 +510,7 @@ for(var i = 0; i < records.length; i++) {
             case (fn == 'Individuals_Internet_2000-2014.csv' || fn == 'Fixed_broadband_2000-2014.csv'):
                 ipr_fixnetsub();
                 break;
-            case (regex.test(fn)):
+            case (regexWI.test(fn)):
                 WebIndexData();
                 break;
             case (fn == 'Survey Scores Primary Raw Data.csv'):
@@ -510,6 +530,9 @@ for(var i = 0; i < records.length; i++) {
                 break;
             case (fn == 'bbcost_IM_AccessIndexData_2014-07-01.csv'):
                 bbcost();
+                break;
+            case(regexAkamai.test(fn)):
+                Akamai();
                 break;
         }
     } catch (e) {

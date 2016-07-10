@@ -30,3 +30,4 @@ Temporary Items
 
 * Temp files from open Vim files
 *.swp
+tags
