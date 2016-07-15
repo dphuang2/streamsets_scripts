@@ -450,8 +450,17 @@ function HDI(){
 function bbcost(){
     function writeRecords(Values){ 
         for(key in Values){
+            var year;
+            if(fn == 'BB pricing 9March2016 (1).csv'){
+                year = 2015;
+                if(key == 'bbcostindex'){
+                    value = (1-value);
+                }
+            } else {
+                year = 2014;
+            }
             var value = Values[key] 
-            outputRecord(records[i], key, country, 2014, value);
+            outputRecord(records[i], key, country, year, value);
         }
     } 
     var country = records[i].value['country'];
@@ -533,7 +542,7 @@ for(var i = 0; i < records.length; i++) {
             case (fn == 'tabula-2015_human_development_report.csv'):
                 HDI();
                 break;
-            case (fn == 'bbcost_IM_AccessIndexData_2014-07-01.csv'):
+            case (fn == 'bbcost_IM_AccessIndexData_2014-07-01.csv' || fn == 'BB pricing 9March2016 (1).csv' || fn == 'IM_AccessIndexData_INTERNAL_2016-01-12.csv'):
                 bbcost();
                 break;
             case(regexAkamai.test(fn)):
