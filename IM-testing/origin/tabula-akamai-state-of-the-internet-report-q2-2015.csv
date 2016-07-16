@@ -1,0 +1,56 @@
+country,speedmbps,peakspeedmbps,bbrate,highbbrate
+Argentina,4.7,25.6,42%,7.70%
+Bolivia,1.9,16.8,3.90%,0.30%
+Brazil,3.6,27,32%,2.40%
+Canada,11.2,48.1,86%,40%
+Chile,5.6,37,62%,7.40%
+Colombia,4.5,27.8,50%,2.70%
+Costa Rica,3.2,17.3,19%,1.10%
+Ecuador,4,24.9,33%,2.50%
+Mexico,5.5,27.3,62%,6.20%
+Panama,3.3,17.6,23%,1.20%
+Paraguay,1.5,15,1.60%,0.10%
+Peru,4.7,28.5,55%,3.20%
+United States,11.7,50.4,77%,43%
+Uruguay,5.9,47.7,61%,11%
+Venezuela,1.6,13.9,3.20%,0.30%
+Australia,7.8,40.3,74%,18%
+China,3.4,18.4,28%,1.20%
+Hong Kong,17,94.8,93%,62%
+India,2.4,18.7,11%,1.60%
+Indonesia,2.4,21,9.00%,0.60%
+Japan,16.4,75.1,90%,60%
+Malaysia,5,36.5,55%,4.50%
+New Zealand,8.4,38.1,87%,21%
+Philippines,3.1,25.6,15%,0.60%
+Singapore,12.7,108.3,87%,50%
+South Korea,23.1,83.3,96%,75%
+Sri Lanka,5.3,31.4,77%,3.20%
+Taiwan,10.6,74.5,90%,33%
+Thailand,8.6,51.5,95%,20%
+Vietnam,3.3,22.7,32%,0.40%
+Austria,10.9,43.5,90%,31%
+Belgium,12.4,57.3,91%,53%
+Czech Republic,13.9,48.7,86%,47%
+Denmark,12.9,48.1,93%,49%
+Finland,14,53.2,90%,48%
+France,7.9,37.2,75%,20%
+Germany,10.7,46.8,87%,34%
+Hungary,10,51.7,88%,35%
+Ireland,11,46.4,72%,36%
+Israel,12.1,71.4,95%,47%
+Italy,6.4,30.2,70%,8.70%
+Netherlands,15.2,60.9,95%,60%
+Norway,14.3,50,87%,47%
+Poland,10,43.5,88%,33%
+Portugal,10.4,48.2,87%,38%
+Romania,12.8,72.1,94%,57%
+Russia,9.6,54.2,84%,33%
+Slovakia,10.3,44,81%,27%
+South Africa,3.3,16.8,19%,2.70%
+Spain,9.7,47.4,84%,31%
+Sweden,16.1,62.8,92%,53%
+Switzerland,15.6,59.4,93%,60%
+Turkey,6.3,37.5,80%,7.00%
+United Arab Emirates,7,47.7,86%,11%
+United Kingdom,11.8,50.9,85%,41%

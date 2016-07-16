@@ -1,3 +1,7 @@
+function stringToNum(number){
+    var out = parseFloat(number.toString().replace(',',''));
+    return out;
+}
 function outputRecord(record, indicator, country, date, value){
     if(parseFloat(value).isNaN()){ // if the value is a string, then output value as string
         record.value = { 
@@ -12,7 +16,7 @@ function outputRecord(record, indicator, country, date, value){
             '${ID}' : indicator.toString(),
             '${CT}' : country.toString(),
             '${DT}' : parseInt(date),
-            '${VL}' : parseFloat(value.toString().replace(',','')),
+            '${VL}' : stringToNum(value),
             'filename' : fn.toString(),
         };
     }
@@ -447,11 +451,11 @@ function HDI(){
     records[i].value['Values'] = Values;
     writeRecords(Values);
 }
-function bbcost(){
+function bbcost_updownr(){
     function writeRecords(Values){ 
         for(key in Values){
             var year;
-            if(fn == 'BB pricing 9March2016 (1).csv'){
+            if(fn == 'BB pricing 9March2016 (1).csv' || fn == 'updownr_IM_AccessIndexData_INTERNAL_2016-01-12.csv'){
                 year = 2015;
                 if(key == 'bbcostindex'){
                     value = (1-value);
@@ -460,11 +464,19 @@ function bbcost(){
                 year = 2014;
             }
             var value = Values[key] 
-            outputRecord(records[i], key, country, year, value);
+            if(key == 'uploadkbps' || key == 'downloadkbps'){
+                outputRecord(records[i], key.replace("kbps","mbps"), country, year, ( stringToNum(value) / 1000) );
+                outputRecord(records[i], key, country, year, value);
+            } else if (key == 'uploadmbps' || key == 'downloadmbps'){
+                outputRecord(records[i], key.replace("mbps","kbps"), country, year, ( stringToNum(value) * 1000) );
+                outputRecord(records[i], key, country, year, value);
+            } else {
+                outputRecord(records[i], key, country, year, value);
+            }
         }
     } 
     var country = records[i].value['country'];
-    var Values = {}
+    var Values = {};
     for(key in records[i].value){
         var value = records[i].value[key];
         if(key != 'filename' && value != '' && key != 'country'){
@@ -488,10 +500,28 @@ function Akamai(){
         }
     } 
     var country = records[i].value['country'];
-    var Values = {}
+    var Values = {};
     for(key in records[i].value){
         var value = records[i].value[key];
         if(key != 'filename' && value != '' && key != 'country'){
+            Values[key] = value;
+        }
+    }
+    writeRecords(Values);
+}
+function litrate_ed(){
+    function writeRecords(Values){ 
+        for(key in Values){
+            var value = Values[key] 
+                outputRecord(records[i], key, country, year, value);
+        }
+    } 
+    var year = records[i].value['year']
+    var country = records[i].value['country'];
+    var Values = {};
+    for(key in records[i].value){
+        var value = records[i].value[key];
+        if(value != '..' && key != 'year' && key != 'filename' && value != '' && key != 'country'){
             Values[key] = value;
         }
     }
@@ -542,11 +572,14 @@ for(var i = 0; i < records.length; i++) {
             case (fn == 'tabula-2015_human_development_report.csv'):
                 HDI();
                 break;
-            case (fn == 'bbcost_IM_AccessIndexData_2014-07-01.csv' || fn == 'BB pricing 9March2016 (1).csv' || fn == 'IM_AccessIndexData_INTERNAL_2016-01-12.csv'):
-                bbcost();
+            case (fn == 'bbcost_IM_AccessIndexData_2014-07-01.csv' || fn == 'BB pricing 9March2016 (1).csv' || fn == 'bbcostindexnew_IM_AccessIndexData_INTERNAL_2016-01-12.csv' || fn == 'updownr_IM_AccessIndexData_2014-07-01.csv' || fn == 'updownr_IM_AccessIndexData_INTERNAL_2016-01-12.csv'):
+                bbcost_updownr();
                 break;
             case(regexAkamai.test(fn)):
                 Akamai();
+                break;
+            case(fn == 'litrate.csv' || fn == 'litrate_IM_AccessIndexData_2014-07-01.csv' || fn == '2015_Statistical_Annex_Table_5.csv'):
+                litrate_ed();
                 break;
         }
     } catch (e) {
