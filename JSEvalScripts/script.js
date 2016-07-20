@@ -513,7 +513,11 @@ function litrate_ed(){
     function writeRecords(Values){ 
         for(key in Values){
             var value = Values[key] 
-                outputRecord(records[i], key, country, year, value);
+                if(fn == 'litrate_IM_AccessIndexData_2014-07-01.csv'){
+                    outputRecord(records[i], key, country, year, value / 100); 
+                } else {
+                    outputRecord(records[i], key, country, year, value);
+                }
         }
     } 
     var year = records[i].value['year']
