@@ -1,23 +1,90 @@
+<!-- jQuery -->
+<script src="http://code.jquery.com/jquery-3.1.0.slim.min.js" integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8=" crossorigin="anonymous"></script>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script language="javascript" type="text/javascript" src="script.js"></script>
 
+<!-- HEADER -->
+<header class="nav navbar-default">
+  <span id="logo">Google Summer of Code 2016 | Berkman Klein Center | Dylan Huang</span>
+</header> 
+<!-- HERO -->
 <div class="hero-wrap">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <h3> Goals </h3>
-        <ul>
-          <li>Create a scalable, modular, and reliable method of data integration</li>
-          <li>Automate the extract, transform, and load process for the Internet Monitor and Dashboard</li>
-        </ul>
+  <div class="row">
+    <div class="col-md-4 left">
+      <ul class="nav nav-tabs">
+        <li id="goals" role="presentation" class="active"><a>Goals</a></li>
+        <li id="research" role="presentation"><a>Research</a></li>
+        <li id="script" role="presentation"><a>Script</a></li>
+        <li id="github" role="presentation"><a>Github</a></li>
+      </ul>
+      <div class="left-container">
+        <!-- GOALS -->
+        <div class="goals">
+          <ul class="goals-list">
+            <li><span class="glyphicon glyphicon-search" aria-hidden="true"></span>  Research a new platform for the integration of disparate data sources into a single Internet Monitor Platform offering.</li>
+            <li><span class="glyphicon glyphicon-list" aria-hidden="true"></span>  Make data available through the Internet Monitor website via a newly defined Platform Data API.</li>
+            <li><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>  Create a scalable, modular, and reliable system to run the ETL process on demand</li>
+            <li><span class="glyphicon glyphicon-console" aria-hidden="true"></span>  Automate an otherwise manual and time consuming process of integrating data into the Internet Monitor system</li>
+            <li><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Eliminate the tedious and error prone human element of transforming data</li>
+          </ul>
+        </div>
+        <!-- RESEARCH -->
+        <div class="research">
+          <h4>Points considered:</h4>
+          <ul class="research-list">
+            <li>Ease of use&#151;how easy is it to setup and how user-friendly is the interface</li>
+            <li>Functionality of platform&#151;how well does it fit our needs</li>
+            <li>How is data retrieved and the format/method of output</li>
+          </ul>
+          <h4>Platforms considered:</h4>
+          <ul class="research-list">
+            <li><a href="http://nifi.apache.org/">Apache NiFi</a></li>
+            <li><a href="https://streamsets.com">StreamSets</a></li>
+            <li><a href="http://couchdb.apache.org/">CouchDB</a></li>
+            <li><a href="http://www.safe.com/fme/fme-desktop/">FME Desktop</a></li>
+          </ul>
+          <h4>Platform Chosen:</h4>
+          <ul class="research-list">
+            <li><a href="https://streamsets.com">StreamSets</a></li>
+          </ul>
+          <p><span id="reason">Reason:</span> Streamsets beat out the other platforms in flexibility by allowing the use of JavaScript to script the transformation process rather than trying to alter and customize pre-built "Evaluators" to transform the data into the desired form.</p>
+        </div>
+        <!-- SCRIPT -->
+        <div class="script">
+          <h3> Structure </h3>
+
+
+        </div>
+        <!-- GITHUB -->
+        <div class="github">
+          <h3> Important Files/Folders <a href="https://github.com/dphuang2/streamsets_scripts">Repo</a> </h3>
+                    <ul>
+            <li><a href="https://github.com/dphuang2/streamsets_scripts/blob/master/JSEvalScripts/script.js">/JSEvalScripts/script.js</a></li>
+            - This file contains all the logic for transforming each .csv file into the desired indicator/country/date/value format.
+            <li><a href="https://github.com/dphuang2/streamsets_scripts/tree/master/IM-testing">/IM-testing</a></li>
+            - Folder that contains all the origin files (input), and destination files (output)
+            <li><a href="https://github.com/dphuang2/streamsets_scripts/blob/master/AddingNewDataSource.md">AddingNewDataSource.md</a></li>
+            - This markdown files contains the instructions and explanation for adding to script.js and understanding the structure of the code.
+            <li><a href="https://github.com/dphuang2/streamsets_scripts/tree/master/OldJsonPipelines">*.json files</a></li>
+            - Streamsets allows users to import a pipeline through use of .json files. This folder contains all the past versions of .json files while the most current pipeline is in the source directory
+          </ul>
+        </div>
       </div>
-      <div class="col-md-6">
-        <img src="streamsets-demonstration.gif" alt="demonstration">
+    </div>
+    <div class="col-md-8 right">
+      <div class="goals-right">
+        <img class="ss-gif goals" src="streamsets-demonstration.gif" alt="demonstration">
+        <div id="script-gist" class="script">
+          <script ss="script" src="https://gist.github.com/dphuang2/a454a1c9251faad94d3522ddb6e85eb5.js"></script>
+        </div>
+        <img class="github" id="github-image" src="github-ss.png">
       </div>
     </div>
   </div>
 </div>
-
-

@@ -1,0 +1,52 @@
+/* header */
+header {
+  padding: 10px 0px;
+}
+#logo {
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 25px;
+  color: black;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+/* hero */
+.hero-wrap .row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.ss-gif{
+  width: 100%;
+}
+.hero-wrap .left-container{
+  margin-left: 10px; 
+  margin-bottom: 20px;
+}
+.left {
+  padding: 0px;
+}
+.right {
+  padding: 0px;
+}
+/* hero goals */
+.hero-wrap .goals-list {
+  list-style: none;
+  padding-left: 0px;
+}
+.hero-wrap .goals-list li{
+  margin-top: 10px;
+}
+/* hero research */
+#reason{
+  font-weight: bold;
+}
+/* hero script */
+#script-gist{
+  height: 475px;
+  width: 100%;
+  overflow: auto;
+}
+#github-image{
+  width: 100%;
+}
