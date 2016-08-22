@@ -12,20 +12,20 @@
 ```javascript
 (defined at the top of the script.js file)
 function outputRecord(record, indicator, country, date, value){
-    if(parseFloat(value).isNaN()){
+    if(parseFloat(value).isNaN()){ // if the value is a string, then output value as string
         record.value = { 
             '${ID}' : indicator.toString(),
             '${CT}' : country.toString(),
-            '${DT}' : parseFloat(date),
+            '${DT}' : parseInt(date),
             '${VL}' : value.toString(),
             'filename' : fn.toString(),
         };
-    } else {
+    } else { // otherwise, replace commas with nil and parseFloat() the value
         record.value = { 
             '${ID}' : indicator.toString(),
             '${CT}' : country.toString(),
-            '${DT}' : parseFloat(date),
-            '${VL}' : parseFloat(value.replace(',', '')),
+            '${DT}' : parseInt(date),
+            '${VL}' : stringToNum(value),
             'filename' : fn.toString(),
         };
     }
@@ -35,7 +35,7 @@ function outputRecord(record, indicator, country, date, value){
 ...
 indicator functions
 ...
-
+// Example indicator function
 function indicator(){
     (defined at the top of a indicator function)
     writeRecord(Values){
