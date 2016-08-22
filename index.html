@@ -1,90 +1,136 @@
-<!-- jQuery -->
-<script src="http://code.jquery.com/jquery-3.1.0.slim.min.js" integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8=" crossorigin="anonymous"></script>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
-<script language="javascript" type="text/javascript" src="script.js"></script>
-
-<!-- HEADER -->
-<header class="nav navbar-default">
-  <span id="logo">Google Summer of Code 2016 | Berkman Klein Center | Dylan Huang</span>
-</header> 
-<!-- HERO -->
-<div class="hero-wrap">
-  <div class="row">
-    <div class="col-md-4 left">
-      <ul class="nav nav-tabs">
-        <li id="goals" role="presentation" class="active"><a>Goals</a></li>
-        <li id="research" role="presentation"><a>Research</a></li>
-        <li id="script" role="presentation"><a>Script</a></li>
-        <li id="github" role="presentation"><a>Github</a></li>
-      </ul>
-      <div class="left-container">
-        <!-- GOALS -->
-        <div class="goals">
-          <ul class="goals-list">
-            <li><span class="glyphicon glyphicon-search" aria-hidden="true"></span>  Research a new platform for the integration of disparate data sources into a single Internet Monitor Platform offering.</li>
-            <li><span class="glyphicon glyphicon-list" aria-hidden="true"></span>  Make data available through the Internet Monitor website via a newly defined Platform Data API.</li>
-            <li><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>  Create a scalable, modular, and reliable system to run the ETL process on demand</li>
-            <li><span class="glyphicon glyphicon-console" aria-hidden="true"></span>  Automate an otherwise manual and time consuming process of integrating data into the Internet Monitor system</li>
-            <li><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Eliminate the tedious and error prone human element of transforming data</li>
-          </ul>
-        </div>
-        <!-- RESEARCH -->
-        <div class="research">
-          <h4>Points considered:</h4>
-          <ul class="research-list">
-            <li>Ease of use&#151;how easy is it to setup and how user-friendly is the interface</li>
-            <li>Functionality of platform&#151;how well does it fit our needs</li>
-            <li>How is data retrieved and the format/method of output</li>
-          </ul>
-          <h4>Platforms considered:</h4>
-          <ul class="research-list">
-            <li><a href="http://nifi.apache.org/">Apache NiFi</a></li>
-            <li><a href="https://streamsets.com">StreamSets</a></li>
-            <li><a href="http://couchdb.apache.org/">CouchDB</a></li>
-            <li><a href="http://www.safe.com/fme/fme-desktop/">FME Desktop</a></li>
-          </ul>
-          <h4>Platform Chosen:</h4>
-          <ul class="research-list">
-            <li><a href="https://streamsets.com">StreamSets</a></li>
-          </ul>
-          <p><span id="reason">Reason:</span> Streamsets beat out the other platforms in flexibility by allowing the use of JavaScript to script the transformation process rather than trying to alter and customize pre-built "Evaluators" to transform the data into the desired form.</p>
-        </div>
-        <!-- SCRIPT -->
-        <div class="script">
-          <h3> Structure </h3>
-
-
-        </div>
-        <!-- GITHUB -->
-        <div class="github">
-          <h3> Important Files/Folders <a href="https://github.com/dphuang2/streamsets_scripts">Repo</a> </h3>
-                    <ul>
-            <li><a href="https://github.com/dphuang2/streamsets_scripts/blob/master/JSEvalScripts/script.js">/JSEvalScripts/script.js</a></li>
-            - This file contains all the logic for transforming each .csv file into the desired indicator/country/date/value format.
-            <li><a href="https://github.com/dphuang2/streamsets_scripts/tree/master/IM-testing">/IM-testing</a></li>
-            - Folder that contains all the origin files (input), and destination files (output)
-            <li><a href="https://github.com/dphuang2/streamsets_scripts/blob/master/AddingNewDataSource.md">AddingNewDataSource.md</a></li>
-            - This markdown files contains the instructions and explanation for adding to script.js and understanding the structure of the code.
-            <li><a href="https://github.com/dphuang2/streamsets_scripts/tree/master/OldJsonPipelines">*.json files</a></li>
-            - Streamsets allows users to import a pipeline through use of .json files. This folder contains all the past versions of .json files while the most current pipeline is in the source directory
-          </ul>
+<html>
+  <head>
+    <title>GSoC 2016 | Dylan Huang</title>
+    <link rel="icon" href="icon.gif">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-3.1.0.slim.min.js" integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script language="javascript" type="text/javascript" src="script.js"></script>
+  </head>
+  <!-- HEADER -->
+  <header class="nav navbar-default">
+    <span id="logo"><img id="icon" src="icon.gif"> Google Summer of Code 2016 | <img id="bkman-logo" src="bkman-logo.gif"> | Dylan Huang</span>
+  </header> 
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <ul class="nav nav-tabs">
+      <li id="goals" role="presentation" class="active"><a>Goals</a></li>
+      <li id="research" role="presentation"><a>Research</a></li>
+      <li id="system" role="presentation"><a>System</a></li>
+      <li id="github" role="presentation"><a>Github</a></li>
+      <li id="redesign" role="presentation"><a>Redesign</a></li>
+      <li id="conclusion" role="presentation"><a>Conclusion</a></li>
+    </ul>
+    <div class="row">
+      <div class="col-md-4 left">
+        <div class="left-container">
+          <!-- GOALS -->
+          <div class="goals">
+            <ul class="goals-list">
+              <li><span class="glyphicon glyphicon-search" aria-hidden="true"></span>  Research a new platform for the integration of disparate data sources into a single Internet Monitor Platform offering.</li>
+              <li><span class="glyphicon glyphicon-list" aria-hidden="true"></span>  Make data available through the Internet Monitor website via a newly defined Platform Data API.</li>
+              <li><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>  Create a scalable, modular, and reliable system to run the ETL process on demand</li>
+              <li><span class="glyphicon glyphicon-console" aria-hidden="true"></span>  Automate an otherwise manual and time consuming process of integrating data into the Internet Monitor system</li>
+              <li><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Eliminate the tedious and error prone human element of transforming data</li>
+            </ul>
+          </div>
+          <!-- RESEARCH -->
+          <div class="research">
+            <h4>Points considered:</h4>
+            <ul class="research-list">
+              <li>Ease of use&#151;how easy is it to setup and how user-friendly is the interface</li>
+              <li>Functionality of platform&#151;how well does it fit our needs</li>
+              <li>How is data retrieved and the format/method of output</li>
+            </ul>
+            <h4>Platforms considered:</h4>
+            <ul class="research-list">
+              <li><a href="http://nifi.apache.org/">Apache NiFi</a></li>
+              <li><a href="https://streamsets.com">StreamSets</a></li>
+              <li><a href="http://www.safe.com/fme/fme-desktop/">FME Desktop</a></li>
+            </ul>
+            <h4>Platform Chosen:</h4>
+            <ul class="research-list">
+              <li><a href="https://streamsets.com">StreamSets</a></li>
+            </ul>
+            <p><span id="reason">Reason:</span> Streamsets beat out the other platforms in flexibility by allowing the use of JavaScript to script the transformation process rather than trying to alter and customize pre-built "Evaluators" to transform the data into the desired form.</p>
+          </div>
+          <!-- SCRIPT -->
+          <div class="system">
+            <h3> Structure </h3> 
+            <a href="https://github.com/dphuang2/streamsets_scripts/blob/master/AddingNewDataSource.md">AddingNewDataSource.md</a> explains the structure of all the code that performs the transformation in detail.
+            <h5> Quick Summary </h5>
+            <p> There are three blocks of the code that are important to understand </p>
+            <ol>
+              <li><b>"outputRecord" function</b> | <i>Line #5</i></li>
+              This function contains the syntax for outputting a record (one line in the csv file). It is executed at the end of each indicator function.
+              <li><b>All the indicator functions</b> | <i>Starts at line #25</i></li>
+              Every indicator function contains the process to transform the origin file to the correct format. Though each function is unique, every function contains a similar structure outlined in <a href="https://github.com/dphuang2/streamsets_scripts/blob/master/AddingNewDataSource.md">AddingNewDataSource.md</a>. 
+              <li><b>Logic for which function to execute</b> | <i>Starts at line #536</i></li>
+              This block contains the basic logic for which indicator function to execute using hard-coded Regex or filenames and a switch statement.
+            </ol>
+          </div>
+          <!-- GITHUB -->
+          <div class="github">
+            <h3> Important Files/Folders - <a href="https://github.com/dphuang2/streamsets_scripts">Repo</a> </h3>
+            <ul>
+              <li><a href="https://github.com/dphuang2/streamsets_scripts/blob/master/JSEvalScripts/script.js">/JSEvalScripts/script.js</a></li>
+              <ul>
+                <li>This file contains all the code for transforming each .csv file into the desired indicator/country/date/value format.</li>
+              </ul>
+              <li><a href="https://github.com/dphuang2/streamsets_scripts/tree/master/IM-testing">/IM-testing</a></li>
+              <ul>
+                <li>Folder that contains all the origin files (input), and destination files (output)</li>
+              </ul>
+              <li><a href="https://github.com/dphuang2/streamsets_scripts/blob/master/AddingNewDataSource.md">AddingNewDataSource.md</a></li>
+              <ul>
+                <li>This markdown files contains the instructions for adding another data source to the pipeline and an explanation for the structure of script.js.</li>
+              </ul>
+              <li><a href="https://github.com/dphuang2/streamsets_scripts/tree/master/OldJsonPipelines">*.json files</a></li>
+              <ul>
+                <li>Streamsets allows users to import a pipeline through use of .json files. This folder contains all the past versions of .json files while the most recent pipeline is in the source directory</li>
+              </ul>
+            </ul>
+          </div>
+          <!-- REDESIGN -->
+          <div class="redesign">
+            <h3> Wrapping up the summer </h3>
+            <p> After I finished scripting the transformation of all the data sources, I worked on redesigning the front-page of the Internet Monitor. <a href="https://github.com/berkmancenter/internet_monitor/commits/dev?author=dphuang2">Commits</a></p> 
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-8 right">
-      <div class="goals-right">
-        <img class="ss-gif goals" src="streamsets-demonstration.gif" alt="demonstration">
-        <div id="script-gist" class="script">
+      <div class="col-md-8 right">
+        <img class="image goals" src="streamsets-demonstration.gif" alt="demonstration">
+        <img class="image research" src="research.png" alt="research">
+
+        <div class="image system">
+          <a href="https://github.com/dphuang2/streamsets_scripts/blob/master/JSEvalScripts/script.js"><h4 id="script-title"> script.js </h4></a>
           <script ss="script" src="https://gist.github.com/dphuang2/a454a1c9251faad94d3522ddb6e85eb5.js"></script>
         </div>
-        <img class="github" id="github-image" src="github-ss.png">
+        <img class="image github" src="github-ss.png"> 
+        <img class="image redesign" src="redesign.png"> 
       </div>
     </div>
+    <div class="conclusion">
+      <h3> Skills Learned </h3>
+      <ul>
+        <b><li>Streamsets and other data pipelining platforms</li></b>
+        During the research part of my assignment, I spent a lot of time comparing and researching the different platforms and what they had to offer. I also spent a lot of time playing with Streamsets and learning the ins and outs of it.
+        <b><li>JavaScript</li></b>
+        Streamset's JavaScript evaluator was the most significant part of the platform.
+        <b><li>RegExr</li></b> 
+        Some of the data sources required the use of RegExr to evaluate multiple files and write the logic for which function indicator to execute.
+        <b><li>Ruby on Rails</li></b>
+        Although I did not spend most of my time working on the website itself (built with Rails), I spent a lot of time learning Ruby on Rails in preparation in working on the website itself.
+      </ul>
+      <h4> Mentors </h4>
+      <p> Thank you <a href="https://cyber.law.harvard.edu/people/rwestphal">Ryan</a> and <a href="https://cyber.law.harvard.edu/people/rheacock">Rebekah</a> for a wonderful summer of coding and learning!
+    </div>
   </div>
-</div>
+</html>

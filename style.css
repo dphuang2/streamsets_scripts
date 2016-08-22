@@ -11,13 +11,19 @@ header {
   letter-spacing: -1px;
   font-weight: bold;
 }
+#icon{
+  width:50px;
+  height:50px;
+}
+#bkman-logo{
+  height: 43px;
+  position: relative;
+  bottom: 7px;
+}
 /* hero */
 .hero-wrap .row {
   margin-left: 0px;
   margin-right: 0px;
-}
-.ss-gif{
-  width: 100%;
 }
 .hero-wrap .left-container{
   margin-left: 10px; 
@@ -28,6 +34,9 @@ header {
 }
 .right {
   padding: 0px;
+}
+.image{
+  width: 100%;
 }
 /* hero goals */
 .hero-wrap .goals-list {
@@ -44,9 +53,23 @@ header {
 /* hero script */
 #script-gist{
   height: 475px;
-  width: 100%;
   overflow: auto;
 }
+#script-title{
+  position: relative;
+  left: 5px;
+}
+/* hero github */
 #github-image{
   width: 100%;
+}
+/* hero redesign */
+#redesign-image{
+  width: 100%;
+}
+/* conclusion */
+.conclusion{
+  margin-left: 10px;
+  position: relative;
+  bottom: 19px;
 }
