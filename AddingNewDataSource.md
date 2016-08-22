@@ -1,5 +1,6 @@
 <h3> Steps for adding a data source </h3>
 <ol>
+    <li>Make sure your pipeline constants (origin, error, and destination folders) are setup under IM_CSV -> Configuration -> Constants </li>
     <li> Add file to origin folder </li>
     <li> Edit JS Script </li>
     <ul>
