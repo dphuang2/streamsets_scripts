@@ -6,8 +6,6 @@
         <li> Add new indicator function following the format provided in the pseudocode </li>
         <li> Add new condition to the switch statement for new file </li>
     </ul>
-    <li> Add new Stream Selector condition for new file </li>
-    <li> Add new Local FS Destination and configure output file name to indicator </li>
 </ol>
 
 <h4> Pseudocode for understanding the script: </h4>
