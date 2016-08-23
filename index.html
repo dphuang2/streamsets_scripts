@@ -61,10 +61,10 @@
             </ul>
             <p><span id="reason">Reason:</span> Streamsets beat out the other platforms in flexibility by allowing the use of JavaScript to script the transformation process rather than trying to alter and customize pre-built "Evaluators" to transform the data into the desired form.</p>
           </div>
-          <!-- SCRIPT -->
+          <!-- SYSTEM -->
           <div class="system">
             <h3> Structure </h3> 
-            <a href="https://github.com/dphuang2/streamsets_scripts/blob/master/AddingNewDataSource.md">AddingNewDataSource.md</a> explains the structure of all the code that performs the transformation in detail.
+            After deciding a platform, the next step was to develop a system that would help achieve our goal of running a scalable, modular, and reliable ETL process on demand. The system boiled down to one script.js file that runs all the logic and transformation of each file while Streamsets handled the input and output. <a href="https://github.com/dphuang2/streamsets_scripts/blob/master/AddingNewDataSource.md">AddingNewDataSource.md</a> explains the structure of all the code that performs the transformation in detail.
             <h5> Quick Summary </h5>
             <p> There are three blocks of the code that are important to understand </p>
             <ol>
@@ -127,7 +127,7 @@
         <b><li>RegExr</li></b> 
         Some of the data sources required the use of RegExr to evaluate multiple files and write the logic for which function indicator to execute.
         <b><li>Ruby on Rails</li></b>
-        Although I did not spend most of my time working on the website itself (built with Rails), I spent a lot of time learning Ruby on Rails in preparation in working on the website itself.
+        Although I spent most of my time working with Streamsets, I also spent a lot of time learning Ruby on Rails in preparation in working on the website itself. I learned important concepts such as MVC, data hashing, encryption, cookies, and test-driven development.
       </ul>
       <h4> Mentors </h4>
       <p> Thank you <a href="https://cyber.law.harvard.edu/people/rwestphal">Ryan</a> and <a href="https://cyber.law.harvard.edu/people/rheacock">Rebekah</a> for a wonderful summer of coding and learning!
